@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit {
         let cle = Object.keys(data);
         let donnees = Object.values(data);
         for(let i = 0; i < cle.length; i++){
+          
           this.listes.push({key: cle[i], values:donnees[i]});
         }
       }
