@@ -14,6 +14,7 @@ import { LocalisationComponent } from './_Comp/localisation/localisation.compone
 import { AccountComponent } from './_Comp/account/account.component';
 import { ConditionComponent } from './_Comp/condition/condition.component';
 import { CarteComponent } from './_Comp/carte/carte.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,11 @@ import { CarteComponent } from './_Comp/carte/carte.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: '',
+      libraries: ['places']
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

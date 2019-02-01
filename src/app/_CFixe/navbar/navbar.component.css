@@ -1,0 +1,11 @@
+ul {
+    margin: 0 auto;
+}
+
+#navbarDropdown {
+    color: white;
+    background-color: green;
+    border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-menu {display: block;}

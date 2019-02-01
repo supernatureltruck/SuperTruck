@@ -1,0 +1,43 @@
+#back { 
+    background-color: #8E9886;
+    min-height: 650px;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+p {
+    margin: 30px 30px 0 30px;
+    padding-bottom: 30px;
+    text-align: justify;
+}
+
+.who {
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 80px;
+    max-width: 550px;
+}
+
+.container {
+    max-width: 550px;
+}
+
+button {
+    font-size: 30px;
+    margin: 30px auto;
+}
+
+@media (min-height:1000px) {
+    #back { 
+        min-height: 800px;
+    }
+}
+
+@media (min-height:1300px) {
+    #back { 
+        min-height: 1150px;
+    }
+}

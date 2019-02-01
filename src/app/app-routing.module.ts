@@ -10,13 +10,14 @@ import { CarteComponent } from './_Comp/carte/carte.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
+  {path:'home', component: HomeComponent},
   {path:'account', component: AccountComponent},
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
   {path:'localisation', component: LocalisationComponent},
   {path:'condition', component: ConditionComponent},
   {path:'carte', component: CarteComponent},
-  // Keep path:** last
+  // Keep the path below,in last position.
   {path:'**', component: CarteComponent},
 ];
 

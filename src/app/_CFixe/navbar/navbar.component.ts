@@ -12,4 +12,11 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  nomsMenu = [{
+    name: 'Salades',
+  },
+  {
+    name: 'Pizza',
+  }]
+
 }

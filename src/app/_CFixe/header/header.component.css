@@ -1,0 +1,30 @@
+.container-fluid {
+  background-color: #B9D9A9;
+  display: block;
+}
+
+h1 {
+  text-align: center;
+  width: 270px;
+  margin: 10px auto;
+}
+
+button {
+  margin: 20px 5px 20px 5px;
+}
+
+img {
+  width: 80px;
+  height: 80px;
+}
+
+@media (max-width: 990px) {
+  img {
+      display: none;
+  }
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
