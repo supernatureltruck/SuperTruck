@@ -8,4 +8,9 @@ ul {
     border-radius: 10px;
 }
 
+a {
+    text-align: center;
+    display: block;
+}
+
 .dropdown:hover .dropdown-menu {display: block;}

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,9 @@ import { AccountComponent } from './_Comp/account/account.component';
 import { ConditionComponent } from './_Comp/condition/condition.component';
 import { CarteComponent } from './_Comp/carte/carte.component';
 import { AgmCoreModule } from '@agm/core';
+import { PlatComponent } from './_Comp/carte/plat/plat.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SearchPipe } from './search.pipe'; 
 
 @NgModule({
   declarations: [
@@ -29,11 +33,15 @@ import { AgmCoreModule } from '@agm/core';
     LocalisationComponent,
     AccountComponent,
     ConditionComponent,
-    CarteComponent
+    CarteComponent,
+    PlatComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
     AgmCoreModule.forRoot({
       apiKey: '',
       libraries: ['places']

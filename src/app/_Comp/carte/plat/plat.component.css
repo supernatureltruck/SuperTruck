@@ -1,0 +1,17 @@
+.card {
+    margin: 50px 0 50px 0;
+    min-height: 400px;
+}
+
+h5 {
+    text-align: center;
+}
+
+p {
+    min-height: 48px;
+}
+
+img {
+    width: 286px;
+    height: 226px;
+}

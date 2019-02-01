@@ -16,7 +16,8 @@ const routes: Routes = [
   {path:'register', component: RegisterComponent},
   {path:'localisation', component: LocalisationComponent},
   {path:'condition', component: ConditionComponent},
-  {path:'carte', component: CarteComponent},
+  {path:'menu', component: CarteComponent},
+  {path:'menu/:categorie', component: CarteComponent},
   // Keep the path below,in last position.
   {path:'**', component: CarteComponent},
 ];
