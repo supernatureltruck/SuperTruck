@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ConfirmPasswordValidator } from '../register/confirm-password.validator';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -31,20 +32,16 @@ export class RegisterComponent implements OnInit {
   });
   public error : boolean = false;
 
-  constructor(private formBuilder: FormBuilder,  private router: Router) { }
+  constructor(private formBuilder: FormBuilder,  private router: Router, private userService: UserService) { }
 
   ngOnInit() {
   }
-  valider(){
-    //console.log(this.connexionForm);
-    if(this.connexionForm.status=="VALID"){
-      let link = ['menu'];
-      this.router.navigate(link);
-    }else{
-      //alert("error");
-      document.getElementById('divErreur').style.display='block'
+  addUser(form) {
+    this.userService.addUser(form.form.value)
+      .subscribe(user => {
+        this.router.navigate([`./menu`]);
+      });
   }
-}
 annuler(){
   history.back();
 }
