@@ -14,16 +14,16 @@ export class RegisterComponent implements OnInit {
   public email: string ='';
     filter=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
 
-  public pw1: string ='';
+  public mdp1: string ='';
      strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})");
 
-     public pw2: string ='';
+     public mdp2: string ='';
     
   connexionForm = this.formBuilder.group({
     connexion: this.formBuilder.group({
      email: ['',Validators.compose([Validators.minLength(3), Validators.pattern(this.filter)])],
-     pw1: ['',Validators.compose([Validators.minLength(6),Validators.pattern(this.strongRegex)])],
-     pw2:[''],    
+     mdp: ['',Validators.compose([Validators.minLength(6),Validators.pattern(this.strongRegex)])],
+     mdp2:[''],    
     }
     ,{
       validator: ConfirmPasswordValidator.MatchPassword

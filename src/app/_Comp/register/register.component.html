@@ -7,12 +7,12 @@
         <div class="error" *ngIf="connexionForm.controls.connexion.controls.email.hasError('pattern')"><strong>X</strong> Veuillez
           saisir un email valide</div>
         <br>
-        <input type="password" name="pw1" placeholder="Mot de passe" formControlName="pw1" required />
-        <div class="error" *ngIf="connexionForm.controls.connexion.controls.pw1.hasError('pattern')"><strong>X</strong> Veuillez saisir
+        <input type="password" name="mdp" placeholder="Mot de passe" formControlName="mdp" required />
+        <div class="error" *ngIf="connexionForm.controls.connexion.controls.mdp.hasError('pattern')"><strong>X</strong> Veuillez saisir
           un mot de passe de minimum 6 caractére avec une Majuscule et un nombre</div>
         <br>
-        <input type="password" name="pw2" placeholder="Confirmer Mot de passe" formControlName="pw2" required />
-        <div class="error" *ngIf="connexionForm.controls.connexion.controls.pw2.hasError('ConfirmPassword')"><strong>X</strong> Veuillez
+        <input type="password" name="mdp2" placeholder="Confirmer Mot de passe" formControlName="mdp2" required />
+        <div class="error" *ngIf="connexionForm.controls.connexion.controls.mdp2.hasError('ConfirmPassword')"><strong>X</strong> Veuillez
           Confirmer votre mot de passe</div>
       </div>
       <div id="divErreur" style="display:none;">Veuillez remplir tous les champs</div>
