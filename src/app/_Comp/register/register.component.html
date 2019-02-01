@@ -1,3 +1,26 @@
-<p>
-  register works!
-</p>
+<div id="back">
+  <div class="form-style">
+    <h1>Création de compte</h1>
+    <form [formGroup]="connexionForm">
+      <div formGroupName="connexion">
+        <input type="email" name="email" placeholder="E-mail" formControlName="email" required />
+        <div class="error" *ngIf="connexionForm.controls.connexion.controls.email.hasError('pattern')"><strong>X</strong> Veuillez
+          saisir un email valide</div>
+        <br>
+        <input type="password" name="pw1" placeholder="Mot de passe" formControlName="pw1" required />
+        <div class="error" *ngIf="connexionForm.controls.connexion.controls.pw1.hasError('pattern')"><strong>X</strong> Veuillez saisir
+          un mot de passe de minimum 6 caractére avec une Majuscule et un nombre</div>
+        <br>
+        <input type="password" name="pw2" placeholder="Confirmer Mot de passe" formControlName="pw2" required />
+        <div class="error" *ngIf="connexionForm.controls.connexion.controls.pw2.hasError('ConfirmPassword')"><strong>X</strong> Veuillez
+          Confirmer votre mot de passe</div>
+      </div>
+      <div id="divErreur" style="display:none;">Veuillez remplir tous les champs</div>
+      <br>
+      <button class="btnValider" (click)="valider()">Valider</button>
+      <button class="btnAnnuler" (click)="annuler()">Annuler</button>
+    </form>
+    <!--connexionForm.controls.connexion.controls.email.hasError('pattern')-->
+    <!--<div>{{ connexionForm.value | json }}</div>-->
+  </div>
+</div>
