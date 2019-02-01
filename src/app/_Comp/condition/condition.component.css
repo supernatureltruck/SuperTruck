@@ -1,0 +1,31 @@
+#back { 
+    background-color: #8E9886;
+	height: 5550px;
+	padding-top: 80px;
+}
+.titre{
+    text-decoration: underline;
+    text-align: center;
+    font-weight: bold;
+    margin: 50px;
+}
+.who {
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 80px;
+    max-width: 750px;
+}
+.container {
+    max-width: 850px;
+}
+
+.italic{
+    font-style: oblique;
+}
+.art{
+    font-weight: bold;
+    margin: 50px;
+}
+.paragraphe{
+    margin: 50px;
+}
