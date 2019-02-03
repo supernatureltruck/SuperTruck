@@ -11,14 +11,25 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-     // POST :  Add a game
+     // POST :  Add user
      addUser(user: User): Observable<User> {
-      let url = `https://super-truck.firebaseio.com/users`;
-      return this.http.post<User>(url, user, {responseType: 'json'}).pipe(
-        tap((product: User) => console.log('Game added')),
+      let url = `https://super-truck.firebaseio.com/users.json`;
+      return this.http.post<User>(url, user, {responseType: 'json'})
+      .pipe(
+        tap((product: User) => console.log('User added')),
         catchError(this.handleError<User>('add'))
       );
     }
+
+    // GET : Get User
+    getUser():Observable<User[]>{
+      return this.http.get<User[]>('https://super-truck.firebaseio.com/users.json')
+        .pipe(
+          tap(data => data),
+          catchError(this.handleError('getUser',[]))
+        );
+    }
+    
 
         /**
    * Handle Http operation that failed.

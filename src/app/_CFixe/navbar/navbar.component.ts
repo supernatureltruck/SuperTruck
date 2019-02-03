@@ -13,7 +13,6 @@ export class NavbarComponent implements OnInit {
   listes = [];
   ngOnInit() {
     this.getProduct();
-    console.log(this.listes);
   }
 
   getProduct() {
