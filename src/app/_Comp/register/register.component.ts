@@ -72,6 +72,8 @@ export class RegisterComponent implements OnInit {
 
   addUser(form) {
     let alone = false;
+    console.log(form.form.value.connexion.email);
+    if (form.form.value.connexion.email != '') {
 
     this.listes.forEach(function(element) {
       if(form.form.value.connexion.email === element.values.connexion.email){
@@ -88,7 +90,10 @@ export class RegisterComponent implements OnInit {
          this.router.navigate([`./menu`]);
         });
     }
+  } else {
+    alert('Veuillez remplir tout les champs !');
   }
+}
 
   annuler() {
     history.back();

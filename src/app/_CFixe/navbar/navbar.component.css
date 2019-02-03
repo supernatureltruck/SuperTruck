@@ -2,15 +2,11 @@ ul {
     margin: 0 auto;
 }
 
-#navbarDropdown {
-    color: white;
-    background-color: green;
-    border-radius: 10px;
+.center {
+    margin: 0 auto;
 }
 
 a {
     text-align: center;
     display: block;
 }
-
-.dropdown:hover .dropdown-menu {display: block;}

@@ -13,9 +13,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+
   login(){
-    let link = ['menu'];
-    this.router.navigate(link);
+    console.log();
+    //let link = ['menu'];
+    //this.router.navigate(link);
   }
 
   annuler(){
