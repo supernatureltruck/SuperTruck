@@ -83,7 +83,6 @@ export class RegisterComponent implements OnInit {
       console.log('Mail déjà prit !');
       alert('Mail déjà utilisé, choisissez un autre mail.')
     } else {
-      console.log('User added');
         this.userService.addUser(form.form.value)
         .subscribe(user => {
          this.router.navigate([`./menu`]);
