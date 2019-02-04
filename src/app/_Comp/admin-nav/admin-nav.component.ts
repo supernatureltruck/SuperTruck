@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ProductService } from 'src/app/_services/product.service';
+import { OrderService } from 'src/app/_services/order.service';
 
 @Component({
   selector: 'app-admin-nav',
@@ -7,15 +8,15 @@ import { ProductService } from 'src/app/_services/product.service';
   styleUrls: ['./admin-nav.component.css']
 })
 export class AdminNavComponent implements OnInit {
-
-
-  constructor(private productService: ProductService) { }
+  status: string;
+  constructor(private productService: ProductService, private orderService: OrderService) { }
 
   ngOnInit() {
+    this.status = this.orderService.status;
   }
 
-  open() {
-
+  change(status) {
+    this.status = this.orderService.change(status);
   }
 
 }
