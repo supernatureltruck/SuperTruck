@@ -18,9 +18,13 @@ import { CookieComponent } from './_Comp/condition/cookie/cookie.component';
 import { ConditionComponent } from './_Comp/condition/condition.component';
 import { CarteComponent } from './_Comp/carte/carte.component';
 import { AgmCoreModule } from '@agm/core';
-import { PlatComponent } from './_Comp/carte/plat/plat.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchPipe } from './search.pipe'; 
+import { SearchPipe } from './search.pipe';
+import { InfosComponent } from './_Comp/carte/plat/infos/infos.component';
+import { AdminNavComponent } from './_Comp/admin-nav/admin-nav.component';
+import { GestionCarteComponent } from './_Comp/gestion-carte/gestion-carte.component';
+import { GestionCommandesComponent } from './_Comp/gestion-commandes/gestion-commandes.component';
+import { AddPlatComponent } from './_Comp/gestion-carte/add-plat/add-plat.component'; 
 
 @NgModule({
   declarations: [
@@ -36,10 +40,14 @@ import { SearchPipe } from './search.pipe';
     AccountComponent,
     ConditionComponent,
     CarteComponent,
-    PlatComponent,
     SearchPipe,
     CgvComponent,
-    CookieComponent
+    CookieComponent,
+    InfosComponent,
+    AdminNavComponent,
+    GestionCarteComponent,
+    GestionCommandesComponent,
+    AddPlatComponent
   ],
   imports: [
     BrowserModule,

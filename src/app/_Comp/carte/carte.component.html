@@ -1,16 +1,16 @@
 <div id="back">
   <div class="container">
-
     <input type="text" [(ngModel)]="term" placeholder=" Pizza,Salade...">
-
     <div class="row ">
-      <app-plat class="mx-auto" *ngFor="let liste of listes | search: term" 
-      [img]="liste.values.image" 
-      [nom]="liste.values.name" 
-      [description]="liste.values.description" 
-      [prix]="liste.values.prix"
-      [categorie]="liste.values.categorie"></app-plat>
-      
+      <div class="card" *ngFor="let liste of listes | search: term" style="width: 18rem;">
+        <img class="card-img-top" src="{{ liste.values.image }}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"> {{ liste.values.name }}  </h5>
+          <p class="card-text"> {{ liste.values.description }} </p>
+          <a href="#" class="btn btn-secondary float-left" [routerLink]="['/info', liste.key]">Informations</a>
+          <button href="#" class="btn btn-info float-right"> {{ liste.values.prix }} €</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
