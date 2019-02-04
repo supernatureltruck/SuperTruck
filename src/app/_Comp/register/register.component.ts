@@ -72,7 +72,7 @@ export class RegisterComponent implements OnInit {
 
   addUser(form) {
     let alone = false;
-    console.log(form.form.value.connexion.email);
+
     if (form.form.value.connexion.email != '') {
 
     this.listes.forEach(function(element) {
