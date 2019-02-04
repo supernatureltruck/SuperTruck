@@ -1,0 +1,46 @@
+.back {
+    background-color: #8E9886;
+    min-height: 650px;
+}
+
+img {
+    width: 400px;
+    height: 300px;
+    margin-top: 80px;
+    margin-right: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+form {
+    margin: 80px auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #e78c00;
+}
+
+button {
+    margin-top: 20px;
+}
+
+input {
+    width: 281px; 
+}
+
+label {
+    padding-top: 20px;
+    color: white;
+}
+
+img {
+    width: 350px;
+    height: 250px;
+    margin-top: 80px;
+    margin-right: 50px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}

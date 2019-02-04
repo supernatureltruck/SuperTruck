@@ -57,6 +57,15 @@ export class ProductService {
     );
   }
 
+      // PUT :  Edit a Game
+      edit(product: Product, key: string): Observable<Product> {
+        const url = `https://super-truck.firebaseio.com/product/`+key+'.json';
+          return this.http.put<Product>(url, product, {responseType: 'json'}).pipe(
+            tap((product: Product) => console.log('plat edited')),
+            catchError(this.handleError<Product>('edit'))
+          );
+        }
+
 
   /**
    * Handle Http operation that failed.

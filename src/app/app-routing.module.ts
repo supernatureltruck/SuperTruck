@@ -13,6 +13,7 @@ import { InfosComponent } from './_Comp/carte/plat/infos/infos.component';
 import { GestionCarteComponent } from './_Comp/gestion-carte/gestion-carte.component';
 import { GestionCommandesComponent } from './_Comp/gestion-commandes/gestion-commandes.component';
 import { AddPlatComponent } from './_Comp/gestion-carte/add-plat/add-plat.component';
+import { EditComponent } from './_Comp/carte/plat/edit/edit.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path:'menu', component: CarteComponent},
   {path:'menu/:categorie', component: CarteComponent},
   {path:'info/:key', component: InfosComponent},
+  {path:'edition/:key', component: EditComponent},
   {path:'gcarte', component: GestionCarteComponent},
   {path:'gcom', component: GestionCommandesComponent},
   {path:'add', component: AddPlatComponent},
