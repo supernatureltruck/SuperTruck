@@ -1,0 +1,24 @@
+<div class="back">
+  <div class="container">
+    <div class="row">
+      <form (ngSubmit)="addPlat(f)" #f="ngForm">
+        <label for="image">Image du plat</label><br>
+        <input type="text" name="image" ngModel><br>
+        <label for="name">Nom du plat</label><br>
+        <input type="text" name="name" ngModel><br>
+        <label for="descritpion">Description du plat</label><br>
+        <input type="text" name="description" ngModel><br>
+        <label for="categorie">Catégorie</label><br>
+        <select class="form-control" name="categorie" ngModel>
+          <option>Salade</option>
+          <option>Pizza</option>
+          <option>Hamburger</option>
+        </select>
+        <label for="price">Prix</label><br>
+        <input type="number" name="prix" ngModel><br>
+        <button class="btn btn-info" type="submit">Envoyer</button>
+        <button class="btn btn-info float-right" [routerLink]="['/gcarte']">Retour</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="back">
+  <div class="container">
+    <div class="row">
+      <form>
+        <h1>Informations</h1>
+        <label for="nom">Nom</label><br>
+        <p>{{plat?.name}}</p>
+        <label for="description">Description</label><br>
+        <p>{{plat?.description}}</p>
+        <label for="prix">Prix</label><br>
+        <p>{{plat?.prix}} Euros</p>
+        <button class="btn btn-info" [routerLink]="['/menu']">Retour</button>
+      </form>
+      <img src="{{plat?.image}}" alt="Image du plat">
+    </div>
+  </div>
+</div>

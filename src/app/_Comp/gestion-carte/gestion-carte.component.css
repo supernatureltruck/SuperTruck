@@ -31,3 +31,11 @@ img {
     width: 286px;
     height: 226px;
 }
+
+.d-flex {
+    max-height: 30px;
+}
+
+button {
+    font-size: 14px;
+}
