@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/_services/user.service';
+import { Router, RouterEvent } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  authStatus = true;
+  authStatus: boolean;
 
-  constructor() { }
+  constructor(private userService : UserService, private router:Router) { }
 
   ngOnInit() {
+    this.authStatus = this.userService.authStatus;
   }
+
+  signIn() {
+    this.userService.signIn();
+    this.authStatus = this.userService.authStatus;
+    let link = ['menu'];
+    this.router.navigate(link);
+  }
+
+  signOut() {
+    this.userService.signOut();
+    this.authStatus = this.userService.authStatus;
+    let link = ['menu'];
+    this.router.navigate(link);
+  }
+
 
 }

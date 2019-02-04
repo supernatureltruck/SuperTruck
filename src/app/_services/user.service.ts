@@ -11,6 +11,17 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+    authStatus = false;
+    // LOGIN
+
+    signIn() {
+      this.authStatus = true;
+    }
+
+    signOut() {
+      this.authStatus = false;
+    }
+
      // POST :  Add user
      addUser(user: User): Observable<User> {
       let url = `https://super-truck.firebaseio.com/users.json`;
@@ -29,6 +40,22 @@ export class UserService {
           catchError(this.handleError('getUser',[]))
         );
     }
+
+    getUserByKey(key: string): Observable<User[]>{
+      return this.http.get<User[]>('https://super-truck.firebaseio.com/users/'+key+'.json')
+      .pipe(
+        tap(data => JSON.stringify(data)),
+        catchError(this.handleError('getUserByKey', []))
+      );
+    }
+
+    edit(games: User, key: string): Observable<User> {
+      const url = `https://super-truck.firebaseio.com/users/`+key+'.json';
+        return this.http.put<User>(url, games, {responseType: 'json'}).pipe(
+          tap((product: User) => console.log('User edited')),
+          catchError(this.handleError<User>('edit'))
+        );
+      }
     
 
         /**

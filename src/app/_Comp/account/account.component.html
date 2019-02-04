@@ -6,8 +6,10 @@
       <p>Bonjour {{user?.mail}}</p>
       <label for="name">Nom</label><br>
       <input type="text" name="name" [ngModel]="user?.name"><br>
-      <label for="image">Mail</label><br>
+      <label for="mail">Mail</label><br>
       <input type="text" name="mail" [ngModel]="user?.mail"><br>
+      <label for="mdp">Nouveau mot de passe</label><br>
+      <input type="text" name="mdp" [ngModel]="user?.mdp"><br>
       <button class="btn btn-info" type="submit">Modifier</button>
       <button class="btn btn-info float-right" [routerLink]="['/menu']">Retour</button>
     </form>

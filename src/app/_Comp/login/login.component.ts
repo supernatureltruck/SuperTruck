@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
+import { UserService } from 'src/app/_services/user.service';
 
 
 @Component({
@@ -9,12 +10,16 @@ import { Router, RouterEvent } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  authStatus: boolean;
+
+  constructor(private router:Router, private userService : UserService) { }
 
   ngOnInit() {
+    this.authStatus = this.userService.authStatus;
   }
 
   login(){
+    this.userService.signIn();
     let link = ['menu'];
     this.router.navigate(link);
   }
