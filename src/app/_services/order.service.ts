@@ -4,17 +4,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class OrderService {
-  status = 'Ouverture';
+  status = 'Ouvert';
 
   constructor() { }
 
   change(status) {
-    if(status === 'Fermeture') {
-      this.status = "Ouverture";
+    if(status === 'Fermé') {
+      this.status = "Ouvert";
     } else {
-      this.status = "Fermeture";
+      this.status = "Fermé";
     }
-
     return this.status;
   }
 

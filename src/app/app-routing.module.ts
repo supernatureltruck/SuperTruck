@@ -15,6 +15,7 @@ import { GestionCommandesComponent } from './_Comp/gestion-commandes/gestion-com
 import { AddPlatComponent } from './_Comp/gestion-carte/add-plat/add-plat.component';
 import { EditComponent } from './_Comp/carte/plat/edit/edit.component';
 
+
 const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'home', component: HomeComponent},
