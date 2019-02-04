@@ -28,3 +28,10 @@ a {
     text-decoration: none;
     color: white;
 }
+.ouvferm{
+  color:red;
+  border:double 5px;
+  margin: 25px;
+  padding: 15px;
+  font-weight: bold;
+}
