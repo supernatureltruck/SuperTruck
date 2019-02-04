@@ -29,22 +29,22 @@ export class EditComponent implements OnInit {
   ngOnInit() {
     this.route.params
       .subscribe(parametres => {
-        this.getGamesByKey(parametres.key);
+        this.getPlatByKey(parametres.key);
         this.key = parametres.key;
       });
   }
 
 
-  getGamesByKey(key) {
+  getPlatByKey(key) {
     this.productService.getProductByKey(key)
       .subscribe(data => {
         this.product = data;
       })
   }
 
-  editPlat(game) {
-    this.productService.edit(game.form.value, this.key)
-      .subscribe(games => this.router.navigate([`./list`]));
+  editPlat(product) {
+    this.productService.edit(product.form.value, this.key)
+      .subscribe(games => this.router.navigate([`./gcarte`]));
 
   }
 

@@ -2,19 +2,21 @@
   <div class="container">
     <div class="row">
       <form (ngSubmit)="editPlat(f)" #f="ngForm">
-        <h1>Edition</h1>
-        <label for="name">Nom du plat</label><br>
-        <input type="text" name="name" [ngModel]="product?.name"><br>
+        <h1>Edition</h1>        
         <label for="image">Lien vers l'image</label><br>
         <input type="text" name="image" [ngModel]="product?.image"><br>
+        <label for="name">Nom du plat</label><br>
+        <input type="text" name="name" [ngModel]="product?.name"><br>
+        <label for="description">Description du plat</label><br>
+        <input type="text" name="description" [ngModel]="product?.description"><br>
         <label for="type">Catégorie</label><br>
         <select class="form-control" name="categorie" [ngModel]="product?.categorie">
             <option>Salade</option>
             <option>Pizza</option>
             <option>Hamburger</option>
           </select>
-        <label for="price">Prix</label><br>
-        <input type="number" name="price" [ngModel]="product?.prix"><br>
+        <label for="prix">Prix</label><br>
+        <input type="number" name="prix" [ngModel]="product?.prix"><br>
         <button class="btn btn-info" type="submit">Envoyer</button>
         <button class="btn btn-info float-right" [routerLink]="['/gcarte']">Retour</button>
       </form>
