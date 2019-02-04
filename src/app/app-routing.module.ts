@@ -7,6 +7,8 @@ import { RegisterComponent } from './_Comp/register/register.component';
 import { LocalisationComponent } from './_Comp/localisation/localisation.component';
 import { ConditionComponent } from './_Comp/condition/condition.component';
 import { CarteComponent } from './_Comp/carte/carte.component';
+import { CgvComponent } from './_Comp/condition/cgv/cgv.component';
+import { CookieComponent } from './_Comp/condition/cookie/cookie.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -16,6 +18,8 @@ const routes: Routes = [
   {path:'register', component: RegisterComponent},
   {path:'localisation', component: LocalisationComponent},
   {path:'condition', component: ConditionComponent},
+  {path:'cgv', component: CgvComponent},
+  {path:'cookie', component: CookieComponent},
   {path:'menu', component: CarteComponent},
   {path:'menu/:categorie', component: CarteComponent},
   // Keep the path below,in last position.

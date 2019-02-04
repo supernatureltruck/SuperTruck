@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
 import { UserService } from 'src/app/_services/user.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -10,9 +11,23 @@ import { UserService } from 'src/app/_services/user.service';
 })
 export class LoginComponent implements OnInit {
 
+  //Statut de connexion
   authStatus: boolean;
 
-  constructor(private router:Router, private userService : UserService) { }
+  //regex pour email
+  public email: string = '';
+  filter = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+
+  loginForm = this.formBuilder.group({
+    connexion: this.formBuilder.group({
+      email: ['', Validators.compose([Validators.minLength(3), Validators.pattern(this.filter)])],
+    },)
+  });
+  public error: boolean = false;
+
+  
+
+  constructor(private router:Router, private userService : UserService,private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.authStatus = this.userService.authStatus;

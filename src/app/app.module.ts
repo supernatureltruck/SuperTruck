@@ -13,6 +13,8 @@ import { LoginComponent } from './_Comp/login/login.component';
 import { RegisterComponent } from './_Comp/register/register.component';
 import { LocalisationComponent } from './_Comp/localisation/localisation.component';
 import { AccountComponent } from './_Comp/account/account.component';
+import { CgvComponent } from './_Comp/condition/cgv/cgv.component';
+import { CookieComponent } from './_Comp/condition/cookie/cookie.component';
 import { ConditionComponent } from './_Comp/condition/condition.component';
 import { CarteComponent } from './_Comp/carte/carte.component';
 import { AgmCoreModule } from '@agm/core';
@@ -35,7 +37,9 @@ import { SearchPipe } from './search.pipe';
     ConditionComponent,
     CarteComponent,
     PlatComponent,
-    SearchPipe
+    SearchPipe,
+    CgvComponent,
+    CookieComponent
   ],
   imports: [
     BrowserModule,

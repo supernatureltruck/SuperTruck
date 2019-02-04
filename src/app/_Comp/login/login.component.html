@@ -1,9 +1,13 @@
 <div id="back">
   <div class="form-style">
     <h1>Connexion au compte</h1>
-    <form>
-      <div>
-        <input type="email" name="email" placeholder="E-mail"/>
+    <form [formGroup]="loginForm" (ngSubmit)="login(f)" #f="ngForm">
+      <div class="error" *ngIf="loginForm.controls.connexion.controls.email.hasError('pattern')"><strong>X</strong>
+         Email/Mot de passe incorrect</div>
+        <br>
+      <div formGroupName="connexion">
+        <input type="email" name="email" placeholder="E-mail" formControlName="email" required />
+        
         <br>
         <input type="password" name="mdp" placeholder="Mot de passe"/>
         <button class="btnValider" (click)="login()">Valider</button>

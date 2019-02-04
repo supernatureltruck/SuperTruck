@@ -79,3 +79,8 @@
 .btnAnnuler:active {
 	transform: translateY(1px);
   }
+ .error{
+	 color:red;
+	 text-align: center;
+	 text-decoration: underline;
+ }
