@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
 
 
@@ -15,9 +15,8 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    console.log();
-    //let link = ['menu'];
-    //this.router.navigate(link);
+    let link = ['menu'];
+    this.router.navigate(link);
   }
 
   annuler(){

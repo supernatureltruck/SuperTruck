@@ -7,10 +7,10 @@
       <h1><a [routerLink]="['/home']">Super Naturel</a></h1>
     </div>
     <div class="col-lg-4 col-md-12 text-center">
-      <button class="btn btn-success" routerLink="register">M'inscrire</button>
-      <button class="btn btn-success" routerLink="login">Me connecter</button>
-      <button class="btn btn-success" *ngIf="authStatus">Mon Compte</button>
-      <button class="btn btn-danger" *ngIf="authStatus">Me déconnecter</button>
+      <button class="btn btn-success" routerLink="register" *ngIf="!authStatus">M'inscrire</button>
+      <button class="btn btn-success" routerLink="login" *ngIf="!authStatus">Me connecter</button>
+      <button class="btn btn-success" routerLink="account" *ngIf="authStatus">Mon Compte</button>
+      <button class="btn btn-danger"  routerLink="home" *ngIf="authStatus">Me déconnecter</button>
     </div>
   </div>
 </div>
