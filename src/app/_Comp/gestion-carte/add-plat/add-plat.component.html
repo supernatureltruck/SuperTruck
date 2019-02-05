@@ -3,12 +3,7 @@
     <div class="row">
       <form (ngSubmit)="addPlat(f)" #f="ngForm">
         <label for="image">Image du plat</label><br>
-        <input type="text" name="image" ngModel><br>
-        <div class="custom-file">
-          <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-          <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-          <div class="invalid-feedback">Example invalid custom file feedback</div>
-        </div>
+        <input type="text" name="image" placeholder="URL de l'image" ngModel><br>
         <label for="name">Nom du plat</label><br>
         <input type="text" name="name" ngModel><br>
         <label for="descritpion">Description du plat</label><br>

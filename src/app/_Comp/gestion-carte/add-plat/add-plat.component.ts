@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/_services/product.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Product } from 'src/app/_class/product';
 
 @Component({
   selector: 'app-add-plat',
@@ -16,9 +18,11 @@ export class AddPlatComponent implements OnInit {
 
   addPlat(form) {
     this.productService.add(form.form.value)
-      .subscribe(games => {
+      .subscribe(plat => {
         this.router.navigate([`./gcarte`]);
       });
   }
+
+
 
 }

@@ -1,0 +1,55 @@
+#back { 
+    background-color: #8E9886;
+    min-height: 650px;
+}
+
+.row {
+    height: 470px;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    padding-top: 50px;
+}
+
+.container {
+    text-align: center;
+}
+
+input {
+    margin-top: 25px;
+    width: 320px;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+
+.card {
+    margin: 30px auto;
+    min-height: 400px;
+}
+
+h5 {
+    text-align: center;
+}
+
+p {
+    min-height: 48px;
+}
+
+img {
+    width: 286px;
+    height: 226px;
+}
+
+.card-body {
+    height: 178px;
+}
+
+button {
+   font-size: 14px;
+}
+
+#btnT {
+    width: 75px;
+}
