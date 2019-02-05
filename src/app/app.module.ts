@@ -26,6 +26,9 @@ import { GestionCarteComponent } from './_Comp/gestion-carte/gestion-carte.compo
 import { GestionCommandesComponent } from './_Comp/gestion-commandes/gestion-commandes.component';
 import { AddPlatComponent } from './_Comp/gestion-carte/add-plat/add-plat.component';
 import { EditComponent } from './_Comp/carte/plat/edit/edit.component'; 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,7 @@ import { EditComponent } from './_Comp/carte/plat/edit/edit.component';
     GestionCarteComponent,
     GestionCommandesComponent,
     AddPlatComponent,
-    EditComponent
+    EditComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,10 @@ import { EditComponent } from './_Comp/carte/plat/edit/edit.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    DragDropModule,
+    BrowserAnimationsModule,
     AgmCoreModule.forRoot({
       apiKey: '',
       libraries: ['places']

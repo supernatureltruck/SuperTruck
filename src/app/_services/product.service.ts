@@ -39,7 +39,7 @@ export class ProductService {
       );
   }
 
-  /** DELETE: remove a game */
+  /** DELETE: remove a product */
   remove(key): Observable < Product[] > {
     let url = 'https://super-truck.firebaseio.com/product/' + key + '.json';
     return this.http.delete < Product[] > (url)
@@ -49,23 +49,28 @@ export class ProductService {
       );
   }
 
-  add(product: Product): Observable<Product> {
+  add(product: Product): Observable < Product > {
     let url = `https://super-truck.firebaseio.com/product.json`;
-    return this.http.post<Product>(url, product, {responseType: 'json'}).pipe(
+    return this.http.post < Product > (url, product, {
+      responseType: 'json'
+    }).pipe(
       tap((product: Product) => console.log('new Plat added')),
-      catchError(this.handleError<Product>('add'))
+      catchError(this.handleError < Product > ('add'))
     );
   }
 
-      // PUT :  Edit a Game
-      edit(product: Product, key: string): Observable<Product> {
-        const url = `https://super-truck.firebaseio.com/product/`+key+'.json';
-          return this.http.put<Product>(url, product, {responseType: 'json'}).pipe(
-            tap((product: Product) => console.log('plat edited')),
-            catchError(this.handleError<Product>('edit'))
-          );
-        }
+  // PUT :  Edit a Game
+  edit(product: Product, key: string): Observable < Product > {
+    const url = `https://super-truck.firebaseio.com/product/` + key + '.json';
+    return this.http.put < Product > (url, product, {
+      responseType: 'json'
+    }).pipe(
+      tap((product: Product) => console.log('plat edited')),
+      catchError(this.handleError < Product > ('edit'))
+    );
+  }
 
+  
 
   /**
    * Handle Http operation that failed.

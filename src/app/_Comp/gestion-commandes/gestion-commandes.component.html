@@ -1,50 +1,31 @@
 <div id="back">
-
-  <h2>Commandes en attentes</h2>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="card" *ngFor="let liste of listes | search: term" style="width: 18rem;">
-        <img class="card-img-top" src="{{ liste.values.image }}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title"> {{ liste.values.name }} </h5>
-          <p class="card-text"> {{ liste.values.description }} </p>
-          <button class="btn btn-secondary float-left" [routerLink]="['/info', liste.key]">Infos</button>
-          <button class="btn btn-success"> Commander </button>
-          <button id="btnT" class="btn btn-info float-right"> {{ liste.values.prix }} €</button>
+      <div class="example-container">
+        <h2>En attente</h2>
+
+        <div cdkDropList #commandesList="cdkDropList" [cdkDropListData]="commandes" [cdkDropListConnectedTo]="[preparationsList]"
+          class="example-list" (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let commande of commandes" cdkDrag>{{commande.values.name}}</div>
+        </div>
+      </div>
+
+      <div class="example-container">
+        <h2>En préparation</h2>
+
+        <div cdkDropList #preparationsList="cdkDropList" [cdkDropListData]="preparations" [cdkDropListConnectedTo]="[commandesList, terminesList]"
+          class="example-list" (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let preparation of preparations" cdkDrag>{{preparation.values.name}}</div>
+        </div>
+      </div>
+
+      <div class="example-container">
+        <h2>Terminées</h2>
+
+        <div cdkDropList #terminesList="cdkDropList" [cdkDropListData]="termines" [cdkDropListConnectedTo]="[commandesList, preparationsList]"
+          class="example-list" (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let termine of termines" cdkDrag>{{termine.values.name}}<button mat-raised-button color="warn" (click)="delete(termine.key)">Delete</button></div>
         </div>
       </div>
     </div>
   </div>
-
-  <h2>Commandes en préparations</h2>
-  <div class="container">
-    <div class="row">
-      <div class="card" *ngFor="let liste of listes | search: term" style="width: 18rem;">
-        <img class="card-img-top" src="{{ liste.values.image }}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title"> {{ liste.values.name }} </h5>
-          <p class="card-text"> {{ liste.values.description }} </p>
-          <button class="btn btn-secondary float-left" [routerLink]="['/info', liste.key]">Infos</button>
-          <button class="btn btn-success"> Commander </button>
-          <button id="btnT" class="btn btn-info float-right"> {{ liste.values.prix }} €</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <h2>Commandes terminées</h2>
-  <div class="container">
-    <div class="row">
-      <div class="card" *ngFor="let liste of listes | search: term" style="width: 18rem;">
-        <img class="card-img-top" src="{{ liste.values.image }}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title"> {{ liste.values.name }} </h5>
-          <p class="card-text"> {{ liste.values.description }} </p>
-          <button class="btn btn-secondary float-left" [routerLink]="['/info', liste.key]">Infos</button>
-          <button class="btn btn-success"> Commander </button>
-          <button id="btnT" class="btn btn-info float-right"> {{ liste.values.prix }} €</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
