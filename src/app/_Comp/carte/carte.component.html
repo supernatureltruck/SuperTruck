@@ -8,7 +8,7 @@
           <h5 class="card-title"> {{ liste.values.name }}  </h5>
           <p class="card-text"> {{ liste.values.description }} </p>
           <button class="btn btn-secondary float-left" [routerLink]="['/info', liste.key]">Infos</button>
-          <button class="btn btn-success"> Commander </button>
+          <button class="btn btn-success" (click)="order66(liste.values)"> Commander </button>
           <button id="btnT" class="btn btn-info float-right"> {{ liste.values.prix }} €</button>
         </div>
       </div>
