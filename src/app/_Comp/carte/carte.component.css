@@ -31,3 +31,15 @@ img {
     width: 286px;
     height: 226px;
 }
+
+.card-body {
+    height: 178px;
+}
+
+button {
+   font-size: 14px;
+}
+
+#btnT {
+    width: 75px;
+}

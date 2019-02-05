@@ -6,7 +6,7 @@
         <a class="nav-link" routerLink="gcom">Gestion des commandes</a>
       </li>
       <li class="nav-item">
-        <button  class="btn btn-success" (click)="change(status)" [ngClass]="{'button:btn-success': status === 'Ouverture', 'button: btn-danger': status === 'Fermeture'}"> {{status}} </button>
+        <button  class="btn btn-success" (click)="change(status)" [ngClass]="{'button:btn-success': status === 'Ouvert', 'button: btn-danger': status === 'Fermé'}"> {{status}} </button>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="gcarte">Gestion de la carte</a>
