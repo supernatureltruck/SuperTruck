@@ -3,6 +3,11 @@
     min-height: 650px;
 }
 
+img {
+    width: 286px;
+    height: 226px;
+}
+
 h2 {
     text-align: center;
     color: white;
@@ -17,12 +22,14 @@ h2 {
   }
   
   .example-list {
+    width: 500px;
+    max-width: 100%;
     border: solid 1px #ccc;
     min-height: 60px;
+    display: block;
     background: white;
     border-radius: 4px;
     overflow: hidden;
-    display: block;
   }
   
   .example-box {

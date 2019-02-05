@@ -4,9 +4,11 @@
       <div class="example-container">
         <h2>En attente</h2>
 
-        <div cdkDropList #commandesList="cdkDropList" [cdkDropListData]="commandes" [cdkDropListConnectedTo]="[preparationsList]"
+        <div cdkDropList #commandesList="cdkDropList" [cdkDropListData]="commandes" [cdkDropListConnectedTo]="[preparationsList, terminesList]"
           class="example-list" (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let commande of commandes" cdkDrag>{{commande.values.name}}</div>
+          <div class="example-box" *ngFor="let commande of commandes" cdkDrag>{{commande.values.name}} <div
+              *cdkDragPreview> <img src="{{commande.values.image}}" alt=""> </div>
+          </div>
         </div>
       </div>
 
@@ -24,7 +26,8 @@
 
         <div cdkDropList #terminesList="cdkDropList" [cdkDropListData]="termines" [cdkDropListConnectedTo]="[commandesList, preparationsList]"
           class="example-list" (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let termine of termines" cdkDrag>{{termine.values.name}}<button mat-raised-button color="warn" (click)="delete(termine.key)">Delete</button></div>
+          <div class="example-box" *ngFor="let termine of termines" cdkDrag>{{termine.values.name}}<button
+              mat-raised-button color="warn" (click)="delete(termine.key)">Delete</button></div>
         </div>
       </div>
     </div>
