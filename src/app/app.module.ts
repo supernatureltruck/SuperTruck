@@ -25,7 +25,9 @@ import { AdminNavComponent } from './_Comp/admin-nav/admin-nav.component';
 import { GestionCarteComponent } from './_Comp/gestion-carte/gestion-carte.component';
 import { GestionCommandesComponent } from './_Comp/gestion-commandes/gestion-commandes.component';
 import { AddPlatComponent } from './_Comp/gestion-carte/add-plat/add-plat.component';
-import { EditComponent } from './_Comp/carte/plat/edit/edit.component'; 
+import { EditComponent } from './_Comp/carte/plat/edit/edit.component';
+import { StripeComponent } from './_Comp/stripe/stripe.component';
+import { NgxStripeModule } from 'ngx-stripe';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ import { EditComponent } from './_Comp/carte/plat/edit/edit.component';
     GestionCarteComponent,
     GestionCommandesComponent,
     AddPlatComponent,
-    EditComponent
+    EditComponent,
+    StripeComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { EditComponent } from './_Comp/carte/plat/edit/edit.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    NgxStripeModule.forRoot('pk_test_8oCjqa6VglrI9rZU9JlPvhKp'),
     AgmCoreModule.forRoot({
       apiKey: '',
       libraries: ['places']

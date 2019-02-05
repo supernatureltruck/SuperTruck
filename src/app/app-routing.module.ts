@@ -14,27 +14,29 @@ import { GestionCarteComponent } from './_Comp/gestion-carte/gestion-carte.compo
 import { GestionCommandesComponent } from './_Comp/gestion-commandes/gestion-commandes.component';
 import { AddPlatComponent } from './_Comp/gestion-carte/add-plat/add-plat.component';
 import { EditComponent } from './_Comp/carte/plat/edit/edit.component';
+import { StripeComponent } from './_Comp/stripe/stripe.component';
 
 
 const routes: Routes = [
-  {path:'', component: HomeComponent},
-  {path:'home', component: HomeComponent},
-  {path:'account', component: AccountComponent},
-  {path:'login', component: LoginComponent},
-  {path:'register', component: RegisterComponent},
-  {path:'localisation', component: LocalisationComponent},
-  {path:'condition', component: ConditionComponent},
-  {path:'cgv', component: CgvComponent},
-  {path:'cookie', component: CookieComponent},
-  {path:'menu', component: CarteComponent},
-  {path:'menu/:categorie', component: CarteComponent},
-  {path:'info/:key', component: InfosComponent},
-  {path:'edition/:key', component: EditComponent},
-  {path:'gcarte', component: GestionCarteComponent},
-  {path:'gcom', component: GestionCommandesComponent},
-  {path:'add', component: AddPlatComponent},
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'account', component: AccountComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'localisation', component: LocalisationComponent },
+  { path: 'condition', component: ConditionComponent },
+  { path: 'cgv', component: CgvComponent },
+  { path: 'cookie', component: CookieComponent },
+  { path: 'menu', component: CarteComponent },
+  { path: 'menu/:categorie', component: CarteComponent },
+  { path: 'info/:key', component: InfosComponent },
+  { path: 'edition/:key', component: EditComponent },
+  { path: 'gcarte', component: GestionCarteComponent },
+  { path: 'gcom', component: GestionCommandesComponent },
+  { path: 'add', component: AddPlatComponent },
+  { path: 'payment', component: StripeComponent },
   // Keep the path below,in last position.
-  {path:'**', component: CarteComponent},
+  { path: '**', component: CarteComponent },
 ];
 
 @NgModule({
