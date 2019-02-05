@@ -19,7 +19,7 @@ img {
   height: 80px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   img {
       display: none;
   }
@@ -30,6 +30,16 @@ img {
   .btn-container{
     margin:0px auto;
   }
+}
+@media all and (min-width: 480px) and (max-width: 949px){
+  .logo{
+    padding-top: 60px;
+    margin:0 auto;
+ }
+ .btn-container{
+   padding-top:60px;
+  margin:0px auto;
+}
 }
 
 a {
