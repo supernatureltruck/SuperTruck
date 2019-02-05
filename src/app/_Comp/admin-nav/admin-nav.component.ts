@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ProductService } from 'src/app/_services/product.service';
 import { OrderService } from 'src/app/_services/order.service';
+import { HeaderComponent } from '../../_CFixe/header/header.component';
 
 @Component({
   selector: 'app-admin-nav',

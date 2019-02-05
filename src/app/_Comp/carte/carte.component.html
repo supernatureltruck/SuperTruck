@@ -7,8 +7,9 @@
         <div class="card-body">
           <h5 class="card-title"> {{ liste.values.name }}  </h5>
           <p class="card-text"> {{ liste.values.description }} </p>
-          <a href="#" class="btn btn-secondary float-left" [routerLink]="['/info', liste.key]">Informations</a>
-          <button href="#" class="btn btn-info float-right"> {{ liste.values.prix }} €</button>
+          <button class="btn btn-secondary float-left" [routerLink]="['/info', liste.key]">Infos</button>
+          <button class="btn btn-success"> Commander </button>
+          <button id="btnT" class="btn btn-info float-right"> {{ liste.values.prix }} €</button>
         </div>
       </div>
     </div>

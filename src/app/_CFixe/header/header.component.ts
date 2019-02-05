@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/_services/user.service';
 import { Router, RouterEvent } from '@angular/router';
 import { RouterLink } from '@angular/router';
+import { OrderService } from 'src/app/_services/order.service';
 
 @Component({
   selector: 'app-header',
@@ -11,11 +12,13 @@ import { RouterLink } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   authStatus: boolean;
+  status: string;
 
-  constructor(private userService : UserService, private router:Router) { }
+  constructor(private userService : UserService, private router:Router, private orderService: OrderService) { }
 
   ngOnInit() {
     this.authStatus = this.userService.authStatus;
+    this.status = this.orderService.status;
   }
 
   signIn() {
