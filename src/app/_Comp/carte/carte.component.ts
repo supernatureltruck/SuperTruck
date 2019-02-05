@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/_services/product.service';
+import { OrderService } from 'src/app/_services/order.service';
+import { Key } from 'protractor';
 
 @Component({
   selector: 'app-carte',
@@ -8,7 +10,7 @@ import { ProductService } from 'src/app/_services/product.service';
 })
 export class CarteComponent implements OnInit {
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private orderService: OrderService) { }
 
   listes = [];
   ngOnInit() {
@@ -26,6 +28,10 @@ export class CarteComponent implements OnInit {
         }
       }
      });
+   }
+
+   order66(order) {
+     this.orderService.addOr(order).subscribe(data => data, error => console.log(error));
    }
 
 }

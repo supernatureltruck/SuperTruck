@@ -46,29 +46,14 @@ export class OrderService {
       );
   }
 
-  addCommandePrep(order: Order): Observable <Order>  {
-    let url = `https://super-truck.firebaseio.com/commande/preparation.json`;
-    return this.http.post <Order> (url, order, {
-      responseType: 'json'
-    }).pipe(
-      tap((order: Order) => console.log('Ok !')),
-      catchError(this.handleError <Order> (' addCommandePrep'))
-    );
-  }
-
-  addCommandeTerm(commande) {
-    let url = `https://super-truck.firebaseio.com/commande/termine.json`;
-    return this.http.post < Product > (url, commande, {
-      responseType: 'json'
-    }).pipe(
-      catchError(this.handleError < Product > (' addCommandePrep'))
-    );
+  addOr(order) {
+    return this.http.post('https://super-truck.firebaseio.com/commande/attente.json', order);
   }
 
 
   /** DELETE: remove a command */
   remove(key): Observable < any[] > {
-    let url = 'https://super-truck.firebaseio.com/commande/termine/' + key + '.json';
+    let url = 'https://super-truck.firebaseio.com/commande/attente/' + key + '.json';
     return this.http.delete < any[] > (url)
       .pipe(
         tap(data => data),
