@@ -17,8 +17,15 @@ button {
 
 input {
     width: 281px; 
+    height: 38px;
+    border-radius: 3px;
 }
 
 label {
     padding-top: 20px;
+}
+
+.custom-file-label {
+    padding-top:  5px;
+    width: 281px;
 }

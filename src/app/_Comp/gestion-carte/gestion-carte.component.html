@@ -3,7 +3,7 @@
       <input type="text" [(ngModel)]="term" placeholder=" Pizza,Salade...">
       <div class="row ">
         <div class="card" *ngFor="let liste of listes | search: term" style="width: 18rem;">
-          <img class="card-img-top" src="{{ liste.values.image }}" alt="Card image cap">
+          <img class="card-img-top" src="{{ liste.values.image }} {{ liste.values.file }}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"> {{ liste.values.name }}  </h5>
             <p class="card-text"> {{ liste.values.description }} </p>
