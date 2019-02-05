@@ -19,7 +19,7 @@ img {
   height: 80px;
 }
 
-@media (max-width: 990px) {
+@media (max-width: 900px) {
   img {
       display: none;
   }
