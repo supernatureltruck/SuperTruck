@@ -31,6 +31,7 @@ import { EditComponent } from './_Comp/carte/plat/edit/edit.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { AddCatComponent } from './_Comp/gestion-carte/add-cat/add-cat.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     GestionCommandesComponent,
     AddPlatComponent,
     EditComponent,
-    StripeComponent
+    StripeComponent,
+    AddCatComponent
   ],
   imports: [
     BrowserModule,

@@ -10,9 +10,11 @@
         <input type="text" name="description" ngModel><br>
         <label for="categorie">Catégorie</label><br>
         <select class="form-control" name="categorie" ngModel>
-          <option>Salade</option>
-          <option>Pizza</option>
-          <option>Hamburger</option>
+            <option *ngFor="let liste of listes" 
+            [value]="liste.values.name" 
+            [selected]="liste.values.name==liste.values.name ? true : null">
+          {{liste.values.name}}
+        </option>
         </select>
         <label for="price">Prix</label><br>
         <input type="number" name="prix" ngModel><br>

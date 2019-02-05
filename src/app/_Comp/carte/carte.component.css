@@ -5,13 +5,22 @@
 
 .container {
     text-align: center;
+    padding-top: 25px;
+}
+
+#checkbox {
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 5px;
+    width: 550px;
+}
+
+label {
+    padding-left: 20px;
 }
 
 input {
-    margin-top: 25px;
-    width: 320px;
     border-radius: 15px;
-    padding-left: 10px;
 }
 
 .card {

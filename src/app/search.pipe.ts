@@ -9,7 +9,8 @@ export class SearchPipe implements PipeTransform {
     if(!value) return [];
     if(!args) return value;
     let filtre = value.filter(liste => liste.values.name.toLowerCase().includes(args.toLowerCase()));
-    return filtre;
+    let filtre2 = value.filter(liste => liste.values.categorie.toLowerCase().includes(args.toLowerCase()));
+    return filtre2;
   }
 
 }

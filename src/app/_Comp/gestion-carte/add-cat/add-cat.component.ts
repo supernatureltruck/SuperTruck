@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/_services/product.service';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { Product } from 'src/app/_class/product';
 
 @Component({
-  selector: 'app-add-plat',
-  templateUrl: './add-plat.component.html',
-  styleUrls: ['./add-plat.component.css']
+  selector: 'app-add-cat',
+  templateUrl: './add-cat.component.html',
+  styleUrls: ['./add-cat.component.css']
 })
-export class AddPlatComponent implements OnInit {
-
+export class AddCatComponent implements OnInit {
+  
+  listes = [];
   constructor(private productService: ProductService, private router: Router) { }
 
-  listes = [];
   ngOnInit() {
     this.getCat();
   }
@@ -31,13 +29,16 @@ export class AddPlatComponent implements OnInit {
      });
    }
 
-  addPlat(form) {
-    this.productService.add(form.form.value)
+   addCat(form) {
+    this.productService.addCat(form.form.value)
       .subscribe(plat => {
         this.router.navigate([`./gcarte`]);
       });
   }
 
-
+  delete(key) {
+    this.productService.removeCat(key).subscribe();
+    this.listes = this.listes.filter(listes => listes.key !== key); //Permet de filtrer la liste en direct
+   }
 
 }

@@ -1,0 +1,28 @@
+.back { 
+    background-color: #8E9886;
+    min-height: 650px;
+}
+
+form {
+    margin: 80px auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: white;
+}
+
+input {
+    width: 281px; 
+    height: 38px;
+    border-radius: 3px;
+    margin-bottom: 25px;
+}
+
+label {
+    padding-top: 20px;
+}
+
+.custom-file-label {
+    padding-top:  5px;
+    width: 281px;
+}

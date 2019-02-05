@@ -1,6 +1,26 @@
 <div id="back">
     <div class="container">
-      <input type="text" [(ngModel)]="term" placeholder=" Pizza,Salade...">
+      <div class="column">
+        <div id="checkbox">
+          <h2>Quel catégorie voulez vous modifier ?</h2>
+          <label>
+              <input type="radio" name="role-group" value="" [checked]="searchTerm===''" [(ngModel)]="term">
+            </label> Tout
+          <label>
+            <input type="radio" name="role-group" value="Pizza" [checked]="searchTerm==='Pizza'" [(ngModel)]="term">
+          </label> Pizza
+          <label>
+            <input type="radio" name="role-group" value="Hamburger" [checked]="searchTerm==='Hamburger'" [(ngModel)]="term">
+            Hamburger
+          </label>
+          <label>
+            <input type="radio" name="role-group" value="Salade" [checked]="searchTerm==='Salade'" [(ngModel)]="term">
+          </label> Salade
+          <label>
+              <input type="radio" name="role-group" value="Boisson" [checked]="searchTerm==='Boisson'" [(ngModel)]="term">
+            </label> Boissons
+        </div>
+      </div>
       <div class="row ">
         <div class="card" *ngFor="let liste of listes | search: term" style="width: 18rem;">
           <img class="card-img-top" src="{{ liste.values.image }} {{ liste.values.file }}" alt="Card image cap">

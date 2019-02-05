@@ -15,6 +15,7 @@ import { GestionCommandesComponent } from './_Comp/gestion-commandes/gestion-com
 import { AddPlatComponent } from './_Comp/gestion-carte/add-plat/add-plat.component';
 import { EditComponent } from './_Comp/carte/plat/edit/edit.component';
 import { StripeComponent } from './_Comp/stripe/stripe.component';
+import { AddCatComponent } from './_Comp/gestion-carte/add-cat/add-cat.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'gcarte', component: GestionCarteComponent },
   { path: 'gcom', component: GestionCommandesComponent },
   { path: 'add', component: AddPlatComponent },
+  { path: 'addcat', component: AddCatComponent },
   { path: 'payment', component: StripeComponent },
   // Keep the path below,in last position.
   { path: '**', component: CarteComponent },

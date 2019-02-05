@@ -70,6 +70,34 @@ export class ProductService {
     );
   }
 
+  getCat(): Observable < Product[] > {
+    return this.http.get < Product[] > ('https://super-truck.firebaseio.com/categories.json')
+      .pipe(
+        tap(data => data),
+        catchError(this.handleError('getCat', []))
+      );
+  }
+
+  addCat(product: Product): Observable < Product > {
+    let url = `https://super-truck.firebaseio.com/categories.json`;
+    return this.http.post < Product > (url, product, {
+      responseType: 'json'
+    }).pipe(
+      tap((product: Product) => console.log('new Cat added')),
+      catchError(this.handleError < Product > ('addCat'))
+    );
+  }
+
+    /** DELETE: remove a product */
+    removeCat(key): Observable < Product[] > {
+      let url = 'https://super-truck.firebaseio.com/categories/' + key + '.json';
+      return this.http.delete < Product[] > (url)
+        .pipe(
+          tap(data => data),
+          catchError(this.handleError < Product[] > ('remove'))
+        );
+    }
+
   
 
   /**
