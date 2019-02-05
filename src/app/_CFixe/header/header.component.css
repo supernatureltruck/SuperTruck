@@ -1,12 +1,13 @@
 .container-fluid {
   background-color: #B9D9A9;
-  display: block;
+  margin: 0px;
+  padding: 0px;
 }
 
 h1 {
   text-align: center;
   width: 270px;
-  margin: 10px auto;
+  /*margin: 10px auto;*/
 }
 
 button {
@@ -22,16 +23,60 @@ img {
   img {
       display: none;
   }
+  .logo{
+     padding-top: 80px;
+     margin: 0 auto;
+  }
+  .btn-container{
+    margin:0px auto;
+  }
 }
 
 a {
     text-decoration: none;
     color: white;
+    
 }
-.ouvferm{
+.ferm{
   color:red;
-  border:double 5px;
+  border:solid 2px red;
   margin: 25px;
   padding: 15px;
   font-weight: bold;
+  width:200px;
+}
+.ouv{
+  color:green;
+  border:solid 2px green;
+  margin: 25px;
+  padding: 15px;
+  font-weight: bold;
+  width:200px;
+}
+.couleur{
+  color:black;
+}
+.btn-container{
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.logo{
+  display:flex;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.titre-item {
+  position: absolute;
+  margin: auto;
+  width: 100vw;
+  text-align: center;
+  margin-top: 22px;
 }
