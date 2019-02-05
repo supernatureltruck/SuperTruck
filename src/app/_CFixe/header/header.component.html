@@ -1,19 +1,18 @@
 <div class="container-fluid">
-  <div class="row">
-      <div class="ouvferm">
-          Actuellement fermé
+    <h1 class="titre-item"><a [routerLink]="['/home']">Super Naturel</a></h1>
+  <div class="header">
+    <div class="logo">
+      <img src="assets/img/food-truck.png" alt="Logo food-truck">
+      <div [ngClass]="{ouv: orderService.status == 'Ouvert' ,ferm: orderService.status == 'Fermé' }">
+        <span class="couleur">Actuellement : </span>{{ orderService.status }}
       </div>
-    <div class="col-md-2">
-      <img src="assets/img/food-truck.png" class="float-right" alt="Logo food-truck">
     </div>
-    <div class="col-lg-6 col-md-12">
-      <h1><a [routerLink]="['/home']">Super Naturel</a></h1>
-    </div>
-    <div class="col-lg-4 col-md-12 text-center">
+    <div class="btn-container">
       <button class="btn btn-success" routerLink="register" *ngIf="!authStatus">M'inscrire</button>
       <button class="btn btn-success" (click)="signIn()" *ngIf="!authStatus">Me connecter</button>
       <button class="btn btn-success" routerLink="account" *ngIf="authStatus">Mon Compte</button>
-      <button class="btn btn-danger"  (click)="signOut()" *ngIf="authStatus">Me déconnecter</button>
+      <button class="btn btn-danger" (click)="signOut()" *ngIf="authStatus">Me déconnecter</button>
     </div>
   </div>
 </div>
+
