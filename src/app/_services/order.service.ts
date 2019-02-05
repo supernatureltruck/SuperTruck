@@ -68,7 +68,7 @@ export class OrderService {
 
   /** DELETE: remove a command */
   remove(key): Observable < any[] > {
-    let url = 'https://super-truck.firebaseio.com/commande/termine/' + key + '.json';
+    let url = 'https://super-truck.firebaseio.com/commande/attente/' + key + '.json';
     return this.http.delete < any[] > (url)
       .pipe(
         tap(data => data),
