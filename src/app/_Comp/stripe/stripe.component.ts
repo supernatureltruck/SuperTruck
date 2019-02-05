@@ -27,7 +27,7 @@ export class StripeComponent implements OnInit {
   };
 
   elementsOptions: ElementsOptions = {
-    locale: 'fr'
+    locale: 'en'
   };
 
   stripeTest: FormGroup;
