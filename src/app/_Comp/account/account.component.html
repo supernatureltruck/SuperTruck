@@ -18,8 +18,10 @@
       <input type="text" name="mail" [ngModel]="user?.mail"><br>
       <label for="mdp">Nouveau mot de passe</label><br>
       <input type="text" name="mdp" [ngModel]="user?.mdp"><br>
+      <label for="mdp">Confirmer mot de passe</label><br>
+      <input type="text" name="mdp" [ngModel]="user?.mdp"><br>
       <br>
-      <button class="btn btn-warning" type="submit">Modifier</button>
+      <button class="btn btn-success" type="submit">Modifier</button>
       <button class="btn btn-dark float-right" [routerLink]="['/menu']">Retour</button>
     </div>
     </form>
