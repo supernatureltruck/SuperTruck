@@ -4,6 +4,8 @@
         <form (ngSubmit)="addCat(f)" #f="ngForm">
           <h2>Catégories déjà existantes</h2><br>
           <p *ngFor="let liste of listes"> {{liste.values.name}}<button class="btn btn-danger float-right" (click)="delete(liste.key)">Supprimer</button></p>
+          <br>
+          <br>
           <h2>Nouvelle catégorie</h2><br>
           <input type="text" name="name" ngModel><br>
           <button class="btn btn-success float-right" type="submit">Envoyer</button>

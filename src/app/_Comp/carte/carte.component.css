@@ -52,3 +52,12 @@ button {
 #btnT {
     width: 75px;
 }
+.column{
+    display: flex;
+    flex-wrap: wrap;
+}
+@media all and (min-width: 350px) and (max-width: 949px){
+    #checkbox{
+        max-width: 340px;
+    }
+}
