@@ -58,7 +58,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     AddPlatComponent,
     EditComponent,
     StripeComponent,
-    AddCatComponent
+    AddCatComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +76,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     AgmCoreModule.forRoot({
       apiKey: '',
       libraries: ['places']
-    })
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
