@@ -32,6 +32,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AddCatComponent } from './_Comp/gestion-carte/add-cat/add-cat.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { AddCatComponent } from './_Comp/gestion-carte/add-cat/add-cat.component
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    MatBadgeModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
