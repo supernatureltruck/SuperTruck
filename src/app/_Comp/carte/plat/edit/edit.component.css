@@ -3,10 +3,11 @@
     min-height: 650px;
 }
 
+
 img {
-    width: 400px;
-    height: 300px;
-    margin-top: 80px;
+    width: 500px;
+    height: 400px;
+    margin-top: 150px;
     margin-right: 150px;
     border: 2px solid black;
     border-radius: 10px;
@@ -16,8 +17,7 @@ form {
     margin: 80px auto;
     border: 2px solid black;
     border-radius: 10px;
-    padding: 30px;
-    background-color: #e78c00;
+    background-color: #ffffff;
 }
 
 button {
@@ -30,17 +30,23 @@ input {
 
 label {
     padding-top: 20px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
-img {
-    width: 350px;
-    height: 250px;
-    margin-top: 80px;
-    margin-right: 50px;
-}
 
 h1 {
     text-align: center;
     color: white;
 }
+.couleur{
+    background-color: #B9D9A9;
+    padding: 20px;
+    height: 80px;
+    border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.paddingFo{
+    padding: 25px;
+}
+
+

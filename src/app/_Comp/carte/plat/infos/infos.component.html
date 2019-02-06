@@ -2,14 +2,17 @@
   <div class="container">
     <div class="row">
       <form>
-        <h1>{{plat?.name}}</h1>
+        <div class="couleur">
+          <h1>{{plat?.name}}</h1>
+        </div>
+        <div class="paddingFo">
         <label for="description">Description</label><br>
         <p>{{plat?.description}}</p>
         <label for="prix">Prix</label><br>
-        <p>{{plat?.prix}} Euros
-        </p>
-        <button class="btn btn-info" [routerLink]="['/menu']">Retour</button>
-        <button class="btn btn-success float-right" (click)="order66(plat)"> Commander </button>
+        <p>{{plat?.prix}} Euros</p>
+        <button class="btn btn-dark float-right" [routerLink]="['/menu']">Retour</button>
+        <button class="btn btn-success" (click)="order66(plat)"> Commander </button>
+      </div>
       </form>
       <img src="{{plat?.image}}" alt="Image du plat">
     </div>

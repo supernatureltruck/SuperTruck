@@ -7,7 +7,6 @@ form {
     margin: 80px auto;
     border: 2px solid black;
     border-radius: 10px;
-    padding: 30px;
     background-color: white;
 }
 
@@ -21,8 +20,41 @@ input {
 label {
     padding-top: 20px;
 }
+h2{
+    color:white;
+}
 
 .custom-file-label {
     padding-top:  5px;
     width: 281px;
+}
+.couleur{
+    background-color: #B9D9A9;
+    padding: 20px;
+    height: 80px;
+    border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.paddingfo{
+    padding: 25px;
+}
+.form-style input[type="text"]
+{
+	outline: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	background: #fff;
+	margin-bottom: 4%;
+	border: 1px solid #ccc;
+	padding: 3%;
+	color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+    width: 281px; 
+}
+.form-style input[type="text"]:focus
+{
+	box-shadow: 0 0 5px #B9D9A9;
+	padding: 3%;
+	border: 1px solid #B9D9A9;
 }

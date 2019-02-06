@@ -7,12 +7,11 @@ form {
     margin: 80px auto;
     border: 2px solid black;
     border-radius: 10px;
-    padding: 30px;
-    background-color: #2570e1;
+    background-color: #fdfdfd;
 }
 
 p {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 button {
@@ -25,7 +24,7 @@ input {
 
 label {
     padding-top: 20px;
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: underline;
     font-size: 22px;
 }
@@ -41,5 +40,16 @@ img {
 
 h1 {
     text-align: center;
-    color: white;
+    color: rgb(255, 255, 255);
 }
+.couleur{
+    background-color: #B9D9A9;
+    padding: 20px;
+    height: 80px;
+    border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.paddingFo{
+    padding: 25px;
+}
+

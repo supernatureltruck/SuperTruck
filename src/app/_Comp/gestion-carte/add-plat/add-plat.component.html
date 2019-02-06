@@ -2,24 +2,29 @@
   <div class="container">
     <div class="row">
       <form (ngSubmit)="addPlat(f)" #f="ngForm">
-        <label for="image">Image du plat</label><br>
-        <input type="text" name="image" placeholder="URL de l'image" ngModel><br>
-        <label for="name">Nom du plat</label><br>
-        <input type="text" name="name" ngModel><br>
-        <label for="descritpion">Description du plat</label><br>
-        <input type="text" name="description" ngModel><br>
-        <label for="categorie">Catégorie</label><br>
-        <select class="form-control" name="categorie" ngModel>
-            <option *ngFor="let liste of listes" 
-            [value]="liste.values.name" 
-            [selected]="liste.values.name==liste.values.name ? true : null">
-          {{liste.values.name}}
-        </option>
-        </select>
-        <label for="price">Prix</label><br>
-        <input type="number" name="prix" ngModel><br>
-        <button class="btn btn-success float-right" type="submit">Envoyer</button>
-        <button class="btn btn-secondary " [routerLink]="['/gcarte']">Retour</button>
+        <div class="form-style">
+          <div class="couleur">
+            <h2>Ajouter un plat</h2>
+          </div>
+          <div class="paddingFo">
+            <label for="image">Image du plat</label><br>
+            <input type="text" name="image" placeholder="URL de l'image" ngModel><br>
+            <label for="name">Nom du plat</label><br>
+            <input type="text" name="name" ngModel><br>
+            <label for="descritpion">Description du plat</label><br>
+            <input type="text" name="description" ngModel><br>
+            <label for="categorie">Catégorie</label><br>
+            <select class="form-control" name="categorie" ngModel>
+              <option *ngFor="let liste of listes" [value]="liste.values.name" [selected]="liste.values.name==liste.values.name ? true : null">
+                {{liste.values.name}}
+              </option>
+            </select>
+            <label for="price">Prix</label><br>
+            <input type="number" name="prix" ngModel><br>
+            <button class="btn btn-success " type="submit">Envoyer</button>
+            <button class="btn btn-dark float-right" [routerLink]="['/gcarte']">Retour</button>
+          </div>
+        </div>
       </form>
     </div>
   </div>

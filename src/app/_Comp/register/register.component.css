@@ -1,6 +1,6 @@
 #back { 
     background-color: #8E9886;
-	height: 650px;
+	height: 700px;
 	padding-top: 80px;
 }
 .form-style{
@@ -24,7 +24,9 @@
 }
 
 .form-style input[type="email"],
-.form-style input[type="password"]
+.form-style input[type="password"],
+.form-style input[type="text"],
+.form-style input[type="tel"]
 {
 	outline: none;
 	box-sizing: border-box;
@@ -39,7 +41,9 @@
 	font: 95% Arial, Helvetica, sans-serif;
 }
 .form-style input[type="email"]:focus,
-.form-style input[type="password"]:focus
+.form-style input[type="password"]:focus,
+.form-style input[type="text"]:focus,
+.form-style input[type="tel"]:focus
 {
 	box-shadow: 0 0 5px #B9D9A9;
 	padding: 3%;
@@ -86,4 +90,8 @@
 	color:red;
 	text-align: center;
 	text-decoration: underline;
+}
+p{
+	text-decoration: underline;
+	text-align: center;
 }
