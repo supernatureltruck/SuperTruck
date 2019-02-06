@@ -2,8 +2,8 @@
   <div class="container-fluid">
     <div class="row">
       <div class="example-container">
+        
         <h2>En attente</h2>
-
         <div cdkDropList #commandesList="cdkDropList" [cdkDropListData]="commandes" [cdkDropListConnectedTo]="[preparationsList, terminesList]"
           class="example-list" (cdkDropListDropped)="drop($event)">
           <div class="example-box" *ngFor="let commande of commandes" cdkDrag>{{commande.values.name}} <div
@@ -14,7 +14,6 @@
 
       <div class="example-container">
         <h2>En préparation</h2>
-
         <div cdkDropList #preparationsList="cdkDropList" [cdkDropListData]="preparations" [cdkDropListConnectedTo]="[commandesList, terminesList]"
           class="example-list" (cdkDropListDropped)="drop($event)">
           <div class="example-box" *ngFor="let preparation of preparations" cdkDrag>{{preparation.values.name}}</div>
@@ -23,7 +22,6 @@
 
       <div class="example-container">
         <h2>Terminées</h2>
-
         <div cdkDropList #terminesList="cdkDropList" [cdkDropListData]="termines" [cdkDropListConnectedTo]="[commandesList, preparationsList]"
           class="example-list" (cdkDropListDropped)="drop($event)">
           <div class="example-box" *ngFor="let termine of termines" cdkDrag>{{termine.values.name}}<button

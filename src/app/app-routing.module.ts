@@ -18,6 +18,7 @@ import { StripeComponent } from './_Comp/stripe/stripe.component';
 import { AddCatComponent } from './_Comp/gestion-carte/add-cat/add-cat.component';
 
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },

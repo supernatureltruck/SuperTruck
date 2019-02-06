@@ -2,19 +2,19 @@
   <div class="mr-auto center">
     <h2>Barre d'administration</h2>
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="gcom">Gestion des commandes</a>
+      <li class="nav-item mr-1">
+        <a id="gcom" class="nav-link" routerLink="gcom" matBadge="4" matBadgePosition="before">Gestion des commandes</a>
       </li>
-      <li class="nav-item">
-        <button  class="btn btn-success" (click)="change(status)" [ngClass]="{'button:btn-success': status === 'Ouvert', 'button: btn-danger': status === 'Fermé'}"> {{status}} </button>
+      <li class="nav-item mr-1">
+        <button class="btn btn-success" (click)="change(status)" [ngClass]="{'button:btn-success': status === 'Ouvert', 'button: btn-danger': status === 'Fermé'}"> {{status}} </button>
       </li>
-      <li class="nav-item">
+      <li class="nav-item mr-1">
         <a class="nav-link" routerLink="gcarte">Gestion de la carte</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item mr-1">
           <a class="nav-link" routerLink="add">Ajouter un plat</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mr-1">
             <a class="nav-link" routerLink="addcat">Ajouter une catégorie de plat</a>
           </li>
     </ul>
