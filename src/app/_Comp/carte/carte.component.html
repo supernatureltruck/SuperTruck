@@ -1,17 +1,18 @@
 <div id="back">
   <div class="container">
-    <div class="column"> 
+    <div class="column">
       <div id="checkbox">
         <h2>Que voulez vous manger ?</h2>
         <label>
-          <input  type="radio" name="role-group" value="" [checked]="searchTerm===''" [(ngModel)]="term"> Tout
-        </label> 
+          <input type="radio" name="role-group" value="" [checked]="searchTerm===''" [(ngModel)]="term"> Tout
+        </label>
         <label *ngFor="let cat of categories ">
-          <input  type="radio" name="role-group" value="{{cat.values.name}}" [checked]="searchTerm===''" [(ngModel)]="term"> {{cat.values.name}}
-        </label> 
-        </div>
+          <input type="radio" name="role-group" value="{{cat.values.name}}" [checked]="searchTerm===''" [(ngModel)]="term">
+          {{cat.values.name}}
+        </label>
       </div>
     </div>
+
 
     <div class="row ">
       <div class="card" *ngFor="let liste of listes | search: term" style="width: 18rem;">
@@ -25,4 +26,5 @@
         </div>
       </div>
     </div>
+  </div>
 </div>

@@ -6,6 +6,7 @@
 h2 {
     text-align: center;
     padding-top: 20px;
+    color:white;
 }
 
 p {
@@ -40,4 +41,10 @@ button {
     #back { 
         min-height: 1150px;
     }
+}
+.couleur{
+    background-color: #B9D9A9;
+    height: 70px;
+    border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
