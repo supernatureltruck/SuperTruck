@@ -66,7 +66,7 @@ import { AddCatComponent } from './_Comp/gestion-carte/add-cat/add-cat.component
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NgxStripeModule.forRoot('pk_test_8oCjqa6VglrI9rZU9JlPvhKp'),
+    NgxStripeModule.forRoot(''),
     MatButtonModule,
     MatCheckboxModule,
     DragDropModule,
