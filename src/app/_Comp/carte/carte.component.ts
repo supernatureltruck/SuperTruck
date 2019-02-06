@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/_services/product.service';
 import { OrderService } from 'src/app/_services/order.service';
-import { Key } from 'protractor';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-carte',

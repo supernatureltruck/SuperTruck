@@ -7,10 +7,9 @@
         <br>
       <div formGroupName="connexion">
         <input type="email" name="email" placeholder="E-mail" formControlName="email" required />
-        
         <br>
-        <input type="password" name="mdp" placeholder="Mot de passe"/>
-        <button class="btnValider" (click)="login()">Valider</button>
+        <input type="password" name="mdp" placeholder="Mot de passe" formControlName="mdp" required/>
+        <button class="btnValider" >Valider</button>
         <button class="btnAnnuler" (click)="annuler()">Annuler</button>
       </div>
     </form>
