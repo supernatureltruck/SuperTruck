@@ -8,6 +8,7 @@
         <label for="prix">Prix</label><br>
         <p>{{plat?.prix}} Euros</p>
         <button class="btn btn-info" [routerLink]="['/menu']">Retour</button>
+        <button class="btn btn-success float-right" (click)="order66(plat)"> Commander </button>
       </form>
       <img src="{{plat?.image}}" alt="Image du plat">
     </div>

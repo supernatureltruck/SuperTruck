@@ -4,21 +4,11 @@
       <div id="checkbox">
         <h2>Que voulez vous manger ?</h2>
         <label>
-            <input  type="radio" name="role-group" value="" [checked]="searchTerm===''" [(ngModel)]="term">
-          </label> Tout
-        <label>
-          <input type="radio" name="role-group" value="Pizza" [checked]="searchTerm==='Pizza'" [(ngModel)]="term">
-        </label> Pizza
-        <label>
-          <input type="radio" name="role-group" value="Hamburger" [checked]="searchTerm==='Hamburger'" [(ngModel)]="term">
-          Hamburger
-        </label>
-        <label>
-          <input type="radio" name="role-group" value="Salade" [checked]="searchTerm==='Salade'" [(ngModel)]="term">
-        </label> Salade
-        <label>
-            <input type="radio" name="role-group" value="Boisson" [checked]="searchTerm==='Boisson'" [(ngModel)]="term">
-          </label> Boissons
+          <input  type="radio" name="role-group" value="" [checked]="searchTerm===''" [(ngModel)]="term"> Tout
+        </label> 
+        <label *ngFor="let cat of categories ">
+          <input  type="radio" name="role-group" value="{{cat.values.name}}" [checked]="searchTerm===''" [(ngModel)]="term"> {{cat.values.name}}
+        </label> 
       </div>
     </div>
 

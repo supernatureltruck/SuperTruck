@@ -11,9 +11,24 @@ export class GestionCarteComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   listes = [];
+  categories = [];
   ngOnInit() {
     this.getProduct();
+    this.getCat();
   }
+
+  getCat() {
+    this.productService.getCat()
+     .subscribe(data => {
+       if(data != null ){
+        let cle = Object.keys(data);
+        let donnees = Object.values(data);
+        for(let i = 0; i < cle.length; i++){
+          this.categories.push({key: cle[i], values:donnees[i]});
+        }
+      }
+     });
+   }
 
   getProduct() {
     this.productService.getProduct()
