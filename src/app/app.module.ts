@@ -33,6 +33,8 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AddCatComponent } from './_Comp/gestion-carte/add-cat/add-cat.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 @NgModule({
   declarations: [
@@ -72,6 +74,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatButtonModule,
     MatCheckboxModule,
     DragDropModule,
+    MatTabsModule,
     BrowserAnimationsModule,
     AgmCoreModule.forRoot({
       apiKey: '',
