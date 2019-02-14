@@ -1,6 +1,6 @@
 #back {
     background-color: #8E9886;
-    min-height: 1400px;
+    min-height: 2400px;
 }
 
 h2 {
@@ -42,9 +42,7 @@ agm-map {
   height: 100%;
 }
 .border-horaire{
-    border-radius: 10px;
     margin-top: 80px;
-    border: solid 2px white;
 }
 .titre-horaire{
     color:white;
@@ -54,7 +52,9 @@ agm-map {
 }
 td{
     text-align: center;
+    padding: 25px;
 }
 th{
     text-align: center;
+    padding: 15px;
 }
