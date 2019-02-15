@@ -1,5 +1,5 @@
 .container-fluid {
-  background-color: rgba(123 , 180, 96, 0.5);
+  background-color: #B72D01;
   margin: 0px;
   padding: 0px;
 }
@@ -49,15 +49,15 @@ a {
 }
 .ferm{
   color:red;
-  border:solid 2px red;
+  border:solid 2px black;
   margin: 25px;
   padding: 15px;
   font-weight: bold;
   width:200px;
 }
 .ouv{
-  color:green;
-  border:solid 2px green;
+  color:#28a745;
+  border:solid 2px #28a745;
   margin: 25px;
   padding: 15px;
   font-weight: bold;
@@ -90,4 +90,6 @@ a {
   width: 100%;
   text-align: center;
   margin-top: 22px;
+  font-family: 'Great Vibes', cursive;
 }
+
