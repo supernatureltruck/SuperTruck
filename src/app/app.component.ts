@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SuperTruck';
-  admin = true;
+  admin = false;
 }
