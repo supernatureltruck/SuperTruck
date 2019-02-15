@@ -90,8 +90,9 @@ a {
   margin: auto;
   width: 100%;
   text-align: center;
-  margin-top: 22px;
-  font-family: 'Great Vibes', cursive;
+  margin-top: 10px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 65px;
 }
 .btn{
   background-color:#343a40;
