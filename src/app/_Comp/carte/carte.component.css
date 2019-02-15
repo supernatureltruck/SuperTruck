@@ -1,5 +1,5 @@
 #back { 
-    background-color: #8E9886;
+    background-color: #D4C4AB;
     min-height: 650px;
 }
 
@@ -22,6 +22,7 @@ h2{
 
 label {
     padding-left: 20px;
+    font-family: 'Bree Serif', serif;
 }
 
 input {
@@ -31,14 +32,19 @@ input {
 .card {
     margin: 30px auto;
     min-height: 400px;
+    background-color: #f5f3eb;
 }
 
-h5 {
+h3 {
     text-align: center;
+    color: #584A42;
+    font-family: 'Kaushan Script', cursive;
 }
 
 p {
     min-height: 48px;
+    color: #584A42;
+    font-family: 'Bree Serif', serif;
 }
 
 img {
@@ -52,6 +58,7 @@ img {
 
 button {
    font-size: 14px;
+   font-family: 'Bree Serif', serif;
 }
 
 #btnT {

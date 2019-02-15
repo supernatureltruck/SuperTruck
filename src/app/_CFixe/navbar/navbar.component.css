@@ -9,4 +9,9 @@ ul {
 a {
     text-align: center;
     display: block;
+    font-family: 'Bree Serif', serif;
+}
+
+button {
+    font-family: 'Bree Serif', serif;
 }
