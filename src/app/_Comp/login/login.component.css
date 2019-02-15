@@ -14,13 +14,13 @@
 .form-style h1{
 	background: #B72D01;
 	padding: 20px 0;
-	font-size: 140%;
 	font-weight: 300;
 	text-align: center;
 	color: #fff;
 	margin: -16px -16px 16px -16px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
+	font-family: 'Great Vibes', cursive;
 }
 
 .form-style input[type="email"],
@@ -83,4 +83,8 @@
 	 color:red;
 	 text-align: center;
 	 text-decoration: underline;
+ }
+
+ button {
+	font-family: 'Bree Serif', serif;
  }

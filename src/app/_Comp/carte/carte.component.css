@@ -1,5 +1,5 @@
 #back { 
-    background-color: #D4C4AB;
+    background-color: #eee;
     min-height: 650px;
 }
 
@@ -19,6 +19,7 @@
 }
 h2{
     font-size: 30px;
+    font-family: 'Kaushan Script', cursive;
 }
 
 label {
