@@ -8,9 +8,9 @@
       </div>
     </div>
     <div class="btn-container">
-      <button class="btn btn-success" routerLink="register" *ngIf="!authStatus">M'inscrire</button>
-      <button class="btn btn-success" routerLink="login" *ngIf="!authStatus">Me connecter</button>
-      <button class="btn btn-success" routerLink="account" *ngIf="authStatus">Mon Compte</button>
+      <button class="btn btn-dark" routerLink="register" *ngIf="!authStatus">M'inscrire</button>
+      <button class="btn btn-dark" routerLink="login" *ngIf="!authStatus">Me connecter</button>
+      <button class="btn btn-dark" routerLink="account" *ngIf="authStatus">Mon Compte</button>
       <button class="btn btn-danger" (click)="signOut()" *ngIf="authStatus">Me déconnecter</button>
     </div>
   </div>
