@@ -54,6 +54,8 @@ a {
   padding: 15px;
   font-weight: bold;
   width:200px;
+  font-family: 'Amatic SC', cursive;
+  font-size:25px;
 }
 .ouv{
   color:#28a745;
@@ -61,6 +63,8 @@ a {
   padding: 15px;
   font-weight: bold;
   width:210px;
+  font-family: 'Amatic SC', cursive;
+  font-size:25px;
 }
 .couleur{
   color:black;
