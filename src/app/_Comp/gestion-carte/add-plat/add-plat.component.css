@@ -33,7 +33,7 @@ h2{
     width: 281px;
 }
 .couleur{
-    background-color: #B9D9A9;
+    background-color: #B72D01;
     padding: 20px;
     height: 80px;
     border-top-left-radius: 10px;
@@ -58,7 +58,7 @@ h2{
 }
 .form-style input[type="text"]:focus
 {
-	box-shadow: 0 0 5px #B9D9A9;
+	box-shadow: 0 0 5px #B72D01;
 	padding: 3%;
-	border: 1px solid #B9D9A9;
+	border: 1px solid #B72D01;
 }
