@@ -12,7 +12,7 @@
 	border-radius: 10px;
 }
 .form-style h1{
-	background: #B72D01;
+	background: #8ea638;
 	padding: 20px 0;
 	font-family: 'Great Vibes', cursive;
 	font-weight: 300;
@@ -45,9 +45,9 @@
 .form-style input[type="text"]:focus,
 .form-style input[type="tel"]:focus
 {
-	box-shadow: 0 0 5px #B72D01;
+	box-shadow: 0 0 5px #8ea638;
 	padding: 3%;
-	border: 1px solid #B72D01;
+	border: 1px solid #8ea638;
 }
 .btnValider{
 	display: inline-block;
@@ -60,7 +60,7 @@
     outline: none;
     color: black;
     background-color: #fff;
-    border: 1.5px solid #B72D01;
+    border: 1.5px solid #8ea638;
     border-radius: 15px;
 }
 .btnValider:active {
@@ -77,7 +77,7 @@
     outline: none;
     color: black;
     background-color: #fff;
-    border: 1.5px solid #B72D01;
+    border: 1.5px solid #8ea638;
     border-radius: 15px;
 }
 .btnAnnuler:active {

@@ -1,5 +1,5 @@
 .container-fluid {
-  background-color: #B72D01;
+  background-color: #eee;
   margin: 0px;
   padding: 0px;
 }
@@ -45,12 +45,11 @@ img {
 
 a {
     text-decoration: none;
-    color: white;
+    color: #8ea638;
     
 }
 .ferm{
   color:red;
-  border:solid 2px black;
   margin: 25px;
   padding: 15px;
   font-weight: bold;
@@ -58,7 +57,6 @@ a {
 }
 .ouv{
   color:#28a745;
-  border:solid 2px #28a745;
   margin: 25px;
   padding: 15px;
   font-weight: bold;

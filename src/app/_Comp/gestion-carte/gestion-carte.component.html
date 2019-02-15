@@ -17,7 +17,7 @@
           <div class="card-body">
             <h5 class="card-title"> {{ liste.values.name }}  </h5>
             <p class="card-text"> {{ liste.values.description }} </p>
-            <button class="btn btn-secondary float-left" [routerLink]="['/edition', liste.key]">Edition</button>
+            <button class="btn btn-success float-left btnVa" [routerLink]="['/edition', liste.key]">Edition</button>
             <button class="btn btn-danger float-right" (click)="delete(liste.key)">Supprimer</button>
           </div>
         </div>

@@ -10,8 +10,8 @@
 
 #checkbox {
     margin: 0 auto;
-    background-color:#B72D01;
-    color:white;
+    background-color:white;
+    color:black;
     border-radius: 5px;
     width: 550px;
     padding: 10px;
@@ -56,4 +56,10 @@ button {
 .column{
     display: flex;
     flex-wrap: wrap;
+}
+.btnAn{
+    background-color: #343a40;
+}
+.btnVa{
+    background-color: #8ea638;
 }

@@ -39,7 +39,7 @@ h1 {
     color: white;
 }
 .couleur{
-    background-color: #B72D01;
+    background-color: #8ea638;
     padding: 20px;
     height: 80px;
     border-top-left-radius: 10px;
@@ -47,6 +47,12 @@ h1 {
 }
 .paddingFo{
     padding: 25px;
+}
+.btnAn{
+    background-color: #343a40;
+}
+.btnVa{
+    background-color: #8ea638;
 }
 
 

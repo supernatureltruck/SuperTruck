@@ -21,8 +21,8 @@
       </select>
         <label for="prix">Prix</label><br>
         <input type="number" name="prix" [ngModel]="product?.prix"><br>
-        <button class="btn btn-success" type="submit">Envoyer</button>
-        <button class="btn btn-dark float-right" [routerLink]="['/gcarte']">Retour</button>
+        <button class="btn btn-success btnVa" type="submit">Envoyer</button>
+        <button class="btn btn-dark float-right btnAn" [routerLink]="['/gcarte']">Retour</button>
       </div>
       </form>
       <img src="{{product?.image}}" alt="Image du plat">
