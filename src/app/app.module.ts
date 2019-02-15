@@ -34,6 +34,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AddCatComponent } from './_Comp/gestion-carte/add-cat/add-cat.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatTabsModule} from '@angular/material/tabs';
+import { ContactComponent } from './_CFixe/contact/contact.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     EditComponent,
     StripeComponent,
     AddCatComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
