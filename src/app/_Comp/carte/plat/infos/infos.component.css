@@ -49,6 +49,23 @@ h1 {
     border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 }
+
+@media(max-width: 640px) {
+    .couleur {
+        padding: 15px 5px 15px 5px;
+        height: 110px;
+    }
+
+    img {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: 356px; 
+    }
+
+    form {
+        width: 356px;
+    }
+}
 .paddingFo{
     padding: 25px;
 }
