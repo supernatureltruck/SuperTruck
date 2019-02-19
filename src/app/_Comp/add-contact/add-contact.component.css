@@ -42,7 +42,9 @@ h2{
 .paddingFo{
     padding: 25px;
 }
-.form-style input[type="text"]
+.form-style input[type="text"],
+.form-style input[type="email"]
+
 {
 	outline: none;
 	box-sizing: border-box;
@@ -56,7 +58,8 @@ h2{
     font: 95% Arial, Helvetica, sans-serif;
     width: 281px; 
 }
-.form-style input[type="text"]:focus
+.form-style input[type="text"]:focus,
+.form-style input[type="email"]:focus
 {
 	box-shadow: 0 0 5px #8ea638;
 	padding: 3%;
@@ -67,5 +70,4 @@ h2{
 }
 .btnVa{
     background-color: #8ea638;
-   
 }

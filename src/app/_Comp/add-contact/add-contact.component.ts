@@ -5,15 +5,15 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  selector: 'app-add-contact',
+  templateUrl: './add-contact.component.html',
+  styleUrls: ['./add-contact.component.css']
 })
-export class ContactComponent implements OnInit {
+export class AddContactComponent implements OnInit {
 
   constructor(private contactService : ContactService, private router:Router) { }
 
-  donnees:any;
+  listes = [];
   
   ngOnInit() {
     this.getContact();
@@ -24,10 +24,14 @@ export class ContactComponent implements OnInit {
      .subscribe(data => {
        if(data != null ){
         let cle = Object.keys(data);
-        this.donnees = data;
+        let donnees = Object.values(data);
+        for(let i = 0; i < cle.length; i++){
+          this.listes.push({key: cle[i], values:donnees[i]});
+        }
       }
      });
    }
+
    addContact(form) {
     this.contactService.addContact(form.form.value)
       .subscribe(contact => {

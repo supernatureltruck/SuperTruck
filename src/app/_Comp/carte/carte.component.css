@@ -65,6 +65,7 @@ button {
 
 #btnT {
     width: 75px;
+    cursor: auto;
 }
 .column{
     display: flex;

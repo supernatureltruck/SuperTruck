@@ -35,6 +35,7 @@ import { AddCatComponent } from './_Comp/gestion-carte/add-cat/add-cat.component
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ContactComponent } from './_CFixe/contact/contact.component';
+import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
 
 
 @NgModule({
@@ -63,6 +64,7 @@ import { ContactComponent } from './_CFixe/contact/contact.component';
     StripeComponent,
     AddCatComponent,
     ContactComponent,
+    AddContactComponent,
   ],
   imports: [
     BrowserModule,

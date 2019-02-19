@@ -3,20 +3,25 @@
     <h2>Barre d'administration</h2>
     <ul class="navbar-nav">
       <li class="nav-item mr-1">
-        <a id="gcom" class="nav-link" routerLink="gcom" matBadge="{{liste}}" (click)="refresh()" matBadgePosition="before" matBadgeColor="warn">Gestion des commandes</a>
+        <a id="gcom" class="nav-link" routerLink="gcom" matBadge="{{liste}}" (click)="refresh()" matBadgePosition="before"
+          matBadgeColor="warn">Gestion des commandes</a>
       </li>
       <li class="nav-item mr-1">
-        <button class="btn btn-success" (click)="change(status)" [ngClass]="{'button:btn-success': status === 'Ouvert', 'button: btn-danger': status === 'Fermé'}"> {{status}} </button>
+        <button class="btn btn-success" (click)="change(status)" [ngClass]="{'button:btn-success': status === 'Ouvert', 'button: btn-danger': status === 'Fermé'}">
+          {{status}} </button>
       </li>
       <li class="nav-item mr-1">
         <a class="nav-link" routerLink="gcarte">Gestion de la carte</a>
       </li>
       <li class="nav-item mr-1">
-          <a class="nav-link" routerLink="add">Ajouter un plat</a>
-        </li>
-        <li class="nav-item mr-1">
-            <a class="nav-link" routerLink="addcat">Ajouter une catégorie de plat</a>
-          </li>
+        <a class="nav-link" routerLink="add">Ajouter un plat</a>
+      </li>
+      <li class="nav-item mr-1">
+        <a class="nav-link" routerLink="addcat">Ajouter une catégorie de plat</a>
+      </li>
+      <li class="nav-item mr-1">
+        <a class="nav-link" routerLink="addContact">Formulaire Contact</a>
+      </li>
     </ul>
   </div>
 </nav>

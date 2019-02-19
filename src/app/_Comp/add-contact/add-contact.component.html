@@ -1,0 +1,21 @@
+<div class="back">
+  <div class="container">
+    <div class="row">
+      <form (ngSubmit)="addContact(f)" #f="ngForm">
+        <div class="form-style">
+          <div class="couleur">
+            <h2>Formulaire contact</h2>
+          </div>
+          <div class="paddingFo" *ngFor="let liste of listes">
+            <label for="email">Email </label><br>
+            <input type="email" name="email" placeholder="{{liste.values.email}}" ngModel><br>
+            <label for="tel">Téléphone</label><br>
+            <input type="text" name="tel" ngModel placeholder="{{liste.values.tel}}"><br>
+            <button class="btn btn-success btnVa " type="submit">Envoyer</button>
+            <button class="btn btn-dark float-right btnAn" [routerLink]="['/gcarte']">Retour</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
