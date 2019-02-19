@@ -5,15 +5,15 @@
         <div class="couleur">
           <h2>Contact</h2>
         </div>
-        <div class="form1">
+        <div class="form1" *ngIf="isLoaded">
           <div class="contact">
             <img src="assets/img/envelope.png" alt="Logo food-truck">
-            <span class="e_color"> {{ donnees?.email }}</span>
+            <span class="e_color"> {{ donnees[0].email }}</span>
           </div>
           <br>
           <div class="contact">
             <img src="assets/img/smartphone-call.png" alt="Logo food-truck">
-            <span class="e_color">{{ donnees?.tel }}</span>
+            <span class="e_color">{{ donnees[0].tel }}</span>
           </div>
         </div>
       </div>

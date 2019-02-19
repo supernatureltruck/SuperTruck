@@ -4,6 +4,7 @@ import { tap, catchError } from 'rxjs/operators';
 import { Contact } from '../_class/contact';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
     providedIn: 'root'
   })
@@ -13,26 +14,18 @@ import { HttpClient } from '@angular/common/http';
 
     // POST :  Add Contact
     addContact(contact: Contact): Observable<Contact> {
-        let url = `https://super-truck.firebaseio.com/contact.json`;
-        return this.http.put<Contact>(url, contact, {responseType: 'json'})
-        .pipe(
-          tap((product: Contact) => console.log('Contact added')),
-          catchError(this.handleError<Contact>('add'))
-        );
+        let url = `http://localhost:8080/api/contacts`;
+        return this.http.put<Contact>(url, contact);
       }
 
        // GET : Get Contact
     getContact():Observable<Contact[]>{
-        return this.http.get<Contact[]>('https://super-truck.firebaseio.com/contact.json')
-          .pipe(
-            tap(data => data),
-            catchError(this.handleError('getContact',[]))
-          );
+        return this.http.get<Contact[]>('http://localhost:8080/api/contacts');
       }
   
       //recuperation by ID
       getUserByKey(key: string): Observable<Contact[]>{
-        return this.http.get<Contact[]>('https://super-truck.firebaseio.com/contact/'+key+'.json')
+        return this.http.get<Contact[]>('http://localhost:8080/api/contacts/'+key)
         .pipe(
           tap(data => JSON.stringify(data)),
           catchError(this.handleError('getUserByKeyContact', []))

@@ -14,6 +14,7 @@ export class ContactComponent implements OnInit {
   constructor(private contactService : ContactService, private router:Router) { }
 
   donnees:any;
+  isLoaded = false;
   
   ngOnInit() {
     this.getContact();
@@ -22,10 +23,9 @@ export class ContactComponent implements OnInit {
   getContact() {
     this.contactService.getContact()
      .subscribe(data => {
-       if(data != null ){
-        let cle = Object.keys(data);
         this.donnees = data;
-      }
+        this.isLoaded = true;
+        console.log(this.donnees);
      });
    }
    addContact(form) {

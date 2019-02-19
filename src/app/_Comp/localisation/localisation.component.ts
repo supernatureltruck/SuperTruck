@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from 'src/app/_services/contact.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-localisation',
@@ -9,13 +11,27 @@ export class LocalisationComponent implements OnInit {
   lat: number;
   lng: number;
   zoom: number;
+  
 
-  constructor() { }
+  constructor(private contactService : ContactService, private router:Router) { }
 
+  donnees:any;
+  isLoaded= false;
+  
   ngOnInit() {
     this.lat = 50.2789254;
     this.lng = 3.9677517999999736;
     this.zoom = 16;
+    this.getContact();
   }
+
+  getContact() {
+    this.contactService.getContact()
+     .subscribe(data => {
+        this.donnees = data;
+        this.isLoaded = true;
+        console.log(this.donnees);
+     });
+   }
 
 }
