@@ -1,0 +1,13 @@
+#back { 
+    background-color: #eee;
+    min-height: 650px;
+}
+
+cart-view {
+    margin: 80px auto;
+}
+
+cart-checkout {
+    margin: 0 auto;
+    margin-bottom: 80px;
+}

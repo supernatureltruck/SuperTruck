@@ -16,7 +16,7 @@ import { AddPlatComponent } from './_Comp/gestion-carte/add-plat/add-plat.compon
 import { EditComponent } from './_Comp/carte/plat/edit/edit.component';
 import { StripeComponent } from './_Comp/stripe/stripe.component';
 import { AddCatComponent } from './_Comp/gestion-carte/add-cat/add-cat.component';
-
+import { PanierComponent } from './_CFixe/panier/panier.component';
 
 
 
@@ -39,7 +39,8 @@ const routes: Routes = [
   { path: 'add', component: AddPlatComponent },
   { path: 'addcat', component: AddCatComponent },
   { path: 'payment', component: StripeComponent },
-  // Keep the path below,in last position.
+  { path: 'panier', component: PanierComponent },
+  // Keep the path below,in last position. 
   { path: '**', component: CarteComponent },
 ];
 

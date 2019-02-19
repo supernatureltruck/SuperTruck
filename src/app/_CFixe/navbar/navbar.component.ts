@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(private productService: ProductService) { }
 
+
   listes = [];
   ngOnInit() {
     this.getProduct();

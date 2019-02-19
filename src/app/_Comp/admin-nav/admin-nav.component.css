@@ -6,13 +6,19 @@ ul {
     margin: 0 auto;
 }
 
+.row {
+    margin: 0 auto;
+}
+
 a {
     text-align: center;
     display: block;
+    font-family: 'Bree Serif', serif;
 }
 
 h2 {
     color: white;
+    font-family: 'Amatic SC', cursive;
 }
 
 #gcom {
@@ -21,4 +27,8 @@ h2 {
 }
 .btnVa{
     background-color: #8ea638;
+}
+
+button {
+    font-family: 'Bree Serif', serif;
 }

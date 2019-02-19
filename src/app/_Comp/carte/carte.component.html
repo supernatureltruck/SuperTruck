@@ -16,16 +16,18 @@
 
 
     <div class="row ">
-      <div class="card" *ngFor="let liste of listes | search: term" style="width: 18rem;">
+      <div class="card" *ngFor="let liste of listes | search: term; let i = index" style="width: 18rem;">
         <img class="card-img-top" src="{{ liste.values.image }}" alt="Card image cap">
         <div class="card-body">
           <h3 class="card-title"> {{ liste.values.name }} </h3>
           <p class="card-text"> {{ liste.values.description }} </p>
           <button class="btn btn-secondary float-left btnVa" [routerLink]="['/info', liste.key]">Infos</button>
-          <button class="btn btn-secondary btnCo" (click)="order66(liste.values)"> Commander </button>
+          <!--<button class="btn btn-secondary btnCo" (click)="order66(liste.values)"> Commander </button>-->  
+          <add-to-cart [item]="products[i]" [custom]="true">
+              <button type="button" class="btn btn-secondary btnCo"> Commander </button>
+           </add-to-cart>
           <button id="btnT" class="btn btn-info float-right"> {{ liste.values.prix }} €</button>
         </div>
       </div>
     </div>
-  </div>
 </div>
