@@ -28,12 +28,6 @@ h2{
     color:white;
 }
 
-p {
-    font-size: 10px;
-    color: darkgrey;
-    margin-bottom: 0;
-}
-
 .custom-file-label {
     padding-top:  5px;
     width: 281px;
@@ -48,7 +42,9 @@ p {
 .paddingFo{
     padding: 25px;
 }
-.form-style input[type="text"]
+.form-style input[type="text"],
+.form-style input[type="email"]
+
 {
 	outline: none;
 	box-sizing: border-box;
@@ -62,7 +58,8 @@ p {
     font: 95% Arial, Helvetica, sans-serif;
     width: 281px; 
 }
-.form-style input[type="text"]:focus
+.form-style input[type="text"]:focus,
+.form-style input[type="email"]:focus
 {
 	box-shadow: 0 0 5px #8ea638;
 	padding: 3%;
@@ -73,5 +70,4 @@ p {
 }
 .btnVa{
     background-color: #8ea638;
-   
 }

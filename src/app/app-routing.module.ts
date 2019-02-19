@@ -18,6 +18,7 @@ import { StripeComponent } from './_Comp/stripe/stripe.component';
 import { AddCatComponent } from './_Comp/gestion-carte/add-cat/add-cat.component';
 import { PanierComponent } from './_CFixe/panier/panier.component';
 import { ContactComponent } from './_CFixe/contact/contact.component';
+import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
 
 
 
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'payment', component: StripeComponent },
   { path: 'panier', component: PanierComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'addContact', component: AddContactComponent },
   // Keep the path below,in last position.
   { path: '**', component: CarteComponent },
 ];

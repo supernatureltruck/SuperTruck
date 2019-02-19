@@ -1,27 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { Contact } from 'src/app/_class/contact';
 import { ContactService } from 'src/app/_services/contact.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-localisation',
-  templateUrl: './localisation.component.html',
-  styleUrls: ['./localisation.component.css']
+  selector: 'app-add-contact',
+  templateUrl: './add-contact.component.html',
+  styleUrls: ['./add-contact.component.css']
 })
-export class LocalisationComponent implements OnInit {
-  lat: number;
-  lng: number;
-  zoom: number;
+export class AddContactComponent implements OnInit {
   
 
   constructor(private contactService : ContactService, private router:Router) { }
 
   donnees:any;
-  isLoaded= false;
+  isLoaded = false;
   
   ngOnInit() {
-    this.lat = 50.2789254;
-    this.lng = 3.9677517999999736;
-    this.zoom = 16;
     this.getContact();
   }
 
@@ -33,5 +29,13 @@ export class LocalisationComponent implements OnInit {
         console.log(this.donnees);
      });
    }
+
+   addContact(form) {
+     console.log(form.value);
+    this.contactService.addContact(form.value)
+      .subscribe(contact => {
+        this.router.navigate([`./contact`]);
+      });
+  }
 
 }
