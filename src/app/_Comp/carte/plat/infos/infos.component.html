@@ -9,7 +9,7 @@
         <label for="description">Description</label><br>
         <p>{{plat?.description}}</p>
         <label for="prix">Prix</label><br>
-        <p>{{plat?.prix}} Euros</p>
+        <p>{{plat?.price}} Euros</p>
         <button class="btn btn-dark float-right btnAn" [routerLink]="['/menu']">Retour</button>
         <button class="btn btn-success btnVa" (click)="order66(plat)"> Commander </button>
       </div>

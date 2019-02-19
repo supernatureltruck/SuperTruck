@@ -13,26 +13,23 @@ export class AddPlatComponent implements OnInit {
 
   constructor(private productService: ProductService, private router: Router) { }
 
-  listes = [];
+  categories = [];
+  catID: number;
   ngOnInit() {
     this.getCat();
   }
 
+  onSubmit() {
+    return this.catID;
+  }
+
   getCat() {
     this.productService.getCat()
-     .subscribe(data => {
-       if(data != null ){
-        let cle = Object.keys(data);
-        let donnees = Object.values(data);
-        for(let i = 0; i < cle.length; i++){
-          this.listes.push({key: cle[i], values:donnees[i]});
-        }
-      }
-     });
+    .subscribe(data=>this.categories = data);
    }
 
   addPlat(form) {
-    this.productService.add(form.form.value)
+    this.productService.add(form.form.value,form.form.value.categorie)
       .subscribe(plat => {
         this.router.navigate([`./gcarte`]);
       });

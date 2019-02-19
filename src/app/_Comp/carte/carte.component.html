@@ -7,8 +7,8 @@
           <input type="radio" name="role-group" value="" [checked]="searchTerm===''" [(ngModel)]="term"> Tout
         </label>
         <label *ngFor="let cat of categories ">
-          <input type="radio" name="role-group" value="{{cat.values.name}}" [checked]="searchTerm===''" [(ngModel)]="term">
-          {{cat.values.name}}
+          <input type="radio" name="role-group" value="{{cat.name}}" [checked]="searchTerm===''" [(ngModel)]="term">
+          {{cat.name}}
         </label>
       </div>
     </div>
@@ -17,16 +17,16 @@
 
     <div class="row ">
       <div class="card" *ngFor="let liste of listes | search: term; let i = index" style="width: 18rem;">
-        <img class="card-img-top" src="{{ liste.values.image }}" alt="Card image cap">
+        <img class="card-img-top" src="{{ liste.image }}" alt="Card image cap">
         <div class="card-body">
-          <h3 class="card-title"> {{ liste.values.name }} </h3>
-          <p class="card-text"> {{ liste.values.description }} </p>
-          <button class="btn btn-secondary float-left btnVa" [routerLink]="['/info', liste.key]">Infos</button>
+          <h3 class="card-title"> {{ liste.name }} </h3>
+          <p class="card-text"> {{ liste.description }} </p>
+          <button class="btn btn-secondary float-left btnVa" [routerLink]="['/info', liste.id]">Infos</button>
           <!--<button class="btn btn-secondary btnCo" (click)="order66(liste.values)"> Commander </button>-->  
-          <add-to-cart [item]="products[i]" [custom]="true">
+          <add-to-cart [item]="listes[i]" [custom]="true">
               <button type="button" class="btn btn-secondary btnCo"> Commander </button>
            </add-to-cart>
-          <button id="btnT" class="btn btn-info float-right"> {{ liste.values.prix }} €</button>
+          <button id="btnT" class="btn btn-info float-right"> {{ liste.price }} €</button>
         </div>
       </div>
     </div>

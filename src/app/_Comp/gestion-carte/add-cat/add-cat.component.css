@@ -11,8 +11,6 @@ form {
 }
 
 input {
-    width: 281px; 
-    height: 38px;
     border-radius: 3px;
     margin-bottom: 25px;
 }
@@ -22,6 +20,10 @@ label {
 }
 h2{
     color:white;
+}
+
+h3 {
+    text-align: center;
 }
 
 .custom-file-label {

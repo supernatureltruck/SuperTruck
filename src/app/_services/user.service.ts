@@ -24,7 +24,7 @@ export class UserService {
 
      // POST :  Add user
      addUser(user: User): Observable<User> {
-      let url = `https://super-truck.firebaseio.com/users.json`;
+      let url = `http://localhost:8080/api/users`;
       return this.http.post<User>(url, user, {responseType: 'json'})
       .pipe(
         tap((product: User) => console.log('User added')),
@@ -34,7 +34,7 @@ export class UserService {
 
     // GET : Get User
     getUser():Observable<User[]>{
-      return this.http.get<User[]>('https://super-truck.firebaseio.com/users.json')
+      return this.http.get<User[]>('http://localhost:8080/api/users')
         .pipe(
           tap(data => data),
           catchError(this.handleError('getUser',[]))
@@ -42,16 +42,16 @@ export class UserService {
     }
 
     getUserByKey(key: string): Observable<User[]>{
-      return this.http.get<User[]>('https://super-truck.firebaseio.com/users/'+key+'.json')
+      return this.http.get<User[]>('http://localhost:8080/api/users/'+key)
       .pipe(
         tap(data => JSON.stringify(data)),
         catchError(this.handleError('getUserByKey', []))
       );
     }
 
-    edit(games: User, key: string): Observable<User> {
-      const url = `https://super-truck.firebaseio.com/users/`+key+'.json';
-        return this.http.put<User>(url, games, {responseType: 'json'}).pipe(
+    edit(user: User, key: string): Observable<User> {
+      const url = 'http://localhost:8080/api/users/' + key;
+        return this.http.put<User>(url, user, {responseType: 'json'}).pipe(
           tap((product: User) => console.log('User edited')),
           catchError(this.handleError<User>('edit'))
         );

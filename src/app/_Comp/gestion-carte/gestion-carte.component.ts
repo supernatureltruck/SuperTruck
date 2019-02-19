@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/_services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gestion-carte',
@@ -8,7 +9,7 @@ import { ProductService } from 'src/app/_services/product.service';
 })
 export class GestionCarteComponent implements OnInit {
   
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,private router: Router) { }
 
   listes = [];
   categories = [];
@@ -19,32 +20,16 @@ export class GestionCarteComponent implements OnInit {
 
   getCat() {
     this.productService.getCat()
-     .subscribe(data => {
-       if(data != null ){
-        let cle = Object.keys(data);
-        let donnees = Object.values(data);
-        for(let i = 0; i < cle.length; i++){
-          this.categories.push({key: cle[i], values:donnees[i]});
-        }
-      }
-     });
+    .subscribe(data=>this.categories = data);
    }
 
   getProduct() {
     this.productService.getProduct()
-     .subscribe(data => {
-       if(data != null ){
-        let cle = Object.keys(data);
-        let donnees = Object.values(data);
-        for(let i = 0; i < cle.length; i++){
-          this.listes.push({key: cle[i], values:donnees[i]});
-        }
-      }
-     });
+      .subscribe(data=>this.listes = data);
    }
 
    delete(key) {
     this.productService.remove(key).subscribe();
-    this.listes = this.listes.filter(listes => listes.key !== key); //Permet de filtrer la liste en direct
+    this.listes = this.listes.filter(listes => listes.id !== key); //Permet de filtrer la liste en direct
    }
 }

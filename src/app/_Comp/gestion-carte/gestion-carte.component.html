@@ -7,18 +7,18 @@
             <input  type="radio" name="role-group" value="" [checked]="searchTerm===''" [(ngModel)]="term"> Tout
           </label> 
           <label *ngFor="let cat of categories ">
-              <input  type="radio" name="role-group" value="{{cat.values.name}}" [checked]="searchTerm===''" [(ngModel)]="term"> {{cat.values.name}}
+              <input  type="radio" name="role-group" value="{{cat.name}}" [checked]="searchTerm===''" [(ngModel)]="term"> {{cat.name}}
             </label> 
         </div>
       </div>
       <div class="row ">
         <div class="card" *ngFor="let liste of listes | search: term" style="width: 18rem;">
-          <img class="card-img-top" src="{{ liste.values.image }} {{ liste.values.file }}" alt="Card image cap">
+          <img class="card-img-top" src="{{ liste.image }}" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title"> {{ liste.values.name }}  </h5>
-            <p class="card-text"> {{ liste.values.description }} </p>
-            <button class="btn btn-success float-left btnVa" [routerLink]="['/edition', liste.key]">Edition</button>
-            <button class="btn btn-danger float-right" (click)="delete(liste.key)">Supprimer</button>
+            <h5 class="card-title"> {{ liste.name }}  </h5>
+            <p class="card-text"> {{ liste.description }} </p>
+            <button class="btn btn-success float-left btnVa" [routerLink]="['/edition', liste.id]">Edition</button>
+            <button class="btn btn-danger float-right" (click)="delete(liste.id)">Supprimer</button>
           </div>
         </div>
       </div>

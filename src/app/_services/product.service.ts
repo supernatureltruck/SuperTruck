@@ -24,7 +24,7 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getProduct(): Observable < Product[] > {
-    return this.http.get < Product[] > ('https://super-truck.firebaseio.com/product.json')
+    return this.http.get < Product[] > ('http://localhost:8080/api/products')
       .pipe(
         tap(data => data),
         catchError(this.handleError('getProduct', []))
@@ -32,7 +32,7 @@ export class ProductService {
   }
 
   getProductByKey(key: string): Observable < Product[] > {
-    return this.http.get < Product[] > ('https://super-truck.firebaseio.com/product/' + key + '.json')
+    return this.http.get < Product[] > ('http://localhost:8080/api/products/' + key)
       .pipe(
         tap(data => JSON.stringify(data)),
         catchError(this.handleError('getProductByKey', []))
@@ -41,7 +41,7 @@ export class ProductService {
 
   /** DELETE: remove a product */
   remove(key): Observable < Product[] > {
-    let url = 'https://super-truck.firebaseio.com/product/' + key + '.json';
+    let url = 'http://localhost:8080/api/products/' + key;
     return this.http.delete < Product[] > (url)
       .pipe(
         tap(data => data),
@@ -49,19 +49,19 @@ export class ProductService {
       );
   }
 
-  add(product: Product): Observable < Product > {
-    let url = `https://super-truck.firebaseio.com/product.json`;
+  add(product: Product, categorie: number): Observable < Product > {
+    let url = 'http://localhost:8080/api/products/'+ categorie;
     return this.http.post < Product > (url, product, {
       responseType: 'json'
     }).pipe(
-      tap((product: Product) => console.log('new Plat added')),
+      tap((product: Product) => console.log('plat added')),
       catchError(this.handleError < Product > ('add'))
     );
   }
 
-  // PUT :  Edit a Game
-  edit(product: Product, key: string): Observable < Product > {
-    const url = `https://super-truck.firebaseio.com/product/` + key + '.json';
+  // PUT :  Edit a meal
+  edit(product: Product, key: string, articleID: number): Observable < Product > {
+    const url = 'http://localhost:8080/api/products/' + key + '/' + articleID;
     return this.http.put < Product > (url, product, {
       responseType: 'json'
     }).pipe(
@@ -71,7 +71,7 @@ export class ProductService {
   }
 
   getCat(): Observable < Product[] > {
-    return this.http.get < Product[] > ('https://super-truck.firebaseio.com/categories.json')
+    return this.http.get < Product[] > ('http://localhost:8080/api/categories')
       .pipe(
         tap(data => data),
         catchError(this.handleError('getCat', []))
@@ -79,7 +79,7 @@ export class ProductService {
   }
 
   addCat(product: Product): Observable < Product > {
-    let url = `https://super-truck.firebaseio.com/categories.json`;
+    let url = `http://localhost:8080/api/categories`;
     return this.http.post < Product > (url, product, {
       responseType: 'json'
     }).pipe(
@@ -90,7 +90,7 @@ export class ProductService {
 
     /** DELETE: remove a product */
     removeCat(key): Observable < Product[] > {
-      let url = 'https://super-truck.firebaseio.com/categories/' + key + '.json';
+      let url = `http://localhost:8080/api/categories/`+ key;
       return this.http.delete < Product[] > (url)
         .pipe(
           tap(data => data),

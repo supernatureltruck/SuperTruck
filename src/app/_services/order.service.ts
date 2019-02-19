@@ -23,7 +23,7 @@ export class OrderService {
   }
 
   getCommande(): Observable <Order[]> {
-    return this.http.get <Order[]> ('https://super-truck.firebaseio.com/commande/attente.json')
+    return this.http.get <Order[]> ('http://localhost:8080/api/orders')
       .pipe(
         tap(data => data),
         catchError(this.handleError('getCommande', []))
@@ -47,13 +47,13 @@ export class OrderService {
   }
 
   addOr(order) {
-    return this.http.post('https://super-truck.firebaseio.com/commande/attente.json', order);
+    return this.http.post('http://localhost:8080/api/orders', order);
   }
 
 
   /** DELETE: remove a command */
   remove(key): Observable < any[] > {
-    let url = 'https://super-truck.firebaseio.com/commande/attente/' + key + '.json';
+    let url = 'http://localhost:8080/api/orders/' + key;
     return this.http.delete < any[] > (url)
       .pipe(
         tap(data => data),

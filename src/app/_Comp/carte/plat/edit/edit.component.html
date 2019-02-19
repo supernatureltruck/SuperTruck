@@ -13,14 +13,14 @@
         <label for="description">Description du plat</label><br>
         <input type="text" name="description" [ngModel]="product?.description"><br>
         <label for="type">Catégorie</label><br>
-        <select class="form-control" name="categorie" [ngModel]="product?.categorie">
-          <option *ngFor="let liste of listes" 
-          [value]="liste.values.name" >
-        {{liste.values.name}}
+        <select class="form-control" name="categorie" [ngModel]="product?.category.id">
+          <option *ngFor="let categorie of categories" 
+          [value]="categorie.id" >
+        {{categorie.name}}
       </option>
       </select>
-        <label for="prix">Prix</label><br>
-        <input type="number" name="prix" [ngModel]="product?.prix"><br>
+        <label for="price">Prix</label><br>
+        <input type="number" name="price" [ngModel]="product?.price"><br>
         <button class="btn btn-success btnVa" type="submit">Envoyer</button>
         <button class="btn btn-dark float-right btnAn" [routerLink]="['/gcarte']">Retour</button>
       </div>

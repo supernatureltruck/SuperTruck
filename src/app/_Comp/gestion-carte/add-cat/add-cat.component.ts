@@ -18,27 +18,19 @@ export class AddCatComponent implements OnInit {
 
   getCat() {
     this.productService.getCat()
-     .subscribe(data => {
-       if(data != null ){
-        let cle = Object.keys(data);
-        let donnees = Object.values(data);
-        for(let i = 0; i < cle.length; i++){
-          this.listes.push({key: cle[i], values:donnees[i]});
-        }
-      }
-     });
+     .subscribe(data => this.listes = data);
    }
 
    addCat(form) {
     this.productService.addCat(form.form.value)
-      .subscribe(plat => {
-        this.router.navigate([`./gcarte`]);
+      .subscribe((data) => {
+            this.ngOnInit();
       });
   }
 
   delete(key) {
     this.productService.removeCat(key).subscribe();
-    this.listes = this.listes.filter(listes => listes.key !== key); //Permet de filtrer la liste en direct
+    this.listes = this.listes.filter(listes => listes.id !== key); //Permet de filtrer la liste en direct
    }
 
 }

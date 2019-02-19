@@ -24,15 +24,7 @@ export class GestionCommandesComponent implements OnInit {
 
   getCommande() {
     this.orderService.getCommande()
-     .subscribe(data => {
-       if(data != null ){
-        let cle = Object.keys(data);
-        let donnees = Object.values(data);
-        for(let i = 0; i < cle.length; i++){
-          this.commandes.push({key: cle[i], values:donnees[i]});
-        }
-      }
-     });
+    .subscribe(data=>this.commandes = data);
    }
 
    getCommandePrep() {

@@ -35,21 +35,12 @@ export class EditComponent implements OnInit {
       this.getCat();
   }
 
-  listes = [];
+  categories = [];
 
   getCat() {
     this.productService.getCat()
-     .subscribe(data => {
-       if(data != null ){
-        let cle = Object.keys(data);
-        let donnees = Object.values(data);
-        for(let i = 0; i < cle.length; i++){
-          this.listes.push({key: cle[i], values:donnees[i]});
-        }
-      }
-     });
+    .subscribe(data=>this.categories = data);
    }
-
 
   getPlatByKey(key) {
     this.productService.getProductByKey(key)
@@ -59,7 +50,7 @@ export class EditComponent implements OnInit {
   }
 
   editPlat(product) {
-    this.productService.edit(product.form.value, this.key)
+    this.productService.edit(product.form.value, this.key, product.form.value.categorie)
       .subscribe(product => this.router.navigate([`./gcarte`]));
   }
 
