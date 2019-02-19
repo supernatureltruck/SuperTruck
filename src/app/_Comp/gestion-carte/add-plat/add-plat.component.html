@@ -19,7 +19,8 @@
                 {{liste.values.name}}
               </option>
             </select>
-            <label for="price">Prix</label><br>
+            <label for="price">Prix (TTC)</label><br>
+            <p>Veuillez ajouter la TVA au prix du plat</p>
             <input type="number" name="prix" ngModel><br>
             <button class="btn btn-success btnVa " type="submit">Envoyer</button>
             <button class="btn btn-dark float-right btnAn" [routerLink]="['/gcarte']">Retour</button>

@@ -34,6 +34,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AddCatComponent } from './_Comp/gestion-carte/add-cat/add-cat.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatTabsModule} from '@angular/material/tabs';
+import {ShoppingCartModule} from 'ng-shopping-cart';
+import { Product } from './_class/product';
 import { ContactComponent } from './_CFixe/contact/contact.component';
 import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
 
@@ -80,6 +82,14 @@ import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
     DragDropModule,
     MatTabsModule,
     BrowserAnimationsModule,
+    ShoppingCartModule.forRoot({ // <-- Add the cart module to your root module
+      itemType: Product, // <-- Configuration is optional
+      serviceType: 'memory',
+      serviceOptions: {
+        storageKey: 'NgShoppingCart',
+        clearOnError: true
+      }
+    }), 
     AgmCoreModule.forRoot({
       apiKey: '',
       libraries: ['places']
