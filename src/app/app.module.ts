@@ -36,6 +36,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatTabsModule} from '@angular/material/tabs';
 import {ShoppingCartModule} from 'ng-shopping-cart';
 import { Product } from './_class/product';
+import { ContactComponent } from './_CFixe/contact/contact.component';
 
 
 @NgModule({
@@ -63,6 +64,7 @@ import { Product } from './_class/product';
     EditComponent,
     StripeComponent,
     AddCatComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
