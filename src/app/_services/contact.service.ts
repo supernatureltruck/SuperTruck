@@ -9,13 +9,14 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root'
   })
   export class ContactService {
+
+    url = `http://localhost:8080/api/contacts`;
   
     constructor(private http: HttpClient) { }
 
     // POST :  Add Contact
-    addContact(contact: Contact): Observable<Contact> {
-        let url = `http://localhost:8080/api/contacts`;
-        return this.http.put<Contact>(url, contact);
+    addContact(contact: Contact) {
+        return this.http.put(`${this.url}/1`, contact);
       }
 
        // GET : Get Contact

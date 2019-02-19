@@ -31,8 +31,8 @@ export class AddContactComponent implements OnInit {
    }
 
    addContact(form) {
-     console.log(form.form.value);
-    this.contactService.addContact(form.form.value)
+     console.log(form.value);
+    this.contactService.addContact(form.value)
       .subscribe(contact => {
         this.router.navigate([`./contact`]);
       });
