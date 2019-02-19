@@ -6,11 +6,11 @@
           <div class="couleur">
             <h2>Formulaire contact</h2>
           </div>
-          <div class="paddingFo" *ngFor="let liste of listes">
+          <div class="paddingFo">
             <label for="email">Email </label><br>
-            <input type="email" name="email" placeholder="{{liste.values.email}}" ngModel><br>
+            <input type="email" name="email" placeholder="{{ donnees?.email }}" ngModel><br>
             <label for="tel">Téléphone</label><br>
-            <input type="text" name="tel" ngModel placeholder="{{liste.values.tel}}"><br>
+            <input type="text" name="tel" ngModel placeholder="{{ donnees?.tel }}"><br>
             <button class="btn btn-success btnVa " type="submit">Envoyer</button>
             <button class="btn btn-dark float-right btnAn" [routerLink]="['/gcarte']">Retour</button>
           </div>

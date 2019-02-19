@@ -10,10 +10,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./add-contact.component.css']
 })
 export class AddContactComponent implements OnInit {
+  
 
   constructor(private contactService : ContactService, private router:Router) { }
 
   listes = [];
+  donnees:any;
   
   ngOnInit() {
     this.getContact();
@@ -24,10 +26,7 @@ export class AddContactComponent implements OnInit {
      .subscribe(data => {
        if(data != null ){
         let cle = Object.keys(data);
-        let donnees = Object.values(data);
-        for(let i = 0; i < cle.length; i++){
-          this.listes.push({key: cle[i], values:donnees[i]});
-        }
+        this.donnees = data;
       }
      });
    }
