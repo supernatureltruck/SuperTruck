@@ -1,30 +1,32 @@
 <div class="back">
-<div class="container">
-  <div class="row">
-    
-    <form (ngSubmit)="editProfil(f)" #f="ngForm">
-      <div class="couleur">
-        <h1>Mon profil</h1>
-      </div>
-      <div class="paddingFo">
-      <p>Bonjour {{user?.name}}</p>
-      <label for="name">Nom</label><br>
-      <input type="text" name="name" [ngModel]="user?.name"><br>
-      <label for="prenom">Prénom</label><br>
-      <input type="text" name="prenom" [ngModel]="user?.prenom"><br>
-      <label for="tel">Téléphone</label><br>
-      <input type="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  [ngModel]="user?.tel"><br>
-      <label for="mail">Mail</label><br>
-      <input type="text" name="mail" [ngModel]="user?.mail"><br>
-      <label for="mdp">Nouveau mot de passe</label><br>
-      <input type="text" name="mdp" [ngModel]="user?.mdp"><br>
-      <label for="mdp">Confirmer mot de passe</label><br>
-      <input type="text" name="mdp" [ngModel]="user?.mdp"><br>
-      <br>
-      <button class="btn btn-success" type="submit">Modifier</button>
-      <button class="btn btn-dark float-right" [routerLink]="['/menu']">Retour</button>
+  <div class="container">
+    <div class="row">
+
+      <form (ngSubmit)="editProfil(f)" #f="ngForm">
+        <div class="couleur">
+          <h1>Mon profil</h1>
+        </div>
+        <div class="paddingFo">
+          <p>Bonjour {{user?.name}}</p>
+          <label for="mail">Email</label><br>
+          <input type="text" name="mail" [ngModel]="user?.mail"><br>
+          <label for="mdp">Nouveau mot de passe</label><br>
+          <input type="text" name="mdp" [ngModel]="user?.mdp"><br>
+          <label for="mdp">Confirmer mot de passe</label><br>
+          <input type="text" name="mdp" [ngModel]="user?.mdp"><br>
+          <br>
+          <p class="option">Optionnel :</p>
+          <label for="name">Nom</label><br>
+          <input type="text" name="name" [ngModel]="user?.name"><br>
+          <label for="prenom">Prénom</label><br>
+          <input type="text" name="prenom" [ngModel]="user?.prenom"><br>
+          <label for="tel">Téléphone</label><br>
+          <input type="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" [ngModel]="user?.tel"><br>
+          <br>
+          <button class="btn btn-success btnVal" type="submit">Modifier</button>
+          <button class="btn btn-dark float-right btnRetour" [routerLink]="['/menu']">Retour</button>
+        </div>
+      </form>
     </div>
-    </form>
   </div>
-</div>
 </div>

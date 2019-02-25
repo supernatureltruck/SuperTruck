@@ -1,5 +1,5 @@
 .back { 
-    background-color: #8E9886;
+    background-color: #eee;
     min-height: 650px;
 }
 
@@ -38,9 +38,24 @@ p {
     text-align: center;
 }
 .couleur{
-    background-color: #B9D9A9;
+    background-color: #8ea638;
     padding: 20px;
     height: 80px;
     border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 }
+.option{
+	text-decoration: underline;
+	text-align: center;
+	font-family: 'Bree Serif', serif;
+}
+
+button {
+	font-family: 'Bree Serif', serif;
+ }
+ .btnRetour{
+    background-color: #343a40;
+ }
+ .btnVal{
+     background-color: #8ea638;
+ }

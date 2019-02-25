@@ -29,22 +29,29 @@ export class RegisterComponent implements OnInit {
   listes = [];
 
   model: any = {};
-  public email: string = '';
+  public mail: string = '';
   filter = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
 
-  public mdp1: string = '';
+  public password: string = '';
   strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})");
 
-  public mdp2: string = '';
+  public password2: string = '';
+  public lastName: string='';
+  public firstName: string='';
+  public phone: string='';
+  
 
   connexionForm = this.formBuilder.group({
     connexion: this.formBuilder.group({
       email: ['', Validators.compose([Validators.minLength(3), Validators.pattern(this.filter)])],
-      mdp: ['', Validators.compose([Validators.minLength(6), Validators.pattern(this.strongRegex)])],
-      mdp2: [''],
+      password: ['', Validators.compose([Validators.minLength(6), Validators.pattern(this.strongRegex)])],
+      password2: [''],
+      lastName:[''],
+      firstName:[''],
+      phone:['']
     }, {
       validator: ConfirmPasswordValidator.MatchPassword
-    })
+    }),
   });
   public error: boolean = false;
 
@@ -70,11 +77,13 @@ export class RegisterComponent implements OnInit {
       });
   }
 
-  addUser(form) {
+  addUser() {
+    const values = this.connexionForm.value;
+    console.log(values.connexion)
     let alone = false;
-    if (form.form.value.connexion.email != '') {
+    if (values.connexion.email != '') {
     this.listes.forEach(function(element) {
-      if(form.form.value.connexion.email === element.values.connexion.email){
+      if(values.connexion.email === element.values.email){
       alone = true;
       }
     })
@@ -83,7 +92,7 @@ export class RegisterComponent implements OnInit {
       console.log('Mail déjà prit !');
       alert('Mail déjà utilisé, choisissez un autre mail.')
     } else {
-        this.userService.addUser(form.form.value)
+        this.userService.addUser(values.connexion)
         .subscribe(user => {
          this.router.navigate([`./menu`]);
         });

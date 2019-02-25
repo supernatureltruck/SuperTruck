@@ -2,12 +2,12 @@ import {AbstractControl} from '@angular/forms';
 
 export class ConfirmPasswordValidator {
     static MatchPassword(control: AbstractControl) {
-       let password = control.get('mdp').value;
+       let password = control.get('password').value;
 
-       let confirmPassword = control.get('mdp2').value;
+       let confirmPassword = control.get('password2').value;
 
         if(password != confirmPassword) {
-            control.get('mdp2').setErrors( {ConfirmPassword: true} );
+            control.get('password2').setErrors( {ConfirmPassword: true} );
         } else {
             return null
         }
