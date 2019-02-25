@@ -6,7 +6,7 @@
           <h2>Catégories déjà existantes</h2>
         </div><br>
         <div class="paddingfo">
-          <p *ngFor="let liste of listes"> {{liste.name}}<button class="btn btn-danger float-right" (click)="delete(liste.id)">Supprimer</button></p>
+          <p *ngFor="let liste of listes"> {{liste.name}}<button type="button" class="btn btn-danger float-right" (click)="delete(liste.id)">Supprimer</button></p>
           <br>
           <br>
           <div class="form-style">

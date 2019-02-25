@@ -48,7 +48,8 @@ p {
 .paddingFo{
     padding: 25px;
 }
-.form-style input[type="text"]
+.form-style input[type="text"],
+.form-style input[type="number"]
 {
 	outline: none;
 	box-sizing: border-box;
