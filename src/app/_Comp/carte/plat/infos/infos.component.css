@@ -15,7 +15,7 @@ p {
 }
 
 button {
-    margin-top: 20px;
+    margin: 0 auto;
 }
 
 input {
@@ -70,9 +70,8 @@ h1 {
     padding: 25px;
     width: 300px;
 }
+
 .btnAn{
     background-color: #343a40;
 }
-.btnVa{
-    background-color: #8ea638;
-}
+

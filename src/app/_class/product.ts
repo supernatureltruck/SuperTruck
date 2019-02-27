@@ -1,6 +1,6 @@
 import { CartItem } from 'ng-shopping-cart';
 
-export class Product extends CartItem{
+export class Product extends CartItem {
         public id: any;
         public name: string;
         public categorie: string;

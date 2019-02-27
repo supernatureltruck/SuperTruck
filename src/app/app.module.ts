@@ -82,6 +82,7 @@ import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
     DragDropModule,
     MatTabsModule,
     BrowserAnimationsModule,
+    ShoppingCartModule,
     ShoppingCartModule.forRoot({ // <-- Add the cart module to your root module
       itemType: Product, // <-- Configuration is optional
       serviceType: 'memory',

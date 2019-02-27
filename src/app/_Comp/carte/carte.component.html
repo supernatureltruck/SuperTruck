@@ -23,7 +23,7 @@
           <p class="card-text"> {{ liste.description }} </p>
           <button class="btn btn-secondary float-left btnVa" [routerLink]="['/info', liste.id]">Infos</button>
           <!--<button class="btn btn-secondary btnCo" (click)="order66(liste.values)"> Commander </button>-->  
-          <add-to-cart [item]="listes[i]" [custom]="true">
+          <add-to-cart [item]="products[i]" [custom]="true">
               <button type="button" class="btn btn-secondary btnCo"> Commander </button>
            </add-to-cart>
           <button id="btnT" class="btn btn-info float-right"> {{ liste.price }} €</button>

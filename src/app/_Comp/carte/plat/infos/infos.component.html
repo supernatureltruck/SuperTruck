@@ -10,8 +10,7 @@
         <p>{{plat?.description}}</p>
         <label for="prix">Prix</label><br>
         <p>{{plat?.price}} Euros</p>
-        <button class="btn btn-dark float-right btnAn" [routerLink]="['/menu']">Retour</button>
-        <button class="btn btn-success btnVa" (click)="order66(plat)"> Commander </button>
+        <button class="btn btn-dark btnAn" [routerLink]="['/menu']">Retour</button>
       </div>
       </form>
       <img src="{{plat?.image}}" alt="Image du plat">
