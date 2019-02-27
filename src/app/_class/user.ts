@@ -1,18 +1,18 @@
 export class User {
     constructor(
         private id: string,
-        private nom: string,
-        private prenom: string,
-        private mdp: string,
-        private mail: string,
-        private tel: string,
+        private lastName: string,
+        private firstName: string,
+        private password: string,
+        private email: string,
+        private phone: string,
 
     ) {
         this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.mdp = mdp;
-        this.mail = mail;
-        this.tel = tel;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.password = password;
+        this.email = email;
+        this.phone = phone;
     }
 }

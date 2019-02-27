@@ -17,10 +17,12 @@ export class LoginComponent implements OnInit {
   //regex pour email
   public email: string = '';
   filter = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+  public password: string='';
 
   loginForm = this.formBuilder.group({
     connexion: this.formBuilder.group({
       email: ['', Validators.compose([Validators.minLength(3), Validators.pattern(this.filter)])],
+      password:['']
     },)
   });
   public error: boolean = false;

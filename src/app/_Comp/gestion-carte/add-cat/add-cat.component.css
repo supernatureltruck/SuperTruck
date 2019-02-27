@@ -53,6 +53,7 @@ h3 {
 	color: #555;
     font: 95% Arial, Helvetica, sans-serif;
     width: 281px; 
+    margin-left: 11%;
 }
 .form-style input[type="text"]:focus
 {

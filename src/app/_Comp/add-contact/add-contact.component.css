@@ -71,3 +71,11 @@ h2{
 .btnVa{
     background-color: #8ea638;
 }
+.error{
+	color:red;
+}
+#divErreur{
+	color:red;
+	text-align: center;
+	text-decoration: underline;
+}
