@@ -54,5 +54,29 @@ h1 {
 .btnVa{
     background-color: #8ea638;
 }
+ @media all and (min-width: 350px) and (max-width: 949px){
+    .back {
+        background-color: #eee;
+        min-height: 950px;
+    }
+    form {
+        margin: 80px auto;
+        margin-top: 600px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: #ffffff;
+    }
+    img{
+        margin-bottom: 500px;  
+        position: absolute;
+        width: 500px;
+        height: 400px;
+        margin-top: 150px;
+        margin-right: 150px;
+        border: 2px solid black;
+        border-radius: 10px;
 
+        }
+    
+  }
 
