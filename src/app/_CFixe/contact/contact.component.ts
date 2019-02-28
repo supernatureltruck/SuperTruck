@@ -25,7 +25,6 @@ export class ContactComponent implements OnInit {
      .subscribe(data => {
         this.donnees = data;
         this.isLoaded = true;
-        console.log(this.donnees);
      });
    }
    addContact(form) {

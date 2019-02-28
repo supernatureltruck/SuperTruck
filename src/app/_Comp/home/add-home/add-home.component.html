@@ -1,3 +1,19 @@
-<p>
-  add-home works!
-</p>
+<div class="back">
+    <div class="container">
+      <div class="row">
+        <form (ngSubmit)="addHome(f)" #f="ngForm">
+          <div class="form-style">
+            <div class="couleur">
+              <h2>Edition page d'accueil</h2>
+            </div>
+            <div class="paddingFo" *ngIf="isLoaded">
+              <p>Paragraphe</p>
+              <textarea class="form-control" rows="3" name="paragraphe" [(ngModel)]="donnees[0].paragraphe"></textarea>
+              <button class="btn btn-success btnVa " type="submit">Modifier</button>
+              <button class="btn btn-dark float-right btnAn" [routerLink]="['/gcarte']">Retour</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

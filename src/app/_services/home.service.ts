@@ -17,7 +17,7 @@ import { HttpClient } from '@angular/common/http';
     // POST :  Add Home
     addHome(home: Home) {
         return this.http.put(`${this.url}/1`, home);
-      }
+    }
 
        // GET : Get Home
     getHome():Observable<Home[]>{

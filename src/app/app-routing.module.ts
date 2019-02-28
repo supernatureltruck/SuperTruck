@@ -19,6 +19,7 @@ import { AddCatComponent } from './_Comp/gestion-carte/add-cat/add-cat.component
 import { PanierComponent } from './_CFixe/panier/panier.component';
 import { ContactComponent } from './_CFixe/contact/contact.component';
 import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
+import { AddHomeComponent } from './_Comp/home/add-home/add-home.component';
 
 
 
@@ -26,6 +27,7 @@ import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'addHome', component: AddHomeComponent },
   { path: 'account', component: AccountComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

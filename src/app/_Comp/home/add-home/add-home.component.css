@@ -1,0 +1,85 @@
+.back { 
+    background-color: #eee;
+    min-height: 50px;
+}
+
+form {
+    margin: 80px auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+button {
+    margin-top: 20px;
+}
+
+input {
+    width: 281px; 
+    height: 38px;
+    border-radius: 3px;
+}
+
+p {
+    padding-top: 20px;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+}
+h2{
+    text-align: center;
+    color:white;
+}
+
+.custom-file-label {
+    padding-top:  5px;
+    width: 281px;
+}
+.couleur{
+    background-color: #8ea638;
+    padding: 20px;
+    height: 80px;
+    width: 900px;
+    border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.paddingFo{
+    padding: 25px;
+}
+.form-style input[type="text"],
+.form-style input[type="email"]
+
+{
+	outline: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	background: #fff;
+	margin-bottom: 4%;
+	border: 1px solid #ccc;
+	padding: 3%;
+	color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+    width: 281px; 
+}
+.form-style input[type="text"]:focus,
+.form-style input[type="email"]:focus
+{
+	box-shadow: 0 0 5px #8ea638;
+	padding: 3%;
+	border: 1px solid #8ea638;
+}
+.btnAn{
+    background-color: #343a40;
+}
+.btnVa{
+    background-color: #8ea638;
+}
+.error{
+	color:red;
+}
+#divErreur{
+	color:red;
+	text-align: center;
+	text-decoration: underline;
+}

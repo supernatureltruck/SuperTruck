@@ -5,18 +5,10 @@
         <div class="couleur">
           <h2>Qui sommes nous ?</h2>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus nec massa at volutpat. Maecenas
-          bibendum,
-          justo quis venenatis laoreet, erat odio auctor leo, ut consectetur massa lectus eget neque. Phasellus ac
-          dolor
-          tincidunt, rhoncus orci iaculis, fermentum tellus. Proin porttitor ac purus id lacinia. Sed auctor lobortis
-          risus vel
-          interdum. Aliquam non arcu iaculis neque elementum aliquet. Fusce eu libero eu neque laoreet auctor et non
-          nunc.
-          Nullam dictum ultricies velit, eu aliquet massa aliquet eu. Proin pretium nisl non est ullamcorper efficitur.
-          Nulla
-          quis eros mollis, posuere urna et, pharetra justo.<br>
+        <div *ngIf="isLoaded">
+        <p>{{ donnees[0].paragraphe }}.<br>
         </p>
+      </div>
       </div>
       <button class="btn btn-back btn-lg" (click)="commande()">Passer une commande</button>
     </div>
