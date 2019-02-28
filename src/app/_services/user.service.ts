@@ -56,7 +56,6 @@ export class UserService {
           catchError(this.handleError<User>('edit'))
         );
       }
-    
 
         /**
    * Handle Http operation that failed.

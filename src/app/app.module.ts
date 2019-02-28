@@ -38,6 +38,7 @@ import {ShoppingCartModule} from 'ng-shopping-cart';
 import { Product } from './_class/product';
 import { ContactComponent } from './_CFixe/contact/contact.component';
 import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
+import { AddHomeComponent } from './_Comp/home/add-home/add-home.component';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
     AddCatComponent,
     ContactComponent,
     AddContactComponent,
+    AddHomeComponent,
   ],
   imports: [
     BrowserModule,
