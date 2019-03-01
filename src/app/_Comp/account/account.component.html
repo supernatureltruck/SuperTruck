@@ -7,7 +7,7 @@
           <h1>Mon profil</h1>
         </div>
         <div class="paddingFo">
-          <p>Bonjour {{profil.lastName}}</p>
+          <p>Bonjour {{profil.lastname}}</p>
           <label for="mail">Email</label><br>
           <input type="text" name="mail" [ngModel]="profil?.email"><br>
           <label for="mdp">Nouveau mot de passe</label><br>
@@ -17,9 +17,9 @@
           <br>
           <p class="option">Optionnel :</p>
           <label for="name">Nom</label><br>
-          <input type="text" name="name" [ngModel]="profil?.lastName"><br>
+          <input type="text" name="name" [ngModel]="profil?.lastname"><br>
           <label for="prenom">Prénom</label><br>
-          <input type="text" name="prenom" [ngModel]="profil?.firstName"><br>
+          <input type="text" name="prenom" [ngModel]="profil?.firstname"><br>
           <label for="tel">Téléphone</label><br>
           <input type="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" [ngModel]="profil?.phone"><br>
           <br>

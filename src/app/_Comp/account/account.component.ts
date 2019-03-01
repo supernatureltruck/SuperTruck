@@ -7,18 +7,18 @@ import { UserService } from 'src/app/_services/user.service';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
-  mail = localStorage.getItem("mail");
+  email = localStorage.getItem("mail");
   profil = [];
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.getUserByMail(this.mail);
+    this.getUserByMail(this.email);
   }
 
-  getUserByMail(mail) {
-    this.userService.getUserByMail(mail)
-    .subscribe(data => this.profil = data);
+  getUserByMail(email) {
+    this.userService.getUserByMail(email)
+    .subscribe(data => console.log(data));
   }
 
 }
