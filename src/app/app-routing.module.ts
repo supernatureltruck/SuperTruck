@@ -27,8 +27,7 @@ import { AuthGuard } from './_services/auth-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'addHome', component: AddHomeComponent, canActivate:[AuthGuard]},
+  { path: 'home', component: HomeComponent },  
   { path: 'account', component: AccountComponent, canActivate:[AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -39,15 +38,19 @@ const routes: Routes = [
   { path: 'menu', component: CarteComponent, canActivate:[AuthGuard] },
   { path: 'menu/:categorie', component: CarteComponent, canActivate:[AuthGuard] },
   { path: 'info/:key', component: InfosComponent, canActivate:[AuthGuard] },
-  { path: 'edition/:key', component: EditComponent, canActivate:[AuthGuard] },
-  { path: 'gcarte', component: GestionCarteComponent, canActivate:[AuthGuard] },
-  { path: 'gcom', component: GestionCommandesComponent, canActivate:[AuthGuard] },
-  { path: 'add', component: AddPlatComponent, canActivate:[AuthGuard] },
-  { path: 'addcat', component: AddCatComponent, canActivate:[AuthGuard] },
   { path: 'payment', component: StripeComponent, canActivate:[AuthGuard] },
   { path: 'panier', component: PanierComponent, canActivate:[AuthGuard] },
   { path: 'contact', component: ContactComponent, canActivate:[AuthGuard] },
+  //AdminPage :
   { path: 'addContact', component: AddContactComponent, canActivate:[AuthGuard] },
+  { path: 'addcat', component: AddCatComponent, canActivate:[AuthGuard] },
+  { path: 'gcarte', component: GestionCarteComponent, canActivate:[AuthGuard] },
+  { path: 'gcom', component: GestionCommandesComponent, canActivate:[AuthGuard] },
+  { path: 'add', component: AddPlatComponent, canActivate:[AuthGuard] },  
+  { path: 'edition/:key', component: EditComponent, canActivate:[AuthGuard] },
+  { path: 'addHome', component: AddHomeComponent, canActivate:[AuthGuard]},
+
+
   // Keep the path below,in last position.
   { path: '**', component: CarteComponent },
 ];

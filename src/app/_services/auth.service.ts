@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap, catchError } from 'rxjs/operators';
 import { User } from '../_class/user';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class Auth {
   TOKEN_KEY = "token";
   MAIL = "mail";
 
-  constructor(private router: Router, private http: HttpClient, private auth: Auth) { }
+  constructor(private router: Router, private http: HttpClient, private auth: Auth, private JwtHelperService : JwtHelperService) { }
 
   login(form) {
     let url = `http://localhost:8080/api/auth/signin`;
@@ -30,6 +31,8 @@ export class Auth {
     }
     localStorage.setItem(this.TOKEN_KEY, authResponse.accessToken);
     localStorage.setItem(this.MAIL, authResponse.mail);
+    const token = localStorage.getItem('token');
+    console.warn(this.JwtHelperService.decodeToken(token));
     this.router.navigate(['/menu']);
   }
 
