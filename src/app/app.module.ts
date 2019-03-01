@@ -87,7 +87,7 @@ import { AddHomeComponent } from './_Comp/home/add-home/add-home.component';
     ShoppingCartModule,
     ShoppingCartModule.forRoot({ // <-- Add the cart module to your root module
       itemType: Product, // <-- Configuration is optional
-      serviceType: 'memory',
+      serviceType: 'localStorage',
       serviceOptions: {
         storageKey: 'NgShoppingCart',
         clearOnError: true

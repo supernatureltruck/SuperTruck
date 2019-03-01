@@ -1,0 +1,13 @@
+#back { 
+    background-color: #eee;
+    padding-bottom: 100px;
+}
+
+h1, h2 {
+    margin: 20px auto;
+    font-family: 'Bree Serif', serif;
+}
+
+p {
+    text-align: justify;
+}
