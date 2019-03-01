@@ -7,21 +7,21 @@
           <h1>Mon profil</h1>
         </div>
         <div class="paddingFo">
-          <p>Bonjour {{user?.name}}</p>
+          <p>Bonjour {{profil.lastname}}</p>
           <label for="mail">Email</label><br>
-          <input type="text" name="mail" [ngModel]="user?.mail"><br>
+          <input type="text" name="mail" [ngModel]="profil?.email"><br>
           <label for="mdp">Nouveau mot de passe</label><br>
-          <input type="text" name="mdp" [ngModel]="user?.mdp"><br>
+          <input type="text" name="mdp" [ngModel]="profil?.password"><br>
           <label for="mdp">Confirmer mot de passe</label><br>
-          <input type="text" name="mdp" [ngModel]="user?.mdp"><br>
+          <input type="text" name="mdp"><br>
           <br>
           <p class="option">Optionnel :</p>
           <label for="name">Nom</label><br>
-          <input type="text" name="name" [ngModel]="user?.name"><br>
+          <input type="text" name="name" [ngModel]="profil?.lastname"><br>
           <label for="prenom">Prénom</label><br>
-          <input type="text" name="prenom" [ngModel]="user?.prenom"><br>
+          <input type="text" name="prenom" [ngModel]="profil?.firstname"><br>
           <label for="tel">Téléphone</label><br>
-          <input type="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" [ngModel]="user?.tel"><br>
+          <input type="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" [ngModel]="profil?.phone"><br>
           <br>
           <button class="btn btn-success btnVal" type="submit">Modifier</button>
           <button class="btn btn-dark float-right btnRetour" [routerLink]="['/menu']">Retour</button>

@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { Contact } from '../_class/contact';
 import { HttpClient } from '@angular/common/http';
+import { Auth } from './auth.service';
 
 
 @Injectable({
@@ -12,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
 
     url = `http://localhost:8080/api/contacts`;
   
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private auth: Auth) { }
 
     // POST :  Add Contact
     addContact(contact: Contact) {
@@ -21,7 +22,7 @@ import { HttpClient } from '@angular/common/http';
 
        // GET : Get Contact
     getContact():Observable<Contact[]>{
-        return this.http.get<Contact[]>('http://localhost:8080/api/contacts');
+        return this.http.get<Contact[]>('http://localhost:8080/api/contacts',{headers: this.auth.tokenHeader});
       }
   
       //recuperation by ID

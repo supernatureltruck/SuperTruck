@@ -18,6 +18,7 @@ import {
 import {
   formArrayNameProvider
 } from '@angular/forms/src/directives/reactive_directives/form_group_name';
+import { Auth } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -55,52 +56,18 @@ export class RegisterComponent implements OnInit {
   });
   public error: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService) {}
+  constructor(private formBuilder: FormBuilder, private router: Router, private auth: Auth) {}
 
   ngOnInit() {
-    this.getUser();
   }
 
-  getUser() {
-    this.userService.getUser()
-      .subscribe(data => {
-        if (data != null) {
-          let cle = Object.keys(data);
-          let donnees = Object.values(data);
-          for (let i = 0; i < cle.length; i++) {
-            this.listes.push({
-              key: cle[i],
-              values: donnees[i]
-            });
-          }
-        }
-      });
+  register() {
+    console.log();
+    this.auth.register(this.connexionForm.value.connexion)
+    .subscribe(user => {
+      this.router.navigate([`./login`]);
+     });
   }
-
-  addUser() {
-    const values = this.connexionForm.value;
-    console.log(values.connexion)
-    let alone = false;
-    if (values.connexion.email != '') {
-    this.listes.forEach(function(element) {
-      if(values.connexion.email === element.values.email){
-      alone = true;
-      }
-    })
-    
-    if (alone) {
-      console.log('Mail déjà prit !');
-      alert('Mail déjà utilisé, choisissez un autre mail.')
-    } else {
-        this.userService.addUser(values.connexion)
-        .subscribe(user => {
-         this.router.navigate([`./menu`]);
-        });
-    }
-  } else {
-    alert('Veuillez remplir tout les champs !');
-  }
-}
 
   annuler() {
     history.back();

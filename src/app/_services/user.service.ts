@@ -3,24 +3,17 @@ import { Observable } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { User } from '../_class/user';
 import { HttpClient } from '@angular/common/http';
+import { Auth } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private auth: Auth) { }
 
     authStatus = false;
-    // LOGIN
 
-    signIn() {
-      this.authStatus = true;
-    }
-
-    signOut() {
-      this.authStatus = false;
-    }
 
      // POST :  Add user
      addUser(user: User): Observable<User> {
@@ -42,10 +35,18 @@ export class UserService {
     }
 
     getUserByKey(key: string): Observable<User[]>{
-      return this.http.get<User[]>('http://localhost:8080/api/users/'+key)
+      return this.http.get<User[]>('http://localhost:8080/api/users/'+ key)
       .pipe(
         tap(data => JSON.stringify(data)),
         catchError(this.handleError('getUserByKey', []))
+      );
+    }
+
+    getUserByMail(mail: String): Observable<User[]>{
+      return this.http.get<User[]>('http://localhost:8080/api/user/' + mail,{headers: this.auth.tokenHeader})
+      .pipe(
+        tap(data => data),
+        catchError(this.handleError('getUser',[]))
       );
     }
 
