@@ -15,16 +15,17 @@ import {
   catchError,
   map
 } from 'rxjs/operators';
+import { Auth } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private auth:Auth) {}
 
   getProduct(): Observable < Product[] > {
-    return this.http.get < Product[] > ('http://localhost:8080/api/products')
+    return this.http.get < Product[] > ('http://localhost:8080/api/products',{headers: this.auth.tokenHeader})
       .pipe(
         tap(data => data),
         catchError(this.handleError('getProduct', []))
@@ -32,7 +33,7 @@ export class ProductService {
   }
 
   getProductByKey(key: string): Observable < Product[] > {
-    return this.http.get < Product[] > ('http://localhost:8080/api/products/' + key)
+    return this.http.get < Product[] > ('http://localhost:8080/api/products/' + key,{headers: this.auth.tokenHeader})
       .pipe(
         tap(data => JSON.stringify(data)),
         catchError(this.handleError('getProductByKey', []))
@@ -42,7 +43,7 @@ export class ProductService {
   /** DELETE: remove a product */
   remove(key): Observable < Product[] > {
     let url = 'http://localhost:8080/api/products/' + key;
-    return this.http.delete < Product[] > (url)
+    return this.http.delete < Product[] > (url,{headers: this.auth.tokenHeader})
       .pipe(
         tap(data => data),
         catchError(this.handleError < Product[] > ('remove'))
@@ -51,9 +52,8 @@ export class ProductService {
 
   add(product: Product, categorie: number): Observable < Product > {
     let url = 'http://localhost:8080/api/products/'+ categorie;
-    return this.http.post < Product > (url, product, {
-      responseType: 'json'
-    }).pipe(
+    return this.http.post < Product > (url, product, {headers: this.auth.tokenHeader})
+    .pipe(
       tap((product: Product) => console.log('plat added')),
       catchError(this.handleError < Product > ('add'))
     );
