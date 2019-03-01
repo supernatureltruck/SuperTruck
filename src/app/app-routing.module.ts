@@ -20,6 +20,7 @@ import { PanierComponent } from './_CFixe/panier/panier.component';
 import { ContactComponent } from './_CFixe/contact/contact.component';
 import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
 import { AddHomeComponent } from './_Comp/home/add-home/add-home.component';
+import { AuthGuard } from './_services/auth-guard.service';
 
 
 
@@ -27,26 +28,26 @@ import { AddHomeComponent } from './_Comp/home/add-home/add-home.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'addHome', component: AddHomeComponent },
-  { path: 'account', component: AccountComponent },
+  { path: 'addHome', component: AddHomeComponent, canActivate:[AuthGuard]},
+  { path: 'account', component: AccountComponent, canActivate:[AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'localisation', component: LocalisationComponent },
   { path: 'condition', component: ConditionComponent },
   { path: 'cgv', component: CgvComponent },
   { path: 'cookie', component: CookieComponent },
-  { path: 'menu', component: CarteComponent },
-  { path: 'menu/:categorie', component: CarteComponent },
-  { path: 'info/:key', component: InfosComponent },
-  { path: 'edition/:key', component: EditComponent },
-  { path: 'gcarte', component: GestionCarteComponent },
-  { path: 'gcom', component: GestionCommandesComponent },
-  { path: 'add', component: AddPlatComponent },
-  { path: 'addcat', component: AddCatComponent },
-  { path: 'payment', component: StripeComponent },
-  { path: 'panier', component: PanierComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'addContact', component: AddContactComponent },
+  { path: 'menu', component: CarteComponent, canActivate:[AuthGuard] },
+  { path: 'menu/:categorie', component: CarteComponent, canActivate:[AuthGuard] },
+  { path: 'info/:key', component: InfosComponent, canActivate:[AuthGuard] },
+  { path: 'edition/:key', component: EditComponent, canActivate:[AuthGuard] },
+  { path: 'gcarte', component: GestionCarteComponent, canActivate:[AuthGuard] },
+  { path: 'gcom', component: GestionCommandesComponent, canActivate:[AuthGuard] },
+  { path: 'add', component: AddPlatComponent, canActivate:[AuthGuard] },
+  { path: 'addcat', component: AddCatComponent, canActivate:[AuthGuard] },
+  { path: 'payment', component: StripeComponent, canActivate:[AuthGuard] },
+  { path: 'panier', component: PanierComponent, canActivate:[AuthGuard] },
+  { path: 'contact', component: ContactComponent, canActivate:[AuthGuard] },
+  { path: 'addContact', component: AddContactComponent, canActivate:[AuthGuard] },
   // Keep the path below,in last position.
   { path: '**', component: CarteComponent },
 ];
