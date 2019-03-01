@@ -3,6 +3,7 @@ import { Router, RouterEvent } from '@angular/router';
 import { UserService } from 'src/app/_services/user.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http'
+import { Auth } from 'src/app/_services/auth.service';
 
 
 @Component({
@@ -31,14 +32,13 @@ export class LoginComponent implements OnInit {
 
   
 
-  constructor(private router:Router, private userService : UserService,private formBuilder: FormBuilder) { }
+  constructor(private router:Router, private userService : UserService,private formBuilder: FormBuilder, private auth: Auth) { }
 
   ngOnInit() {
-    this.authStatus = this.userService.authStatus;
-    this.login();
+    this.authStatus = this.userService.authStatus;;
   }
 
-  login() {
+  //login() {
   //   const values = this.loginForm.value;
   //   console.log(values.connexion)
   //   let alone = false;
@@ -61,13 +61,14 @@ export class LoginComponent implements OnInit {
   // } else {
   //   alert('Veuillez remplir tout les champs !');
   // }
-    } 
+  //  } 
 
-  // login(){
-  //   this.userService.signIn();
-  //   let link = ['menu'];
-  //   this.router.navigate(link);
-  // }
+   login(form) {
+     console.log(form.value.connexion)
+    this.auth.login(form.value.connexion);
+    let link = ['menu'];
+    this.router.navigate(link);
+   }
 
   annuler(){
       history.back();
