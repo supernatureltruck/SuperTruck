@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { JwtModule } from '@auth0/angular-jwt';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -87,7 +86,6 @@ import { AddHomeComponent } from './_Comp/home/add-home/add-home.component';
     MatTabsModule,
     BrowserAnimationsModule,
     ShoppingCartModule,
-    JwtModule.forRoot({}),
     ShoppingCartModule.forRoot({ // <-- Add the cart module to your root module
       itemType: Product, // <-- Configuration is optional
       serviceType: 'localStorage',
