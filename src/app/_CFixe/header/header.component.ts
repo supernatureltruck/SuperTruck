@@ -21,12 +21,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.status = this.orderService.status;
   }
-
-  signIn() {
-    this.userService.signIn();
-    let link = ['menu'];
-    this.router.navigate(link);
-  }
   
   logOut() {
       this.auth.logout();
