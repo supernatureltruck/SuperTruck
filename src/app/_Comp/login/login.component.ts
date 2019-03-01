@@ -65,6 +65,7 @@ export class LoginComponent implements OnInit {
 
    login(form) {
     this.auth.login(form.value.connexion);
+    
     let link = ['menu'];
     this.router.navigate(link);
    }

@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap, catchError } from 'rxjs/operators';
 import { User } from '../_class/user';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -30,6 +31,7 @@ export class Auth {
     }
     localStorage.setItem(this.TOKEN_KEY, authResponse.accessToken);
     localStorage.setItem(this.MAIL, authResponse.mail);
+    console.warn(this.MAIL, authResponse.mail)
     this.router.navigate(['/menu']);
   }
 
