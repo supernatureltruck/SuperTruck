@@ -85,7 +85,7 @@ import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
     ShoppingCartModule,
     ShoppingCartModule.forRoot({ // <-- Add the cart module to your root module
       itemType: Product, // <-- Configuration is optional
-      serviceType: 'memory',
+      serviceType: 'localStorage',
       serviceOptions: {
         storageKey: 'NgShoppingCart',
         clearOnError: true
