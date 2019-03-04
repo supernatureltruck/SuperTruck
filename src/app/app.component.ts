@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Auth } from './_services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SuperTruck';
-  admin = false;
+ 
+
+  constructor(private auth:Auth){
+  }
+
 }
