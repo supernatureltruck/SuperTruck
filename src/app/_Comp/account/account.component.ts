@@ -18,7 +18,7 @@ export class AccountComponent implements OnInit {
 
   getUserByMail(email) {
     this.userService.getUserByMail(email)
-    .subscribe(data => console.log(data));
+    .subscribe(data => this.profil = data);
   }
 
 }

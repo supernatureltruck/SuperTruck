@@ -62,16 +62,15 @@ export class ProductService {
   // PUT :  Edit a meal
   edit(product: Product, key: string, articleID: number): Observable < Product > {
     const url = 'http://localhost:8080/api/products/' + key + '/' + articleID;
-    return this.http.put < Product > (url, product, {
-      responseType: 'json'
-    }).pipe(
+    return this.http.put < Product > (url, product, {headers: this.auth.tokenHeader})
+    .pipe(
       tap((product: Product) => console.log('plat edited')),
       catchError(this.handleError < Product > ('edit'))
     );
   }
 
   getCat(): Observable < Product[] > {
-    return this.http.get < Product[] > ('http://localhost:8080/api/categories')
+    return this.http.get < Product[] > ('http://localhost:8080/api/categories', {headers: this.auth.tokenHeader})
       .pipe(
         tap(data => data),
         catchError(this.handleError('getCat', []))
@@ -80,9 +79,8 @@ export class ProductService {
 
   addCat(product: Product): Observable < Product > {
     let url = `http://localhost:8080/api/categories`;
-    return this.http.post < Product > (url, product, {
-      responseType: 'json'
-    }).pipe(
+    return this.http.post < Product > (url, product, {headers: this.auth.tokenHeader})
+    .pipe(
       tap((product: Product) => console.log('new Cat added')),
       catchError(this.handleError < Product > ('addCat'))
     );
@@ -91,7 +89,7 @@ export class ProductService {
     /** DELETE: remove a product */
     removeCat(key): Observable < Product[] > {
       let url = `http://localhost:8080/api/categories/`+ key;
-      return this.http.delete < Product[] > (url)
+      return this.http.delete < Product[] > (url, {headers: this.auth.tokenHeader})
         .pipe(
           tap(data => data),
           catchError(this.handleError < Product[] > ('remove'))
