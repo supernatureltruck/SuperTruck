@@ -43,12 +43,9 @@ export class LoginComponent implements OnInit {
    login(form) {
     this.auth.login(form.value.connexion)
     .subscribe((res:any) => {
-      console.log(res);
       this.auth.authenticated(res);
       this.userService.getUserByMail( localStorage.getItem('mail'))
       .subscribe((user:any) => {
-        console.log(user);
-        console.log(user.roles[0].id);
          if(user.roles[0].id == "1"){
         localStorage.setItem(this.ROLE, "1");
         this.router.navigate(['/gcom']);
