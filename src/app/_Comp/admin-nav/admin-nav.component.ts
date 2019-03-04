@@ -10,11 +10,13 @@ import { HeaderComponent } from '../../_CFixe/header/header.component';
 })
 export class AdminNavComponent implements OnInit {
   status: string;
+
   liste = 0;
   constructor(private productService: ProductService, private orderService: OrderService) { }
 
   ngOnInit() {
     this.status = this.orderService.status; 
+  
   }
 
   change(status) {
