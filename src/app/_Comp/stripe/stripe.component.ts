@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { StripeService, StripeCardComponent, ElementOptions, ElementsOptions } from 'ngx-stripe';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-stripe',
@@ -8,53 +7,37 @@ import { StripeService, StripeCardComponent, ElementOptions, ElementsOptions } f
   styleUrls: ['./stripe.component.css']
 })
 export class StripeComponent implements OnInit {
-  @ViewChild(StripeCardComponent) card: StripeCardComponent;
 
-  cardOptions: ElementOptions = {
-    style: {
-      base: {
-        iconColor: '#666EE8',
-        color: '#31325F',
-        lineHeight: '40px',
-        fontWeight: 300,
-        fontFamily: 'Helvetica Neue',
-        fontSize: '15px',
-        '::placeholder': {
-          color: '#CFD7E0',
-        },
-      },
-    }
-  };
+  URL = 'http://localhost:8080/payment/charge';
 
-  elementsOptions: ElementsOptions = {
-    locale: 'en'
-  };
+  constructor(private http: HttpClient) { }
 
-  stripeTest: FormGroup;
+  ngOnInit() { }
 
-  constructor(
-    private fb: FormBuilder,
-    private stripeService: StripeService) { }
-
-  ngOnInit() {
-    this.stripeTest = this.fb.group({
-      name: ['', [Validators.required]]
+  chargeCreditCard() {
+    const form = document.getElementsByTagName('form')[0];
+    (<any>window).Stripe.card.createToken({
+      number: form.cardNumber.value,
+      exp_month: form.expMonth.value,
+      exp_year: form.expYear.value,
+      cvc: form.cvc.value
+    }, (status: number, response: any) => {
+      if (status === 200) {
+        const token = response.id;
+        this.chargeCard(token);
+      } else {
+        console.log(response.error.message);
+      }
     });
   }
 
-  buy() {
-    const name = this.stripeTest.get('name').value;
-    this.stripeService
-      .createToken(this.card.getCard(), { name })
-      .subscribe(result => {
-        if (result.token) {
-          // Use the token to create a charge or a customer
-          // https://stripe.com/docs/charges
-          console.log(result.token.id);
-        } else if (result.error) {
-          // Error creating the token
-          console.log(result.error.message);
-        }
+  chargeCard(token: string) {
+    const headers = new HttpHeaders();
+    headers.append('token', token);
+    headers.set('amount', '100');
+    this.http.post(this.URL, {}, { headers: headers })
+      .subscribe(resp => {
+        console.log(resp);
       });
   }
 }

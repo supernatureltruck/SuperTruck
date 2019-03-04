@@ -27,15 +27,14 @@ import { GestionCarteComponent } from './_Comp/gestion-carte/gestion-carte.compo
 import { GestionCommandesComponent } from './_Comp/gestion-commandes/gestion-commandes.component';
 import { AddPlatComponent } from './_Comp/gestion-carte/add-plat/add-plat.component';
 import { StripeComponent } from './_Comp/stripe/stripe.component';
-import { NgxStripeModule } from 'ngx-stripe';
-import { EditComponent } from './_Comp/carte/plat/edit/edit.component'; 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { EditComponent } from './_Comp/carte/plat/edit/edit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AddCatComponent } from './_Comp/gestion-carte/add-cat/add-cat.component';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatTabsModule} from '@angular/material/tabs';
-import {ShoppingCartModule} from 'ng-shopping-cart';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatTabsModule } from '@angular/material/tabs';
+import { ShoppingCartModule } from 'ng-shopping-cart';
 import { Product } from './_class/product';
 import { ContactComponent } from './_CFixe/contact/contact.component';
 import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
@@ -79,7 +78,6 @@ import { AddHomeComponent } from './_Comp/home/add-home/add-home.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NgxStripeModule.forRoot(''),
     MatButtonModule,
     MatCheckboxModule,
     DragDropModule,
@@ -93,7 +91,7 @@ import { AddHomeComponent } from './_Comp/home/add-home/add-home.component';
         storageKey: 'NgShoppingCart',
         clearOnError: true
       }
-    }), 
+    }),
     AgmCoreModule.forRoot({
       apiKey: '',
       libraries: ['places']
