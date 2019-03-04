@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CheckoutPaypalSettings } from 'ng-shopping-cart';
+import { OrderService } from 'src/app/_services/order.service';
+import { Order } from 'src/app/_class/order';
+import { AdminNavComponent } from 'src/app/_Comp/admin-nav/admin-nav.component';
 
 @Component({
   selector: 'app-panier',
@@ -7,6 +10,9 @@ import { CheckoutPaypalSettings } from 'ng-shopping-cart';
   styleUrls: ['./panier.component.css']
 })
 export class PanierComponent implements OnInit {
+
+  constructor(private orderService: OrderService){}
+
   headers = {
     empty: 'Votre panier est vide !',
     name: 'Nom du plat',
@@ -18,16 +24,22 @@ export class PanierComponent implements OnInit {
     total: 'Prix total'
   }
 
-  settings: CheckoutPaypalSettings = {
-    business: 'myaccount@paypal.com',
-    itemName: 'myMarketplaceAppCart',
-    itemNumber: '1234',
-    serviceName: 'MyBusiness',
-    country: 'FR'
-  };
+  Inorder() {
+    const donnees = JSON.parse(localStorage.getItem('NgShoppingCart'));
+    const quantity = donnees.items[0].quantity;
+    const item = donnees.items[0].id;
+    const idUser = localStorage.getItem('id');
+    const order = new Order(quantity,item,idUser);
+    this.orderService.addOr(order);
+  }
 
-
-  constructor() { }
+  // settings: CheckoutPaypalSettings = {
+  //   business: 'myaccount@paypal.com',
+  //   itemName: 'myMarketplaceAppCart',
+  //   itemNumber: '1234',
+  //   serviceName: 'MyBusiness',
+  //   country: 'FR'
+  // };
 
   ngOnInit() {
   }

@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   user;
   ROLE = "role";
+  ID = "id";
 
   //Statut de connexion
   authStatus: boolean;
@@ -47,9 +48,11 @@ export class LoginComponent implements OnInit {
       this.userService.getUserByMail( localStorage.getItem('mail'))
       .subscribe((user:any) => {
          if(user.roles[0].id == "1"){
+        localStorage.setItem(this.ID, user.id);
         localStorage.setItem(this.ROLE, "1");
         this.router.navigate(['/gcom']);
       } else {
+        localStorage.setItem(this.ID, user.id);
         localStorage.setItem(this.ROLE, "2");
         this.router.navigate(['/menu']);
       }

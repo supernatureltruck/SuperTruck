@@ -5,8 +5,9 @@
         [priceHeaderText]="headers.price" [totalHeaderText]="headers.total" [taxFooterText]="footers.tax"
         [shippingFooterText]="footers.shipping" [totalFooterText]="footers.total">
       </cart-view>
-    <cart-checkout [service]="'paypal'" settings="settings">
-    </cart-checkout>   
+    <!-- <cart-checkout [service]="'paypal'" settings="settings">
+    </cart-checkout>    -->
+    <button type="button" class="btn btn-dark" (click)="Inorder()">Commander !</button>
    </div>
   </div>
 </div>
