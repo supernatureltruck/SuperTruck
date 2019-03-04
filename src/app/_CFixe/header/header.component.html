@@ -10,8 +10,8 @@
     <div class="btn-container">
       <button class="btn btn-dark" routerLink="register" *ngIf="!auth.isAuthentificated">M'inscrire</button>
       <button class="btn btn-dark" routerLink="login" *ngIf="!auth.isAuthentificated">Me connecter</button>
-      <button class="btn btn-dark btnA" routerLink="account" *ngIf="auth.isAuthentificated">Mon Compte</button>
-      <button class="btn btn-danger" (click)="logOut()" *ngIf="auth.isAuthentificated">Me déconnecter</button>
+      <button class="btn btn-dark" routerLink="account" *ngIf="auth.isAuthentificated">Mon Compte</button>
+      <button class="btn btn-outline-danger" (click)="logOut()" *ngIf="auth.isAuthentificated">Me déconnecter</button>
     </div>
   </div>
 </div>
