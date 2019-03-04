@@ -4,6 +4,7 @@ import { Order } from '../_class/order';
 import { tap, catchError } from 'rxjs/operators';
 import { Product } from '../_class/product';
 import { HttpClient } from '@angular/common/http';
+import { Auth } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class OrderService {
   status = 'Ouvert';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private auth: Auth) { }
 
   change(status) {
     if(status === 'Fermé') {
@@ -31,7 +32,7 @@ export class OrderService {
   }
 
   getCommandePrep(): Observable <Order[]> {
-    return this.http.get <Order[]> ('https://super-truck.firebaseio.com/commande/preparation.json')
+    return this.http.get <Order[]> ('http://localhost:8080/api/orders')
       .pipe(
         tap(data => data),
         catchError(this.handleError('getCommandePrep', []))
@@ -47,9 +48,8 @@ export class OrderService {
   }
 
   addOr(order) {
-    return this.http.post('http://localhost:8080/api/orders', order);
+    return this.http.post('http://localhost:8080/api/orders', order, {headers: this.auth.tokenHeader});
   }
-
 
   /** DELETE: remove a command */
   remove(key): Observable < any[] > {

@@ -83,7 +83,6 @@ import { AddHomeComponent } from './_Comp/home/add-home/add-home.component';
     DragDropModule,
     MatTabsModule,
     BrowserAnimationsModule,
-    ShoppingCartModule,
     ShoppingCartModule.forRoot({ // <-- Add the cart module to your root module
       itemType: Product, // <-- Configuration is optional
       serviceType: 'localStorage',

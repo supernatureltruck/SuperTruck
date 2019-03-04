@@ -30,7 +30,6 @@ export class LocalisationComponent implements OnInit {
      .subscribe(data => {
         this.donnees = data;
         this.isLoaded = true;
-        console.log(data);
      });
    }
 

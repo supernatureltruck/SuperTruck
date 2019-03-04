@@ -13,6 +13,10 @@ import { Auth } from 'src/app/_services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  user;
+  ROLE = "role";
+  ID = "id";
+
   //Statut de connexion
   authStatus: boolean;
   listes=[];
@@ -35,39 +39,25 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router, private userService : UserService,private formBuilder: FormBuilder, private auth: Auth) { }
 
   ngOnInit() {
-    this.authStatus = this.userService.authStatus;;
   }
 
-  //login() {
-  //   const values = this.loginForm.value;
-  //   console.log(values.connexion)
-  //   let alone = false;
-  //   if (values.connexion.email != '') {
-  //   this.listes.forEach(function(element) {
-  //     if(values.connexion.email === element.values.email){
-  //     alone = false;
-  //     }
-  //   })
-    
-  //   if (alone) {
-  //     console.log('Mail déjà prit !');
-  //     alert('Mail déjà utilisé, choisissez un autre mail.')
-  //   } else {
-  //       this.userService.getUserByKey(values.connexion)
-  //       .subscribe(user => {
-  //        this.router.navigate([`./menu`]);
-  //       });
-  //   }
-  // } else {
-  //   alert('Veuillez remplir tout les champs !');
-  // }
-  //  } 
-
    login(form) {
-    this.auth.login(form.value.connexion);
-    
-    let link = ['menu'];
-    this.router.navigate(link);
+    this.auth.login(form.value.connexion)
+    .subscribe((res:any) => {
+      this.auth.authenticated(res);
+      this.userService.getUserByMail( localStorage.getItem('mail'))
+      .subscribe((user:any) => {
+         if(user.roles[0].id == "1"){
+        localStorage.setItem(this.ID, user.id);
+        localStorage.setItem(this.ROLE, "1");
+        this.router.navigate(['/gcom']);
+      } else {
+        localStorage.setItem(this.ID, user.id);
+        localStorage.setItem(this.ROLE, "2");
+        this.router.navigate(['/menu']);
+      }
+      })
+    })
    }
 
   annuler(){

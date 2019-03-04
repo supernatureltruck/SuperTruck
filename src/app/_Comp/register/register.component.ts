@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
       phone:['']
     }, {
       validator: ConfirmPasswordValidator.MatchPassword
-    }),
+    }), 
   });
   public error: boolean = false;
 

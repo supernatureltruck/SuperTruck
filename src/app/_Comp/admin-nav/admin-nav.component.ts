@@ -10,14 +10,13 @@ import { HeaderComponent } from '../../_CFixe/header/header.component';
 })
 export class AdminNavComponent implements OnInit {
   status: string;
-  liste = 4;
+
+  liste = 0;
   constructor(private productService: ProductService, private orderService: OrderService) { }
 
   ngOnInit() {
     this.status = this.orderService.status; 
-    setTimeout(() => {
-      this.liste++;
-    }, 5000);
+  
   }
 
   change(status) {
@@ -27,15 +26,6 @@ export class AdminNavComponent implements OnInit {
 
   refresh() {
     this.liste = 0;
-    setTimeout(() => {
-      this.liste+=2;
-    }, 2000);
-    setTimeout(() => {
-      this.liste+=1
-    }, 1000);
-    setTimeout(() => {
-      this.liste+=3
-    }, 4000);
   }
 
 }
