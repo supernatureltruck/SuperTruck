@@ -1,8 +1,26 @@
 <div class="back">
-  <div class="container">
+  <div class="form-style">
     <div class="row">
-
       <form (ngSubmit)="editProfil(f)" #f="ngForm">
+        <div class="couleur">
+          <h1>Mon profil</h1>
+        </div>
+        <div class="paddingFo">
+          <p> Optionnel :</p>
+          <input type="text" name="lastname" placeholder="Nom"  [ngModel]="profil?.lastname" required />
+          <input type="text" name="firstname" placeholder="Prénom" [ngModel]="profil?.firstname" required />
+          <input type="tel" name="phone" placeholder="téléphone"  [ngModel]="profil?.phone" required />
+          <br>
+          <button class="btn btn-success btnVal" type="submit">Modifier</button>
+          <button class="btn btn-dark float-right btnRetour" [routerLink]="['/menu']">Retour</button>
+          <br>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- <form (ngSubmit)="editProfil(f)" #f="ngForm">
         <div class="couleur">
           <h1>Mon profil</h1>
         </div>
@@ -25,7 +43,4 @@
           <button class="btn btn-success btnVal" type="submit">Modifier</button>
           <button class="btn btn-dark float-right btnRetour" [routerLink]="['/menu']">Retour</button>
         </div>
-      </form>
-    </div>
-  </div>
-</div>
+      </form> -->
