@@ -14,10 +14,6 @@
         <input type="password" name="password2" placeholder="Confirmer Mot de passe*" formControlName="password2" required />
         <div class="error" *ngIf="connexionForm.controls.connexion.controls.password2.hasError('ConfirmPassword')"><strong>X</strong>
           Veuillez confirmer votre mot de passe </div><br>
-      <p>  Optionnel :</p>
-      <input type="text" name="lastName" placeholder="Nom" formControlName="lastName" required />
-      <input type="text" name="firstName" placeholder="Prénom" formControlName="firstName" required />
-      <input type="tel" name="phone" placeholder="téléphone" formControlName="phone" required />
       <div id="divErreur" style="display:none;">Veuillez remplir tous les champs</div>
       <br>
     </div>

@@ -1,27 +1,9 @@
 <div class="container">
-  <div class="cell example example2" id="example-2">
-    <form novalidate (ngSubmit)="buy()" [formGroup]="stripeTest">
-      <div data-locale-reversible="">
-        <div class="row">
-          <div class="field">
-            <input id="example2-address" type="text" formControlName="name" placeholder="Name" required autocomplete="address-line1">
-            <label for="example2-address" data-tid="elements_examples.form.address_label"></label>
-            <div class="baseline"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="field">
-          <div id="example2-card-number" class="input empty"></div>
-          <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
-          <label for="example2-card-number" data-tid="elements_examples.form.card_number_label"></label>
-          <div class="baseline"></div>
-        </div>
-        <button type="submit" data-tid="elements_examples.form.pay_button">Pay €20</button>
-        <div class="error" role="alert"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
-          </svg>
-          <span class="message"></span></div>
-      </div>
-    </form>
-  </div>
+  <form>
+    <input type="text" placeholder="Credit Card #" name="cardNumber">
+    <input type="text" placeholder="Expiration Month" name="expMonth">
+    <input type="text" placeholder="Expiration Year" name="expYear">
+    <input type="text" placeholder="CVC" name="cvc">
+    <button (click)="chargeCreditCard()">Submit</button>
+  </form>
 </div>

@@ -17,7 +17,7 @@ import { Auth } from './auth.service';
 
     // POST :  Add Contact
     addContact(contact: Contact) {
-        return this.http.put(`${this.url}/1`, contact);
+        return this.http.put(`${this.url}/1`, contact,{headers: this.auth.tokenHeader});
       }
 
        // GET : Get Contact
