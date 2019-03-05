@@ -20,4 +20,5 @@ button {
 }
 .btn-dark{
     display: inherit;
+    padding:15px;
 }

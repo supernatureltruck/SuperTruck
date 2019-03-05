@@ -1,9 +1,14 @@
-<div class="container">
-  <form>
-    <input type="text" placeholder="Numéro de carte" name="cardNumber"><br><br>
-    <input type="text" placeholder="Mois d'expiration" name="expMonth"><br><br>
-    <input type="text" placeholder="Années d'expiration" name="expYear"><br><br>
-    <input type="text" placeholder="CVC" name="cvc">
-    <button (click)="chargeCreditCard()">Submit</button>
-  </form>
+<div class="back">
+  <div class="container">
+    <form>
+      <div class="couleur">
+        <h2>Paiement securisé</h2>
+      </div><br><hr><br>
+      <input class="input" type="text" placeholder="Numéro de carte" name="cardNumber"><br><br>
+      <input class="input" type="text" placeholder="Mois d'expiration" name="expMonth"><br><br>
+      <input class="input" type="text" placeholder="Années d'expiration" name="expYear"><br><br>
+      <input class="input" type="text" placeholder="CVC" name="cvc"><br><br>
+      <button type="button" class="btn btn-success" (click)="chargeCreditCard()">Payer</button>
+    </form>
+  </div>
 </div>
