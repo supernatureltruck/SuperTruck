@@ -26,8 +26,10 @@ export class GestionCommandesComponent implements OnInit {
    }
 
   remove(id) {
-    this.orderService.remove(id);
-    this.commandes = this.commandes.filter(commandes => commandes.id !== id);
+    this.orderService.remove(id)
+    .subscribe ( data => {
+      this.commandes = this.commandes.filter(commandes => commandes.id !== id);
+    })
     }
 
   drop(event: CdkDragDrop<string[]>) {
