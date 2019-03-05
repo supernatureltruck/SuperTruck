@@ -1,18 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { OrderService } from 'src/app/_services/order.service';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { PanierComponent } from 'src/app/_CFixe/panier/panier.component';
 
 @Component({
   selector: 'app-gestion-commandes',
   templateUrl: './gestion-commandes.component.html',
-  styleUrls: ['./gestion-commandes.component.css']
+  styleUrls: ['./gestion-commandes.component.css'],
+  providers: [PanierComponent]
 })
 export class GestionCommandesComponent implements OnInit {
 
 
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService, private panier: PanierComponent) { }
 
   commandes = [];
+
+  @Input()
+  nbCommandes = 0;
 
   ngOnInit() {
     this.getCommande();
