@@ -1,13 +1,17 @@
 <div id="back">
   <div class="container-fluid">
     <div class="row">
-      <cart-view class="col-md-12" [localeFormat]="'€'"  [emptyText]="headers.empty" [nameHeaderText]="headers.name" [quantityHeaderText]="headers.quantity"
-        [priceHeaderText]="headers.price" [totalHeaderText]="headers.total" [taxFooterText]="footers.tax"
-        [shippingFooterText]="footers.shipping" [totalFooterText]="footers.total">
+      <cart-view class="col-md-12" [localeFormat]="'€'" [emptyText]="headers.empty" [nameHeaderText]="headers.name"
+        [quantityHeaderText]="headers.quantity" [priceHeaderText]="headers.price" [totalHeaderText]="headers.total"
+        [taxFooterText]="footers.tax" [shippingFooterText]="footers.shipping" [totalFooterText]="footers.total">
       </cart-view>
-    <!-- <cart-checkout [service]="'paypal'" settings="settings">
+      <!-- <cart-checkout [service]="'paypal'" settings="settings">
     </cart-checkout>    -->
-   </div>
-   <button type="button" class="btn btn-dark" (click)="Inorder()">Commander !</button>
+
+
+    </div>
+    <div class="btnCom">
+      <button type="button" class="btn btn-dark" (click)="Inorder()">Commander !</button>
+    </div>
   </div>
 </div>
