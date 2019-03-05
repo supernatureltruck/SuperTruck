@@ -1,14 +1,23 @@
-.back { 
+#back { 
     background-color: #eee;
-    min-height: 650px;
+	height: 700px;
+	padding-top: 80px;
 }
 
 form {
     margin: 80px auto;
     border: 2px solid black;
     border-radius: 10px;
-    /* padding: 30px; */
+    max-width: 450px;
     background-color: #ffffff;
+}
+.form-style{
+	font: 95% Arial, Helvetica, sans-serif;
+	/* max-width: 400px; */
+	margin: 10px auto;
+	padding: 16px;
+	background: #F7F7F7;
+	border-radius: 10px;
 }
 .paddingFo{
     padding: 25px;
@@ -58,4 +67,41 @@ button {
  }
  .btnVal{
      background-color: #8ea638;
+ }
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"]
+{
+	outline: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	background: #fff;
+	margin-bottom: 4%;
+	border: 1px solid #ccc;
+	padding: 3%;
+	color: #555;
+	font: 95% Arial, Helvetica, sans-serif;
+}
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus
+{
+	box-shadow: 0 0 5px #8ea638;
+	padding: 3%;
+	border: 1px solid #8ea638;
+}
+#divErreur{
+	color:red;
+	text-align: center;
+	text-decoration: underline;
+}
+.error{
+	color:red;
+}
+button {
+	font-family: 'Bree Serif', serif;
  }
