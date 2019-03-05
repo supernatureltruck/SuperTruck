@@ -11,7 +11,7 @@ import { AdminNavComponent } from 'src/app/_Comp/admin-nav/admin-nav.component';
 })
 export class PanierComponent implements OnInit {
 
-  constructor(private orderService: OrderService){}
+  constructor(private orderService: OrderService) { }
 
   headers = {
     empty: 'Votre panier est vide !',
@@ -27,11 +27,9 @@ export class PanierComponent implements OnInit {
   Inorder() {
     const donnees = JSON.parse(localStorage.getItem('NgShoppingCart'));
     const quantity = donnees.items[0].quantity;
-    const item:[] = donnees.items[0].id;
+    const item: [] = donnees.items[0].id;
     const idUser = localStorage.getItem('id');
-    const order = new Order(JSON.stringify(quantity*item),idUser);
-    console.log(order);
-    this.orderService.addOr(order);
+
   }
 
   // settings: CheckoutPaypalSettings = {

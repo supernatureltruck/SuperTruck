@@ -31,7 +31,7 @@ export class Auth {
   ROLE = "role";
   admin = false;
 
-  constructor(private router: Router, private http: HttpClient) {}
+  constructor(private router: Router, private http: HttpClient) { }
 
   login(form) {
     let url = `http://localhost:8080/api/auth/signin`;
@@ -52,12 +52,12 @@ export class Auth {
     return !!localStorage.getItem(this.TOKEN_KEY);
   }
 
-   get isAdmin() {
+  get isAdmin() {
     this.ROLE = localStorage.getItem('role');
     if (this.ROLE === "1") {
-       return true;
+      return true;
     } else {
-       return false;
+      return false;
     }
   }
 
@@ -67,14 +67,14 @@ export class Auth {
     });
   }
 
-  register(user: User): Observable < User > {
+  register(user: User): Observable<User> {
     let url = `http://localhost:8080/api/auth/signup`;
-    return this.http.post < User > (url, user, {
-        responseType: 'json'
-      })
+    return this.http.post<User>(url, user, {
+      responseType: 'json'
+    })
       .pipe(
         tap((user: User) => console.log('User added')),
-        catchError(this.handleError < User > ('register'))
+        catchError(this.handleError<User>('register'))
       );
   }
 
@@ -83,8 +83,8 @@ export class Auth {
     this.router.navigate(['/login']);
   }
 
-  private handleError < T > (operation = 'operation', result ? : T) {
-    return (error: any): Observable < T > => {
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
