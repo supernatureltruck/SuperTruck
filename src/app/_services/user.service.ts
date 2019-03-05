@@ -52,10 +52,7 @@ export class UserService {
 
     edit(user: User, key: string): Observable<User> {
       const url = 'http://localhost:8080/api/users/' + key;
-        return this.http.put<User>(url, user, {responseType: 'json'}).pipe(
-          tap((product: User) => console.log('User edited')),
-          catchError(this.handleError<User>('edit'))
-        );
+        return this.http.put<User>(url, user,{headers: this.auth.tokenHeader});
       }
 
         /**
