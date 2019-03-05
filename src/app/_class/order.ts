@@ -1,9 +1,9 @@
 export class Order {
     constructor(   
-        private item: [],
-        private id: string
+        private ids = [],
+        private user_id: string
         ){
-        this.item = item,
-        this.id = id
+        this.ids = ids,
+        this.user_id = user_id
     }
 }

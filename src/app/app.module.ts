@@ -40,6 +40,7 @@ import { Product } from './_class/product';
 import { ContactComponent } from './_CFixe/contact/contact.component';
 import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
 import { AddHomeComponent } from './_Comp/home/add-home/add-home.component';
+import { ValidateComponent } from './_CFixe/panier/validate/validate.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { AddHomeComponent } from './_Comp/home/add-home/add-home.component';
     ContactComponent,
     AddContactComponent,
     AddHomeComponent,
+    ValidateComponent,
   ],
   imports: [
     BrowserModule,

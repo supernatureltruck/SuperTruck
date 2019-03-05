@@ -1,0 +1,9 @@
+.back { 
+    background-color: #eee;
+    min-height: 650px;
+    padding-top: 60px;
+}
+
+p {
+    padding-top: 40px;
+}

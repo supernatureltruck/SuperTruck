@@ -22,6 +22,7 @@ import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
 import { AddHomeComponent } from './_Comp/home/add-home/add-home.component';
 import { AuthGuard } from './_services/auth-guard.service';
 import { AdminGuard } from './_services/admin-guard.service';
+import { ValidateComponent } from './_CFixe/panier/validate/validate.component';
 
 
 
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: 'payment', component: StripeComponent, canActivate:[AuthGuard] },
   { path: 'panier', component: PanierComponent, canActivate:[AuthGuard] },
   { path: 'contact', component: ContactComponent, canActivate:[AuthGuard] },
+  { path: 'validate/:id', component: ValidateComponent, canActivate:[AuthGuard]},
   //AdminPage :
   { path: 'addContact', component: AddContactComponent, canActivate:[AuthGuard] },
   { path: 'addcat', component: AddCatComponent, canActivate:[AuthGuard] },
@@ -50,6 +52,7 @@ const routes: Routes = [
   { path: 'add', component: AddPlatComponent, canActivate:[AuthGuard] },  
   { path: 'edition/:key', component: EditComponent, canActivate:[AuthGuard] },
   { path: 'addHome', component: AddHomeComponent, canActivate:[AuthGuard]},
+  
 
 
   // Keep the path below,in last position.

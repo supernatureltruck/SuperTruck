@@ -53,8 +53,4 @@ export class CarteComponent implements OnInit {
         }
       });
   }
-
-  order66(order) {
-    this.orderService.addOr(order).subscribe(data => data, error => console.log(error));
-  }
 }
