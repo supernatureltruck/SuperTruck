@@ -31,41 +31,19 @@ export class OrderService {
       );
   }
 
-  getCommandePrep(): Observable <Order[]> {
-    return this.http.get <Order[]> ('http://localhost:8080/api/orders')
-      .pipe(
-        tap(data => data),
-        catchError(this.handleError('getCommandePrep', []))
-      );
-  }
-
-  getCommandeTerm(): Observable <Order[]> {
-    return this.http.get <Order[]> ('https://super-truck.firebaseio.com/commande/termine.json')
-      .pipe(
-        tap(data => data),
-        catchError(this.handleError('getCommandeTerm', []))
-      );
-  }
-
   addOr(order) {
     return this.http.post('http://localhost:8080/api/orders', order, {headers: this.auth.tokenHeader});
   }
 
   /** DELETE: remove a command */
-  remove(id): Observable < any[] > {
+  remove(id): Observable <Order> {
     let url = 'http://localhost:8080/api/orders/' + id;
-    return this.http.delete < any[] > (url,{headers: this.auth.tokenHeader})
+    return this.http.delete <Order> (url,{headers: this.auth.tokenHeader})
       .pipe(
-        tap(data => {
-          data;
-          console.log("delete");
-        
-        }),
-        catchError(this.handleError < any[] > ('remove'))
+        tap(data => data ),
+        catchError(this.handleError <Order> ('remove'))
       );
   }
-
-
 
   /**
    * Handle Http operation that failed.
