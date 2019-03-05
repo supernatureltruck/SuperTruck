@@ -17,7 +17,7 @@ import { Auth } from './auth.service';
 
     // POST :  Add Home
     addHome(home: Home) {
-        return this.http.put(`${this.url}/1`, home);
+        return this.http.put(`${this.url}/1`, home,{headers: this.auth.tokenHeader});
     }
 
        // GET : Get Home
