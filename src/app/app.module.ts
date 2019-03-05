@@ -40,6 +40,8 @@ import { ContactComponent } from './_CFixe/contact/contact.component';
 import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
 import { AddHomeComponent } from './_Comp/home/add-home/add-home.component';
 import { ValidateComponent } from './_CFixe/panier/validate/validate.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -83,6 +85,7 @@ import { ValidateComponent } from './_CFixe/panier/validate/validate.component';
     MatButtonModule,
     MatCheckboxModule,
     DragDropModule,
+    MatDialogModule,
     MatTabsModule,
     BrowserAnimationsModule,
     ShoppingCartModule.forRoot({ // <-- Add the cart module to your root module

@@ -19,6 +19,7 @@ import {
   Product
 } from 'src/app/_class/product';
 
+
 @Component({
   selector: 'app-carte',
   templateUrl: './carte.component.html',
@@ -32,6 +33,7 @@ export class CarteComponent implements OnInit {
   listes = [];
   products = [];
   categories = [];
+
 
   ngOnInit() {
     this.getProduct();
@@ -53,4 +55,5 @@ export class CarteComponent implements OnInit {
         }
       });
   }
+
 }
