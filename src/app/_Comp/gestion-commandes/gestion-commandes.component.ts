@@ -13,8 +13,6 @@ export class GestionCommandesComponent implements OnInit {
   constructor(private orderService: OrderService) { }
 
   commandes = [];
-  preparations = []
-  termines = [];
 
   ngOnInit() {
     this.getCommande();
@@ -24,17 +22,13 @@ export class GestionCommandesComponent implements OnInit {
     this.orderService.getCommande()
     .subscribe(data=> { 
       this.commandes = data;
-      console.log(this.commandes)
     });
    }
 
-   
-
-
-  //  delete(key) {
-  //   this.orderService.remove(key).subscribe();
-  //   this.termines = this.termines.filter(termines => termines.key !== key);
-  //  }
+  remove(id) {
+    this.orderService.remove(id);
+    this.commandes = this.commandes.filter(commandes => commandes.id !== id);
+    }
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {

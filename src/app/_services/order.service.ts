@@ -52,11 +52,15 @@ export class OrderService {
   }
 
   /** DELETE: remove a command */
-  remove(key): Observable < any[] > {
-    let url = 'http://localhost:8080/api/orders/' + key;
-    return this.http.delete < any[] > (url)
+  remove(id): Observable < any[] > {
+    let url = 'http://localhost:8080/api/orders/' + id;
+    return this.http.delete < any[] > (url,{headers: this.auth.tokenHeader})
       .pipe(
-        tap(data => data),
+        tap(data => {
+          data;
+          console.log("delete");
+        
+        }),
         catchError(this.handleError < any[] > ('remove'))
       );
   }
