@@ -32,7 +32,12 @@ export class OrderService {
   }
 
   addOr(order) {
-    return this.http.post('http://localhost:8080/api/orders', order, {headers: this.auth.tokenHeader});
+    let url = 'http://localhost:8080/api/orders';
+    return this.http.post(url, order, {headers: this.auth.tokenHeader})
+    .pipe(
+      tap((order: Order) => console.log('Order send')),
+      catchError(this.handleError < Product > ('add'))
+    );
   }
 
   /** DELETE: remove a command */
