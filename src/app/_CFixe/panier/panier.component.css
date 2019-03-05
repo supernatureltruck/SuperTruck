@@ -1,10 +1,13 @@
 #back { 
     background-color: #eee;
-    min-height: 650px;
+    min-height: 520px;
 }
 
 cart-view {
     margin: 80px auto;
+    background-color:white;
+    border:solid 1px;
+    max-width: 1000px;
 }
 
 cart-checkout {
@@ -14,4 +17,7 @@ cart-checkout {
 
 button {
     margin: 0 auto;
+}
+.btn-dark{
+    display: inherit;
 }
