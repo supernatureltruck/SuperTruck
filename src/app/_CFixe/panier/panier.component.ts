@@ -18,8 +18,11 @@ export class PanierComponent implements OnInit {
   order: Order;
   data;
   idCom;
+  mail = localStorage.getItem('mail');
+  price = 0;
 
-  ngOnInit(){}
+  ngOnInit(){
+  }
 
   constructor(private orderService: OrderService, private router: Router, private mailing: MailingService){}
 
@@ -36,7 +39,6 @@ export class PanierComponent implements OnInit {
 
   Inorder() {
     const donnees = JSON.parse(localStorage.getItem('NgShoppingCart'));
-
     for(let i = 0; donnees.items.length > i ; i++){
       const quantity = donnees.items[i].quantity;
       const id =  JSON.stringify(donnees.items[i].id);
@@ -62,4 +64,47 @@ export class PanierComponent implements OnInit {
     localStorage.removeItem('NgShoppingCart');
   }
 
+  quantity() {
+    const donnees = JSON.parse(localStorage.getItem('NgShoppingCart'));
+    for(let i = 0; donnees.items.length > i ; i++){
+      const price =  donnees.items[i].price;
+      const quantity: number = donnees.items[i].quantity;
+      this.price += price * quantity;
+  }
+}
+
+  openCheckout() {
+    this.quantity();
+    const handler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_8oCjqa6VglrI9rZU9JlPvhKp',
+      locale: 'auto',
+      token: function (token: any) {
+        // You can access the token ID with `token.id`.
+        // Get the token ID to your server-side code for use.
+      }
+    });
+
+    handler.open({
+      name: 'Supernaturel',
+      description: 'Paiement de votre commande',
+      amount: this.price*100,
+      currency: 'EUR',
+      email: this.mail,
+      closed: ()=>{this.verif();} 
+    });
+
+  }
+
+  verif(){
+    if(localStorage.getItem('lsid') != null) {
+      this.Inorder();
+    } else {
+      return;
+    }
+  }
+  
+
+
+
+  
 }

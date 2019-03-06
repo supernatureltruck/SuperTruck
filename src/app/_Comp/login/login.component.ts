@@ -60,9 +60,5 @@ export class LoginComponent implements OnInit {
     })
    }
 
-  annuler(){
-      history.back();
-  }
-
 
 }
