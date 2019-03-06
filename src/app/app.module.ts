@@ -41,6 +41,7 @@ import { AddContactComponent } from './_Comp/add-contact/add-contact.component';
 import { AddHomeComponent } from './_Comp/home/add-home/add-home.component';
 import { ValidateComponent } from './_CFixe/panier/validate/validate.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -76,6 +77,7 @@ import {MatDialogModule} from '@angular/material/dialog';
   ],
   imports: [
     BrowserModule,
+    NgbModule,
     AppRoutingModule,
     FormsModule,
     MatBadgeModule,

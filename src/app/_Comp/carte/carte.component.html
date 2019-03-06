@@ -12,8 +12,6 @@
         </label>
       </div>
     </div>
- 
-
 
     <div class="row ">
       <div class="card" *ngFor="let liste of listes | search: term; let i = index" style="width: 18rem;">
@@ -24,7 +22,7 @@
           <button class="btn btn-secondary float-left btnVa" [routerLink]="['/info', liste.id]">Infos</button>
           <!--<button class="btn btn-secondary btnCo" (click)="order66(liste.values)"> Commander </button>-->  
           <add-to-cart [item]="products[i]" [custom]="true">
-              <button type="button" class="btn btn-secondary btnCo"> Commander </button>
+              <button type="button" class="btn btn-secondary btnCo" (click)="open(content)"> Commander </button>
            </add-to-cart>
            
           <button id="btnT" class="btn btn-info float-right"> {{ liste.price }} €</button>
@@ -32,3 +30,19 @@
       </div>
     </div>
 </div>
+
+<ng-template #content let-modal>
+    <div class="modal-header text-center">
+      <h4 class="modal-title">Commande enregistrée !</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Voulez vous acceder directement à votre panier ?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-dark" (click)="modal.close('Close click')" [routerLink]="['/panier']">Mon panier</button>
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Continuer ma commande</button>
+    </div>
+  </ng-template>

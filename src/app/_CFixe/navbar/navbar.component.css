@@ -28,3 +28,7 @@ cart-summary {
 row {
     margin: 0 auto;
 }
+
+cart-summary {
+    cursor: pointer;
+}

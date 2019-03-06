@@ -1,6 +1,7 @@
 import {
   Component,
-  OnInit
+  OnInit,
+  Input
 } from '@angular/core';
 import {
   ProductService
@@ -18,6 +19,7 @@ import {
 import {
   Product
 } from 'src/app/_class/product';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -27,7 +29,7 @@ import {
 })
 export class CarteComponent implements OnInit {
 
-  constructor(private productService: ProductService, private orderService: OrderService) {}
+  constructor(private productService: ProductService, private orderService: OrderService,private modalService: NgbModal) {}
 
 
   listes = [];
@@ -56,4 +58,9 @@ export class CarteComponent implements OnInit {
       });
   }
 
+  open(content) {
+    this.modalService.open(content, { centered: true });
+  }
 }
+
+
