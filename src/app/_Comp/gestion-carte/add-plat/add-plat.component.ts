@@ -13,6 +13,8 @@ export class AddPlatComponent implements OnInit {
 
   constructor(private productService: ProductService, private router: Router) { }
 
+  imageSrc;
+  selectedFile;
   categories = [];
   catID: number;
   ngOnInit() {
@@ -29,10 +31,18 @@ export class AddPlatComponent implements OnInit {
    }
 
   addPlat(form) {
+    const formData = new FormData();
+    formData.append('file', this.selectedFile);
     this.productService.add(form.form.value,form.form.value.categorie)
       .subscribe(plat => {
-        this.router.navigate([`./gcarte`]);
+        this.productService.uploadPicture(plat.id,formData).subscribe(img => {
+          this.router.navigate([`./gcarte`]);
+        });
       });
+  }
+  
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0];
   }
 
 

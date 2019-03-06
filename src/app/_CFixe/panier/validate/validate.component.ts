@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PanierComponent } from '../panier.component';
+import { CartService } from 'ng-shopping-cart';
 
 
 @Component({
@@ -14,10 +15,6 @@ export class ValidateComponent implements OnInit {
 
   ngOnInit() {
     this.numero = this.route.snapshot.paramMap.get("id");
-  }
-
-  ngOnDestroy() {
-    location.reload();
   }
 
 }

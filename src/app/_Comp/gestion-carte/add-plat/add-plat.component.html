@@ -7,10 +7,10 @@
             <h2>Ajouter un plat</h2>
           </div>
           <div class="paddingFo">
-            <!-- <label for="image">Ajouter une image</label>
-            <input type="file" class="form-control-file" ngModel> -->
-            <label for="image">Image du plat</label><br>
-            <input type="text" name="image" placeholder="URL de l'image" ngModel><br>
+            <label for="image">Ajouter une image</label>
+            <input type="file" name="image" class="form-control-file" (change)="onFileChanged($event)" ngModel>
+            <!-- <label for="image">Image du plat</label><br>
+            <input type="text" name="image" placeholder="URL de l'image" ngModel><br> -->
             <label for="name">Nom du plat</label><br>
             <input type="text" name="name" ngModel><br>
             <label for="descritpion">Description du plat</label><br>

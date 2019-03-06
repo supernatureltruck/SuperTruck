@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CheckoutPaypalSettings } from 'ng-shopping-cart';
+import { CheckoutPaypalSettings, CartService } from 'ng-shopping-cart';
 import { OrderService } from 'src/app/_services/order.service';
 import { Order } from 'src/app/_class/order';
 import { AdminNavComponent } from 'src/app/_Comp/admin-nav/admin-nav.component';
@@ -24,7 +24,7 @@ export class PanierComponent implements OnInit {
   ngOnInit(){
   }
 
-  constructor(private orderService: OrderService, private router: Router, private mailing: MailingService){}
+  constructor(private orderService: OrderService, private router: Router, private mailing: MailingService, private cartService: CartService<any>){}
 
   headers = {
     empty: 'Votre panier est vide !',
@@ -52,16 +52,13 @@ export class PanierComponent implements OnInit {
     .subscribe(data => {
       this.data = data;
       this.idCom = this.data.id;
-      this.ngOnDestroy();
       this.router.navigate(['./validate/' + this.idCom]);
       let id = localStorage.getItem('id');
       this.mailing.mailing(id)
-        .subscribe(data => data);
+        .subscribe(data => {
+          this.cartService.clear();
+        });
     })
-  }
-
-  ngOnDestroy() {
-    localStorage.removeItem('NgShoppingCart');
   }
 
   quantity() {
@@ -90,17 +87,9 @@ export class PanierComponent implements OnInit {
       amount: this.price*100,
       currency: 'EUR',
       email: this.mail,
-      closed: ()=>{this.verif();} 
+      closed: ()=>{this.Inorder();} 
     });
 
-  }
-
-  verif(){
-    if(localStorage.getItem('lsid') != null) {
-      this.Inorder();
-    } else {
-      return;
-    }
   }
   
 

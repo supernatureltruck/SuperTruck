@@ -96,6 +96,11 @@ export class ProductService {
         );
     }
 
+    uploadPicture(productId, file) {
+      let url = 'http://localhost:8080';
+      return this.http.post(`${url}/${productId}/uploadFile`, file, {headers: this.auth.tokenHeader});
+    }
+
   
 
   /**
