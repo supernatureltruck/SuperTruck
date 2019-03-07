@@ -19,8 +19,8 @@ export class LocalisationComponent implements OnInit {
   isLoaded= false;
   
   ngOnInit() {
-    this.lat = 50.2789254;
-    this.lng = 3.9677517999999736;
+    this.lat = 50.6327635;
+    this.lng = 3.0209538;
     this.zoom = 16;
     this.getContact();
   }

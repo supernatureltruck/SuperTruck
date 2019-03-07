@@ -1,5 +1,5 @@
 #back { 
-    background-color: #eee;
+  background-color: #eee;
 	height: 650px;
 	padding-top: 80px;
 }
@@ -48,7 +48,6 @@
 .btnValider{
 	display: inline-block;
 	padding: 5px 25px;
-	margin-left:20px;
     font-size: 24px;
     cursor: pointer;
     text-align: center;
@@ -88,3 +87,15 @@
  button {
 	font-family: 'Bree Serif', serif;
  }
+
+ @media (max-width:380px) {
+	.btnAnnuler {
+		margin-left: 10px;
+	}
+}
+
+@media (max-width:1024px) {
+	.btnValider {
+		margin-left: 0;
+	}
+}

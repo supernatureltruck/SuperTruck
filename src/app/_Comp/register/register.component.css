@@ -100,3 +100,9 @@ p{
 button {
 	font-family: 'Bree Serif', serif;
  }
+
+ @media (max-width:380px) {
+	.btnAnnuler {
+		margin-left: 10px;
+	}
+}

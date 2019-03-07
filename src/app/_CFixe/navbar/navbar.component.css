@@ -32,3 +32,9 @@ row {
 cart-summary {
     cursor: pointer;
 }
+
+@media (max-width:380px) {
+	cart-summary {
+        margin: 0 auto;
+    }
+}
