@@ -31,14 +31,18 @@ input {
 .card {
     margin: 30px auto;
     min-height: 400px;
+    background-color: #f5f3eb;
 }
 
 h5 {
     text-align: center;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 23px;
 }
 
 p {
     min-height: 48px;
+    font-family: 'Bree Serif', serif;
 }
 
 img {
