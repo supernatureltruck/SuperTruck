@@ -51,7 +51,7 @@ export class CarteComponent implements OnInit {
     this.productService.getProduct()
       .subscribe(data => {
         for (let i = 0; i < data.length; i++) {
-          const product = new Product(data[i].id,data[i].name,data[i].categorie,data[i].price,data[i].description,data[i].image);
+          const product = new Product(data[i].id,data[i].name,data[i].category,data[i].price,data[i].description,data[i].image);
           this.products.push(product);
           this.listes = data;
         }

@@ -6,14 +6,14 @@
         <h1>Edition</h1>
       </div>    
       <div class="paddingFo">
-        <label for="image">Lien vers l'image</label><br>
-        <input type="text" name="image" [ngModel]="product?.image"><br>
+        <label for="image">Ajouter une image</label><br>
+        <input type="file" name="image" class="form-control-file" (change)="onFileChanged($event)" ngModel><br>
         <label for="name">Nom du plat</label><br>
         <input type="text" name="name" [ngModel]="product?.name"><br>
         <label for="description">Description du plat</label><br>
         <input type="text" name="description" [ngModel]="product?.description"><br>
         <label for="type">Catégorie</label><br>
-        <select class="form-control" name="categorie" [ngModel]="product?.category.id">
+        <select class="form-control" name="category" [ngModel]="product?.category.id">
           <option *ngFor="let categorie of categories" 
           [value]="categorie.id" >
         {{categorie.name}}

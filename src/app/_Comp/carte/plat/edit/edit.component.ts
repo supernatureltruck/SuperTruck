@@ -10,6 +10,8 @@ import {
 import {
   ProductService
 } from 'src/app/_services/product.service';
+import { Category } from 'src/app/_class/category';
+import { Product } from 'src/app/_class/product';
 
 @Component({
   selector: 'app-edit',
@@ -19,6 +21,8 @@ import {
 export class EditComponent implements OnInit {
   product: Object;
   key: string;
+  imageSrc;
+  selectedFile;
 
   constructor(
     private route: ActivatedRoute,
@@ -33,6 +37,8 @@ export class EditComponent implements OnInit {
         this.key = parametres.key;
       });
       this.getCat();
+
+  
   }
 
   categories = [];
@@ -49,9 +55,26 @@ export class EditComponent implements OnInit {
       })
   }
 
-  editPlat(product) {
-    this.productService.edit(product.form.value, this.key, product.form.value.categorie)
-      .subscribe(product => this.router.navigate([`./gcarte`]));
+  editPlat(form) {
+    const formData = new FormData();
+    formData.append('file', this.selectedFile);
+    const cat = new Category(this.categories[0].name,this.categories[0].id);
+    const product = new Product(+this.key,form.form.value.name,cat,form.form.value.price,form.form.value.description,form.form.value.image);
+    this.productService.edit(product, +this.key)
+      .subscribe(plat => {
+        if(!this.selectedFile){
+          this.router.navigate([`./gcarte`]);
+        } else {
+        this.productService.uploadPicture(plat.id,formData).subscribe(img => {
+          this.router.navigate([`./gcarte`]);
+        });
+      }
+      });
+  }
+
+
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0];
   }
 
 }

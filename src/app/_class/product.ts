@@ -1,20 +1,21 @@
 import { CartItem } from 'ng-shopping-cart';
+import { Category } from './category';
 
 export class Product extends CartItem {
         public id: any;
         public name: string;
-        public categorie: string;
+        public category: Category;
         public price: number;
         public quantity: number;
         public description: string;
         public image: string;
         public data: any;
 
-        constructor(id: any, name:string, categorie:string, price:number,description: string,image: string) {
+        constructor(id: any, name:string, category:Category, price:number,description: string,image: string) {
             super();
             this.id = id;
             this.name = name;
-            this.categorie = categorie;
+            this.category = category;
             this.price = price;
             this.quantity = 1;
             this.description = description;

@@ -60,8 +60,8 @@ export class ProductService {
   }
 
   // PUT :  Edit a meal
-  edit(product: Product, key: string, articleID: number): Observable < Product > {
-    const url = 'http://localhost:8080/api/products/' + key + '/' + articleID;
+  edit(product: Product, articleID: number): Observable < Product > {
+    const url = 'http://localhost:8080/api/products/' + articleID;
     return this.http.put < Product > (url, product, {headers: this.auth.tokenHeader})
     .pipe(
       tap((product: Product) => console.log('plat edited')),
